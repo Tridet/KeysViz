@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+  </style>
+</head>
+  <!--
+  <svg width=600 height=600>
+    <rect style="x:100;y:150;width:50;height:100;"></rect>
+    <rect style="x:200;y:50;width:50;height:200;"></rect>
+    <rect style="x:300;y:170;width:50;height:80;"></rect>
+
+  </svg>
+  -->
+
+<body>
+  <script>
+    
+    //1. Créer le SVG
+    var svg = d3.select("body")
+    .append("svg")
+    .attr("width",1200)
+    .attr("height",600)
+    
+    //2. Générer les données
+    var data=d3.range(25)
+    
+    //3. Data binding
+    // enter, exit, et ne rien mettre pour update
+    svg.selectAll("rect").data(data).enter()
+    	.append("rect")
+      .attr("x",function(d,i){return 100+550*(i+1)/data.length;})
+      .attr("y",function(d,i){return 250-d*10;})
+      .attr("width", function(d,i){return 250/data.length - 1;})
+      .attr("height",function(d,i){return d*10;})
+      .attr("fill","red")
+    
+//     data.forEach(function(d,i){
+//     svg.append("rect")
+//     .attr("x",100+550*(i+1)/data.length)
+//     .attr("y",250-d*10)
+//     .attr("width", 50/data.length)
+//     .attr("height",d*10)
+//     .attr("fill","red")                 
+//    	})
+    
+    
+    
+  </script>
+</body>
