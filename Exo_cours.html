@@ -25,17 +25,70 @@
     .attr("height",600)
     
     //2. Générer les données
-    var data=d3.range(25)
+    var data=d3.range(10)
     
     //3. Data binding
     // enter, exit, et ne rien mettre pour update
     svg.selectAll("rect").data(data).enter()
-    	.append("rect")
+      .append("rect")
       .attr("x",function(d,i){return 100+550*(i+1)/data.length;})
       .attr("y",function(d,i){return 250-d*10;})
       .attr("width", function(d,i){return 250/data.length - 1;})
       .attr("height",function(d,i){return d*10;})
       .attr("fill","red")
+    
+    //Update
+    var data2=d3.range(5)
+    svg.selectAll("rect").data(data2)
+      .attr("fill","blue")
+    
+    //Exit
+    var data3=d3.range(15)
+    svg.selectAll("rect").data(data3).exit()
+      .attr("fill","green")
+    
+    //scaleLinear
+    var y = d3.scaleLinear()
+    .domain([d3.min(data), d3.max(data)])  //nb éléments
+    .range([0,100]) //px
+    
+    //console.log(x(2))
+    // utiliser x(i) dans les attributs
+    
+    //scaleBand
+    var x = d3.scaleBand()
+    .domain(d3.range(data.length))
+    .range([200,500])
+    
+    svg.selectAll("rect").data(data).remove()
+    
+    svg.selectAll("rect").data(data).enter()
+      .append("rect")
+      .attr("x",function(d,i){return x(d);})
+      .attr("y",function(d,i){return 300-y(d);})
+      .attr("width", function(d,i){return x.bandwidth();})
+      .attr("height",function(d,i){return y(d);})
+      .attr("fill","red")
+    
+      .on("mouseover", function(d,i){
+         d3.select(this)
+        .attr("fill","blue")
+         
+        svg.append("text").text(d)
+        .attr("id","label") //manière simple d'identifier un élément
+        .attr("x",x(d))
+        .attr("y",300-y(d))
+        })
+    
+      .on("mouseleave", function(d,i){
+        d3.select(this)
+         .attr("fill","red")
+        
+        d3.select("#label").remove()})
+    
+//     console.log(y(5))
+//     console.log(y.bandwidth())
+    
     
 //     data.forEach(function(d,i){
 //     svg.append("rect")
@@ -44,7 +97,7 @@
 //     .attr("width", 50/data.length)
 //     .attr("height",d*10)
 //     .attr("fill","red")                 
-//    	})
+//      })
     
     
     
