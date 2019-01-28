@@ -16,6 +16,6 @@ Before exiting, the program writes "Exiting..." in the logs, it needs to be take
 it if you want (line 25).
 
 
-WARNING : IF YOU WANT TO ENSURE THE PRESENCE OF A NONE KEY, RUN THE COMMAND : sudo name="logs_code" python3 keylogger.py
+WARNING : IF YOU WANT TO ENSURE THE PRESENCE OF A NONE KEY, RUN THE COMMAND : sudo name="logs_code" python3 keylogger.py SO YOU CAN EXIT THE CODE MANUALLY IN THE TERMINAL. OR YOU’LL HAVE TO DO SOMETHING LIKE : ps aux | grep Python AND THEN GET THE ID OF THE PROCESS TO KILL IT : kill ID 
 
 HAVE FUN!!!
