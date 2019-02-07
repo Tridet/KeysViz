@@ -58,7 +58,7 @@
 
   //Define the global variables
   var outerWidth = 1450;
-  var outerHeight = 700
+  var outerHeight = 500
   var margin = {top: 150, right:30, bottom:80, left: 100};
 
   var innerWidth = (outerWidth - margin.left - margin.right)/2;
@@ -89,7 +89,7 @@
       d["date"] = parseDate(d["date"]);
     });
     
-	barchart(g, data, 7, innerWidth, innerHeight, "salmon")
+	barchart(g, data, 7, (3/4)*innerWidth, innerHeight, "salmon")
     
     // title of the ligne chart
     g.append("text")             
@@ -111,7 +111,7 @@
       d["date"] = parseDate(d["date"]);
     });
     
-    barchart(g1, data, 7, innerWidth, innerHeight, "salmon")
+    barchart(g1, data, 7, (3/4)*innerWidth, innerHeight, "salmon")
     
     // title of the ligne chart
     g1.append("text")             
