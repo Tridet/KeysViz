@@ -57,11 +57,11 @@
   <script>
 
   //Define the global variables
-  var outerWidth = 1400;
-  var outerHeight = 530
+  var outerWidth = 1300;
+  var outerHeight = 700
   var margin = {top: 150, right:80, bottom:80, left: 150};
 
-  var innerWidth = outerWidth/2 - margin.left - margin.right;
+  var innerWidth = (outerWidth - margin.left - margin.right)/2;
   var innerHeight = outerHeight - margin.top - margin.bottom;
 
   //Create the SVG
@@ -73,7 +73,7 @@
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	  
   var g1 = svg.append("g1")
-  .attr("transform", "translate(" + (margin.left + outerWidth/2) + "," + margin.top + ")");
+  .attr("transform", "translate(" + (margin.left + outerWidth)/2 + "," + margin.top + ")");
 
   var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
   var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
