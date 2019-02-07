@@ -66,10 +66,16 @@ function barchart(elt, data, filter_count, w, h, var_color) {
           	.attr("opacity", function(e) {
             	return e=== d ? 1: .1; 
           })
+          elt.append("text")
+          .attr("id","label")
+          .attr("x", xScale(d.value)+10)
+          .attr("y", yScale(d.key))
+          .text(d.value)
       })
       .on("mouseleave", function(d) {
         	d3.select("svg").selectAll(".bar")
           	.attr("opacity", 1)
+          d3.selectAll("#label").remove()
       });
 
   // text label for the x axis
