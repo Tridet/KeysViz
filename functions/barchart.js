@@ -82,4 +82,4 @@ function barchart(elt, data, filter_count, w, h, var_color) {
     .style("font-size", 14)
     .style("font-family", "monospace")
     .text("Keystroke");  
-}
+};
