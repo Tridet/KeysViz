@@ -1,4 +1,4 @@
-var barchart = function(elt, data, filter_count, w, h, var_color) {
+function barchart (elt, data, filter_count, w, h, var_color) {
 
   var keys = d3.nest()
   .key(function(d) { return d["stroke"]; })
