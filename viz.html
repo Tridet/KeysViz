@@ -100,6 +100,8 @@
       .style("font-family", "monospace")
       .text("Bar chart of key strokes while coding in D3.js");
 	  
+    });
+	  
   d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/tolstoi/logs_rapport_philo.txt', function(error, raw){
     var dsv = d3.dsvFormat(';')
     var data = dsv.parse(raw)
