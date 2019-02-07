@@ -75,7 +75,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
   // text label for the x axis
   elt.append("text")             
     .attr("transform",
-          "translate(" + (w/2) + " ," + (h/2 + 1.5*margin.top) + ")")
+          "translate(" + (w/2) + " ," + (h/2 + 1.8*margin.top) + ")")
     .style("text-anchor", "middle")
     .style("font-size", 14)
     .style("font-family", "monospace")
@@ -85,7 +85,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
   // text label for the y axis
   elt.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin.left*0.8)
+    .attr("y", 0 - margin.left*0.9)
     .attr("x",0 - (h / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
