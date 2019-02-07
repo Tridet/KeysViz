@@ -42,10 +42,10 @@ function chordMpr (data) {
   },
   mpr.addValuesToMap = function (varName, info) {
     var values = _.uniq(_.pluck(data, varName));
-    var id_alphabet  = {"a":0,"e":1,"i":2,"o":3,"u":4,"y":5,"b":6,"c":7,"d":8,"f":9,"g":10,"h":11,"j":12,"k":13,"l":14,"m":15,"n":16,"p":17,"q":18,"r":19,"s":20,"t":21,"v":22,"x":23}
+    var id_alphabet  = {"a":0,"e":1,"i":2,"o":3,"u":4,"y":5,"b":6,"c":7,"d":8,"f":9,"g":10,"h":11,"j":12,"k":13,"l":14,"m":15,"n":16,"p":17,"q":18,"r":19,"s":20,"t":21,"v":22,"x":23};
     _.map(values, function (v) {
       if (!mmap[v]) {
-        mmap[v] = { name: v, id: id_alphabet.v, data: info }
+        mmap[v] = { name: v, id: id_alphabet[v], data: info }
       }
     });
     return this;
