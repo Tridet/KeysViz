@@ -73,7 +73,7 @@
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	  
   var g1 = svg.append("g1")
-  .attr("transform", "translate(" + margin.left + outerWidth/2 + "," + margin.top + ")");
+  .attr("transform", "translate(" + (margin.left + outerWidth/2) + "," + margin.top + ")");
 
   var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
   var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
