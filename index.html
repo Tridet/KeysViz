@@ -54,8 +54,10 @@
   var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
   var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
   //     console.log(parseDate("2019-01-29 10:28:05,248"));
-    
-  d3.text('data/pascal/logs_js.txt', function(error, raw){
+
+  var data_link = "https://raw.githubusercontent.com/Tridet/KeysViz/master/data/pascal/logs_js.txt"
+	
+  d3.text(data_link, function(error, raw){
     var dsv = d3.dsvFormat(';')
     var data = dsv.parse(raw)
 
