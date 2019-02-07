@@ -61,6 +61,16 @@ function barchart(elt, data, filter_count, w, h, var_color) {
     .attr("y", function(d) { return yScale(d.key); })
     .attr("height", yScale.bandwidth())
     .style("fill", var_color);
+    .on("mouseenter", function(d) {
+        	d3.select("svg").selectAll(".bar")
+          	.attr("opacity", function(e) {
+            	return e=== d ? 1: .1; 
+          })
+      })
+      .on("mouseleave", function(d) {
+        	d3.select("svg").selectAll(".bar")
+          	.attr("opacity", 1)
+      });
 
   // text label for the x axis
   elt.append("text")             
