@@ -85,7 +85,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
   // text label for the y axis
   elt.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin.left*0.6)
+    .attr("y", 0 - margin.left*0.8)
     .attr("x",0 - (h / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
