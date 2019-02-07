@@ -1,4 +1,4 @@
-function barchart (elt, data, filter_count, w, h, var_color) {
+function barchart(elt, data, filter_count, w, h, var_color) {
 
   var keys = d3.nest()
   .key(function(d) { return d["stroke"]; })
@@ -10,7 +10,7 @@ function barchart (elt, data, filter_count, w, h, var_color) {
   keys.sort(function(x, y){
     return d3.descending(x.value, y.value)});
 
-  var sum_keys = d3.sum(keys, function(d){ return d.value; })
+  var sum_keys = d3.sum(keys, function(d){ return d.value; });
 
   keys.forEach(function(d) {
     d.value=d.value/sum_keys*100
