@@ -64,7 +64,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
     .on("mouseenter", function(d) {
         	d3.select("svg").selectAll(".bar")
           	.attr("opacity", function(e) {
-            	return e=== d ? 1: .1; 
+            	return e.key===d.key ? 1: .1; 
           })
           elt.append("text")
           .attr("id","label")
