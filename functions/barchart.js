@@ -70,7 +70,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
           .attr("id","label")
           .attr("x", xScale(d.value)+10)
           .attr("y", yScale(d.key))
-          .text(d.value)
+          .text(d.value.toFixed(2))
       })
       .on("mouseleave", function(d) {
         	d3.select("svg").selectAll(".bar")
