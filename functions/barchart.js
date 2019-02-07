@@ -60,7 +60,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
     .attr("width", function(d) {return xScale(d.value); } )
     .attr("y", function(d) { return yScale(d.key); })
     .attr("height", yScale.bandwidth())
-    .style("fill", var_color);
+    .style("fill", var_color)
     .on("mouseenter", function(d) {
         	d3.select("svg").selectAll(".bar")
           	.attr("opacity", function(e) {
