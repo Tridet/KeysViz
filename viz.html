@@ -58,7 +58,7 @@
 
   //Define the global variables
   var outerWidth = 1450;
-  var outerHeight = 500
+  var outerHeight = 700
   var margin = {top: 150, right:30, bottom:80, left: 100};
 
   var innerWidth = (outerWidth - margin.left - margin.right)/2;
@@ -94,7 +94,7 @@
     // title of the ligne chart
     g.append("text")             
       .attr("transform",
-            "translate(" + (innerWidth/2) + " ," + (-margin.top*0.1) + ")")
+            "translate(" + ((3/4)*innerWidth/2) + " ," + (-margin.top*0.1) + ")")
       .style("text-anchor", "middle")
       .style("font-size", 16)
       .style("font-family", "monospace")
@@ -116,7 +116,7 @@
     // title of the ligne chart
     g1.append("text")             
       .attr("transform",
-            "translate(" + (innerWidth/2) + " ," + (-margin.top*0.1) + ")")
+            "translate(" + ((3/4)*innerWidth/2) + " ," + (-margin.top*0.1) + ")")
       .style("text-anchor", "middle")
       .style("font-size", 16)
       .style("font-family", "monospace")
