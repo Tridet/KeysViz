@@ -61,7 +61,7 @@
   var navbarHeight = 100
   var outerWidth = screen.width;
   var outerHeight = screen.height-navbarHeight-topbarHeight;
-  var margin = {top: 50, right:30, bottom:80, left: 100};
+  var margin = {top: 50, right:80, bottom:80, left: 100};
 
   var innerWidth = outerWidth/2 - margin.left - margin.right;
   var innerHeight = outerHeight - margin.top - margin.bottom;
@@ -92,7 +92,7 @@
       d["date"] = parseDate(d["date"]);
     });
     
-	barchart(g, data, 7, innerWidth, innerHeight, "salmon")
+	barchart(g, data, 30, innerWidth, innerHeight, "salmon")
     
     // title of the ligne chart
     g.append("text")             
@@ -114,7 +114,7 @@
       d["date"] = parseDate(d["date"]);
     });
     
-    barchart(g1, data, 7, innerWidth, innerHeight, "salmon")
+    barchart(g1, data, 30, innerWidth, innerHeight, "salmon")
     
     // title of the ligne chart
     g1.append("text")             

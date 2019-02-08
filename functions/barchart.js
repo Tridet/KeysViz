@@ -5,10 +5,12 @@ function barchart(elt, data, filter_count, w, h, var_color) {
   .rollup(function(v) { return v.length; })
   .entries(data);
 
-  var keys = keys.filter(d => d.value > filter_count);
+  //var keys = keys.filter(d => d.value > filter_count);
 
   keys.sort(function(x, y){
     return d3.descending(x.value, y.value)});
+
+  var keys = keys.slice(0,filter_count)
 
   var sum_keys = d3.sum(keys, function(d){ return d.value; });
 
