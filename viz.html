@@ -57,23 +57,26 @@
   <script>
 
   //Define the global variables
+  var topbarHeight = 50
+  var navbarHeight = 100
   var outerWidth = screen.width;
-  var outerHeight = screen.height*3/4;
-  var margin = {top: 150, right:30, bottom:80, left: 100};
+  var outerHeight = screen.height-navbarHeight-topbarHeight;
+  var margin = {top: 50, right:30, bottom:80, left: 100};
 
-  var innerWidth = (outerWidth - margin.left - margin.right)/2;
+  var innerWidth = outerWidth/2 - margin.left - margin.right;
   var innerHeight = outerHeight - margin.top - margin.bottom;
 
   //Create the SVG
   var svg = d3.select("body").append("svg")
+  .attr("transform", "translate(" + 0 + "," + topbarHeight + ")")
   .attr("width", outerWidth)
   .attr("height", outerHeight);
         
   var g = svg.append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  .attr("transform", "translate(" + margin.left + "," + (margin.top) + ")");
 	  
   var g1 = svg.append("g")
-  .attr("transform", "translate(" + (margin.left + outerWidth)/2 + "," + margin.top + ")");
+  .attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top) + ")");
 
   var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
   var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
@@ -89,16 +92,16 @@
       d["date"] = parseDate(d["date"]);
     });
     
-	barchart(g, data, 7, (3/4)*innerWidth, innerHeight, "salmon")
+	barchart(g, data, 7, innerWidth, innerHeight, "salmon")
     
     // title of the ligne chart
     g.append("text")             
       .attr("transform",
-            "translate(" + ((3/4)*innerWidth/2) + " ," + (-margin.top*0.1) + ")")
-      .style("text-anchor", "middle")
+            "translate(" + 50 + " ," + (-margin.top*0.1) + ")")
+      .style("text-anchor", "start")
       .style("font-size", 16)
       .style("font-family", "monospace")
-      .text("Bar chart of key strokes while coding in D3.js");
+      .text("Key strokes while coding in D3.js");
 	  
     });
 	  
@@ -111,16 +114,16 @@
       d["date"] = parseDate(d["date"]);
     });
     
-    barchart(g1, data, 7, (3/4)*innerWidth, innerHeight, "salmon")
+    barchart(g1, data, 7, innerWidth, innerHeight, "salmon")
     
     // title of the ligne chart
     g1.append("text")             
       .attr("transform",
-            "translate(" + ((3/4)*innerWidth/2) + " ," + (-margin.top*0.1) + ")")
-      .style("text-anchor", "middle")
+            "translate(" + 50 + " ," + (-margin.top*0.1) + ")")
+      .style("text-anchor", "start")
       .style("font-size", 16)
       .style("font-family", "monospace")
-      .text("Bar chart of key strokes while writing a philosophy paper");
+      .text("Key strokes while writing a philosophy paper");
     
     });
 
