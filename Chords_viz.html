@@ -73,9 +73,24 @@
 			g.append("svg:path")
 				.style("stroke", "white")
 				.style("fill", function(d, i) {console.log(mapReader(d).gname);
-					return colors(2);
+					if(i<6){return colors(1);}
+						else{
+					return colors(2);}
 				})
-				.attr("d", arc);
+				.attr("d", arc)
+				.on("mouseenter",function(d,i){
+					d3.select("svg").selectAll("path.chord")
+					.style("fill",function(f,g){
+					if(f.source.index==i || f.target.index==i){
+						return colors(1);}
+					else{return colors(0);}
+					})})
+				.on("mouseleave",function(d,i){
+					d3.select("svg").selectAll("path.chord")
+					.style("fill",function(f,g){
+					return colors(0);
+					})});
+				
 
 			g.append("svg:text")
 				.each(function(d) {
@@ -104,7 +119,7 @@
 				.attr("class", "chord")
 				.style("stroke", "white")
 				.style("fill", function(d, i) {
-					return colors(0)
+					return colors(0);
 				})
 				.attr("d", ribbon.radius(r0))
 				.on("mouseenter", function(d) {
