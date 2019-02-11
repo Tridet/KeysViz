@@ -27,8 +27,21 @@
 			drawChords(mpr.getMatrix(), mpr.getMap());
 		});
 
+		function filter_matrix(matrix, rate) {
+			//max_mat = d3.max(matrix, function(d) {return d3.max(d);})
+			for (var i=0; i<matrix.length;i++) {
+				for (var j=0; j<i+1; j++) {
+					if (matrix[i][j] <=rate && matrix[j][i] <=rate) {
+						matrix[i][j] = 0;
+						matrix[j][i] = 0;
+					}
+				}
+			}
+		}
+
 		function drawChords(matrix, mmap) {
 			//console.log(matrix)
+			filter_matrix(matrix, 5);
 			var w = 950,
 				h = 600,
 				r1 = h / 2 ,
@@ -60,7 +73,20 @@
 
 			var mapReader = chordRdr(matrix, mmap);
 
-			var colors = d3.scaleOrdinal(d3.schemeCategory20c);
+			var colors_1 = d3.scaleOrdinal(d3.schemeCategory20c);
+			for (var i=0;i<20;i++) {
+				colors_1(i)
+			}
+			function colors (n) {
+				//var blues = d3.scaleOrdinal(d3.interpolateBlues(1));
+				//var list_colors = ["#2980e1", "#29b7e1", "#295be1"];
+				var list_colors = ["#e1e7e8", colors_1(0), colors_1(8)];
+				return list_colors[n];
+			}
+			/*
+			var colors = d3.scaleLinear()
+				.range(['#FFFFFF', '#483D8B	'])
+				.interpolate(d3.interpolateHcl);*/
 
 
 			var g = svg.selectAll("g.group")
@@ -72,7 +98,7 @@
 
 			g.append("svg:path")
 				.style("stroke", "white")
-				.style("fill", function(d, i) {console.log(mapReader(d).gname);
+				.style("fill", function(d, i) {//console.log(mapReader(d).gname);
 					if(i<6){return colors(1);}
 						else{
 					return colors(2);}
@@ -82,14 +108,21 @@
 					d3.select("svg").selectAll("path.chord")
 					.style("fill",function(f,g){
 					if(f.source.index==i || f.target.index==i){
-						return colors(1);}
+						if (i<6) {return colors(1);} else{return colors(2)}
+						}
 					else{return colors(0);}
-					})})
+					})
+					.attr("opacity", function(e) {
+							if(e.source.index==i || e.target.index==i){
+								return 1;}
+							else{return 0.1;}
+						})})
 				.on("mouseleave",function(d,i){
 					d3.select("svg").selectAll("path.chord")
 					.style("fill",function(f,g){
 					return colors(0);
-					})});
+					})
+					.attr("opacity", 1)});
 				
 
 			g.append("svg:text")
