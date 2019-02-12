@@ -39,11 +39,18 @@
 			}
 		}
 
+		function updateWindow(){
+			x = window.innerWidth;
+			y = window.innerHeight;
+
+			svg.attr("width", x).attr("height", y);
+		}
+
 		function drawChords(matrix, mmap) {
 			//console.log(matrix)
 			filter_matrix(matrix, 5);
-			var w = 950,
-				h = 600,
+			var w = window.innerWidth,
+				h = window.innerHeight,
 				r1 = h / 2 ,
 				r0 = r1 - 70;
 
@@ -166,6 +173,8 @@
 						d3.select("svg").selectAll("path.chord")
 							.attr("opacity", 1)
 				});
+
+			d3.select(window).on('resize.updatesvg', updateWindow);
 			}
 
 	</script>
