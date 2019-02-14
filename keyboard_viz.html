@@ -26,9 +26,9 @@
     var data;
     var height2 = width / 3;
     
-    d3.json('keyboard_display.json', function(json) {
+    d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/keyboard_display.json', function(json) {
       data = json;
-      console.log(data);
+      //console.log(data);
       svg.selectAll("rect").data(data).enter()
       	.append("rect")
         .attr("x", function(d,i) {return width*d.start;})
