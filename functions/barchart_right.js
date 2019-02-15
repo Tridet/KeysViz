@@ -1,24 +1,13 @@
-function barchart(elt, data, filter_count, w, h, var_color) {
+function barchart_right(elt, data, filter_count, w, h, var_color, alphabetical = false) {
 
-  var keys = d3.nest()
-  .key(function(d) { return d["stroke"]; })
-  .rollup(function(v) { return v.length; })
-  .entries(data);
+  var keys = stroke2freq(data, filter_count, alphabetical = false)
 
-  //var keys = keys.filter(d => d.value > filter_count);
-
-  keys.sort(function(x, y){
-    return d3.descending(x.value, y.value)});
-
-  var keys = keys.slice(0,filter_count)
-
-  var sum_keys = d3.sum(keys, function(d){ return d.value; });
-
-  keys.forEach(function(d) {
-    d.value=d.value/sum_keys*100
+  var val = []
+  keys.forEach( function(d){
+    val.push(d.value)
   });
 
-  var max_percentage = keys[0].value;
+  var max_percentage = d3.max(val);
 
   var strokeAccessor = function(d) {
     return d.key
@@ -50,7 +39,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
   var yAxis = d3.axisLeft(yScale);
 
   yScale.domain(strokeNames);  
-  xScale.domain([0, max_percentage]);
+  xScale.domain([0,max_percentage]);
 
   xAxisG.call(xAxis)
   yAxisG.call(yAxis);
@@ -71,7 +60,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
           elt.append("text")
           .attr("id","label")
           .attr("x", xScale(d.value)+10)
-          .attr("y", yScale(d.key))
+          .attr("y", yScale(d.key)+13)
           .text(d.value.toFixed(2))
       })
       .on("mouseleave", function(d) {
@@ -83,7 +72,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
   // text label for the x axis
   elt.append("text")             
     .attr("transform",
-          "translate(" + (w/2) + " ," + (h + margin.top) + ")")
+          "translate(" + (w/2) + " ," + (h*1.05) + ")")
     .style("text-anchor", "middle")
     .style("font-size", 14)
     .style("font-family", "monospace")
@@ -91,6 +80,7 @@ function barchart(elt, data, filter_count, w, h, var_color) {
 
 
   // text label for the y axis
+    /*
   elt.append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", 0 - margin.left*0.8)
@@ -99,5 +89,6 @@ function barchart(elt, data, filter_count, w, h, var_color) {
     .style("text-anchor", "middle")
     .style("font-size", 14)
     .style("font-family", "monospace")
-    .text("Keystroke");  
+    .text("Keystroke");
+    */
 };

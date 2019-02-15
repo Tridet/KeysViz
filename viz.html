@@ -9,9 +9,12 @@
   <meta name="google" content="notranslate" />
   <meta content="Mashup templates have been developped by Orson.io team" name="author">
   <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="./functions/barchart.js"></script>
+  <script src="functions/barchart_right.js"></script>
+  <script src="functions/barchart_left.js"></script>
+  <script src="functions/stroke2freq.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
-    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0;}
   </style>
 
   <!-- Disable tap highlight on IE -->
@@ -24,65 +27,64 @@
 
 <link href="./main.3f6952e4.css" rel="stylesheet"></head>
 
-<body class="">
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
+<body>
  <!-- Add your content of header -->
 <header>
   <nav class="navbar  navbar-fixed-top navbar-default">
     <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav ">
           <li><a href="./index.html" title="">01 : Home</a></li>
           <li><a href="./viz.html" title="">02 : Visualizations</a></li>
           <li><a href="./about.html" title="">03 : About the project</a></li>
         </ul>
-
-
       </div> 
     </div>
   </nav>
 </header>
 
 <div>
+
+  <form id="form" align="right" position="relative">
+      </br>
+      &nbsp;Sorting layout:
+      <label><input type="radio" name="layout" value="descending" checked> Frequency&nbsp;</label>
+      <label><input type="radio" name="layout" value="alphabetical"> Alphabetical &nbsp;</label>
+  </form>
+
+    <!--
+  <select class="sort" text-align="right" position="relative">
+      <option selected="" value="value-descending">Frequency</option>
+      <option value="name-ascending">Alphabetical</option>
+  </select>
+  -->
+
   <script>
 
-  //Define the global variables
-  var topbarHeight = 50
-  var navbarHeight = 100
-  var outerWidth = screen.width;
-  var outerHeight = screen.height-navbarHeight-topbarHeight;
-  var margin = {top: 50, right:80, bottom:80, left: 100};
+  var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
+  var outerWidth = $(window).width();//window.innerWidth
+  var outerHeight = $(window).height()-topHeight;//window.innerHeight-topbarHeight;
+  var margin = {top: 0.04*outerWidth, right: 0.06*outerWidth, bottom:0.04*outerWidth, left: 0.06*outerWidth};
 
   var innerWidth = outerWidth/2 - margin.left - margin.right;
   var innerHeight = outerHeight - margin.top - margin.bottom;
 
   //Create the SVG
   var svg = d3.select("body").append("svg")
-  .attr("transform", "translate(" + 0 + "," + topbarHeight + ")")
   .attr("width", outerWidth)
   .attr("height", outerHeight);
-        
+
   var g = svg.append("g")
-  .attr("transform", "translate(" + margin.left + "," + (margin.top) + ")");
-	  
+  .attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top) + ")");
+
   var g1 = svg.append("g")
   .attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top) + ")");
 
   var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
   var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
   //     console.log(parseDate("2019-01-29 10:28:05,248"));
-    
-	
+
+
   d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/pascal/logs_js.txt', function(error, raw){
     var dsv = d3.dsvFormat(';')
     var data = dsv.parse(raw)
@@ -91,20 +93,23 @@
       d["stroke"] = d["stroke"].toString();
       d["date"] = parseDate(d["date"]);
     });
-    
-	barchart(g, data, 30, innerWidth, innerHeight, "salmon")
-    
+
+    barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false)
+    //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
+    //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
+
+
     // title of the ligne chart
-    g.append("text")             
+    g.append("text")
       .attr("transform",
-            "translate(" + 50 + " ," + (-margin.top*0.1) + ")")
-      .style("text-anchor", "start")
+          "translate(" + innerWidth/2 + " ," + (-innerHeight*0.02) + ")")
+      .style("text-anchor", "middle")
       .style("font-size", 16)
       .style("font-family", "monospace")
       .text("Key strokes while coding in D3.js");
-	  
+
     });
-	  
+
   d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/tolstoi/logs_rapport_philo.txt', function(error, raw){
     var dsv = d3.dsvFormat(';')
     var data = dsv.parse(raw)
@@ -113,33 +118,29 @@
       d["stroke"] = d["stroke"].toString();
       d["date"] = parseDate(d["date"]);
     });
-    
-    barchart(g1, data, 30, innerWidth, innerHeight, "salmon")
-    
+
+    barchart_right(g1, data, 30, innerWidth, innerHeight, "salmon",false)
+    //d3.select("input[value=\"descending\"]").on("click", barchart_right(g1, data, 30, innerWidth, innerHeight, "salmon",false));
+    //d3.select("input[value=\"alphabetical\"]").on("click", barchart_right(g1, data, 30, innerWidth, innerHeight, "salmon",true));
+
+
+
     // title of the ligne chart
-    g1.append("text")             
+    g1.append("text")
       .attr("transform",
-            "translate(" + 50 + " ," + (-margin.top*0.1) + ")")
-      .style("text-anchor", "start")
+            "translate(" + innerWidth/2 + " ," + (-innerHeight*0.02) + ")")
+      .style("text-anchor", "middle")
       .style("font-size", 16)
       .style("font-family", "monospace")
       .text("Key strokes while writing a philosophy paper");
-    
+
     });
 
   </script>
 </div>
 
 
-<footer class="footer-container text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p></p>
-      </div>
-    </div>
-  </div>
-</footer>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {

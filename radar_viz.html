@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="functions/radar_chart.js"></script>
+    <script src="functions/stroke2freq.js"></script>
+	<style>
+		body {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 11px;
+		font-weight: 300;
+		fill: #242424;
+		text-align: center;
+		text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+		cursor: default;
+		}
+
+		.legend {
+		font-family: 'Raleway', sans-serif;
+		fill: #333333;
+		}
+
+		.tooltip {
+		fill: #333333;
+		}
+
+	</style>
+</head>
+
+<body>
+    <div class="radarChart"></div>
+	<script>
+
+var margin = {top: 100, right: 100, bottom: 100, left: 100},
+            width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+            height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+        //////////////////////////////////////////////////////////////
+        ////////////////////////// Data //////////////////////////////
+        //////////////////////////////////////////////////////////////
+
+var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
+
+d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/tolstoi/logs_rapport_philo.txt', function(error, raw){
+    var dsv = d3.dsvFormat(';')
+    var data = dsv.parse(raw)
+
+    var keys = stroke2freq(data, filter_count, alphabetical = false)
+
+});
+
+var data2 = [
+          [
+            {axis:"Coding D3",value:0.12},
+            {axis:"Coding Python",value:0.18},
+            {axis:"Philosophy Report",value:0.19},
+            {axis:"Scientific Report",value:0.07},
+            {axis:"Mail",value:0.12},
+            {axis:"Les Miserables",value:0.02}
+          ]
+        ];
+//////////////////////////////////////////////////////////////
+//////////////////// Draw the Chart //////////////////////////
+//////////////////////////////////////////////////////////////
+
+var color = d3.scaleOrdinal()
+    .range(["salmon"])
+    //.range(["#EDC951","#CC333F","#00A0B0"]);
+
+var radarChartOptions = {
+  w: width,
+  h: height,
+  margin: margin,
+  maxValue: 0.2,
+  levels: 5,
+  roundStrokes: true,
+  color: color
+};
+//Call function to draw the Radar chart
+RadarChart(".radarChart", data2, radarChartOptions);
+
+	</script>
+</body>
