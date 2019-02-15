@@ -49,8 +49,33 @@ d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/tolstoi/lo
     var dict_keys = stroke2dict(data, 30, alphabetical = false)
 
     var tooltip = dict_keys["c"]
-    console.log(dict_keys)
-    console.log(tooltip)
+
+    var data = [
+        [
+            {axis:"Coding D3",value:0.12},
+            {axis:"Coding Python",value:0.18},
+            {axis:"Philosophy Report",value:tooltip},
+            {axis:"Scientific Report",value:0.07},
+            {axis:"Mail",value:0.12},
+            {axis:"Les Miserables",value:0.19}
+        ]
+    ];
+
+    var color = d3.scaleOrdinal()
+        .range(["salmon"])
+    //.range(["#EDC951","#CC333F","#00A0B0"]);
+
+    var radarChartOptions = {
+        w: width,
+        h: height,
+        margin: margin,
+        maxValue: 0.2,
+        levels: 5,
+        roundStrokes: true,
+        color: color
+    };
+//Call function to draw the Radar chart
+    RadarChart(".radarChart", data, radarChartOptions);
 
 });
 
@@ -58,31 +83,14 @@ var data2 = [
           [
             {axis:"Coding D3",value:0.12},
             {axis:"Coding Python",value:0.18},
-            {axis:"Philosophy Report",value:0.19},
+            {axis:"Philosophy Report",value:tooltip},
             {axis:"Scientific Report",value:0.07},
             {axis:"Mail",value:0.12},
-            {axis:"Les Miserables",value:0.02}
+            {axis:"Les Miserables",value:0.19}
           ]
         ];
-//////////////////////////////////////////////////////////////
-//////////////////// Draw the Chart //////////////////////////
-//////////////////////////////////////////////////////////////
+// Draw the Chart
 
-var color = d3.scaleOrdinal()
-    .range(["salmon"])
-    //.range(["#EDC951","#CC333F","#00A0B0"]);
-
-var radarChartOptions = {
-  w: width,
-  h: height,
-  margin: margin,
-  maxValue: 0.2,
-  levels: 5,
-  roundStrokes: true,
-  color: color
-};
-//Call function to draw the Radar chart
-RadarChart(".radarChart", data2, radarChartOptions);
 
 	</script>
 </body>

@@ -1,6 +1,7 @@
-function barchart_right(elt, data, filter_count, w, h, var_color, alphabetical = false) {
+function barchart_right(elt, data, main_key, filter_count, w, h, var_color, alphabetical = false) {
 
-  var keys = stroke2freq(data, filter_count, alphabetical = false)
+  //var keys = stroke2freq(data, filter_count, alphabetical = false)
+  var keys = filter_data(data, main_key, filter_count, alphabetical = false)
 
   var val = []
   keys.forEach( function(d){
