@@ -13,15 +13,15 @@
 
 <body>
   <script>
-    var margin = { top: 50, right: 0, bottom: 50, left: 30 },
+    var margin = { top: 50, right: 30, bottom: 50, left: 30 },
           width = window.innerWidth - margin.left - margin.right,
           height = window.innerHeight - margin.top - margin.bottom;
 
     var svg = d3.select("body").append("svg")
           .attr("width", width)
-          .attr("height", height);
+          .attr("height", height)
           //.append("g")
-          //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     
     var data;
     var height2 = width / 3;
