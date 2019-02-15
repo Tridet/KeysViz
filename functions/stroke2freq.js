@@ -31,6 +31,5 @@ function stroke2freq(data, filter_count, alphabetical = false) {
         d.value = d.value / sum_keys * 100
     });
 
-    console.log(keys)
     return keys;
 };

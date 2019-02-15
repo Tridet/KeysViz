@@ -4,6 +4,7 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="functions/radar_chart.js"></script>
     <script src="functions/stroke2freq.js"></script>
+    <script src="functions/stroke2dict.js"></script>
 	<style>
 		body {
 		font-family: 'Open Sans', sans-serif;
@@ -45,7 +46,11 @@ d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/tolstoi/lo
     var dsv = d3.dsvFormat(';')
     var data = dsv.parse(raw)
 
-    var keys = stroke2freq(data, filter_count, alphabetical = false)
+    var dict_keys = stroke2dict(data, 30, alphabetical = false)
+
+    var tooltip = dict_keys["c"]
+    console.log(dict_keys)
+    console.log(tooltip)
 
 });
 
