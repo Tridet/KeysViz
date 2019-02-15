@@ -4,28 +4,93 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="./functions/stroke2dict.js"></script>
 	<script src="./functions/stroke2freq.js"></script>
+	<script src="./functions/radar_chart.js"></script>
+
 	<style>
-		rect.bordered {
-				stroke: #E6E6E6;
-				stroke-width:4px;   
-			}
-		body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+	rect.bordered {
+			stroke: #E6E6E6;
+			stroke-width:4px;   
+		}
+    .reg {
+	    fill: #000;
+	    stroke: #ffffff;
+	    stroke-width: 1px;
+	}
+	.hidden {
+	    display: none;
+	}
+	div.tooltip {
+	    color: #222;
+	    background-color: #fff;
+	    padding: .5em;
+	    text-shadow: #f5f5f5 0 1px 0;
+	    border-radius: 2px;
+	    opacity: 0.9;
+	    position: absolute;
+	    }
+	div.radarChart {
+	    color: #222;
+	    background-color: #fff;
+	    padding: .5em;
+	    text-shadow: #f5f5f5 0 1px 0;
+	    border-radius: 2px;
+	    opacity: 0.9;
+	    position: absolute;
+	    }
+	body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
 	</style>
 </head>
 
 <body>
+
 	<script>
 		var margin = { top: 50, right: 30, bottom: 50, left: 30 },
 					width = window.innerWidth - margin.left - margin.right,
 					height = window.innerHeight - margin.top - margin.bottom;
+
+		var margin_tt = {top: 20, right: 20, bottom: 20, left: 20},
+            width_tt = Math.min(300, window.innerWidth - 10) - margin_tt.left - margin_tt.right,
+            height_tt = Math.min(width_tt, window.innerHeight - margin_tt.top - margin_tt.bottom - 20);
 
 		var svg = d3.select("body").append("svg")
 					.attr("width", width)
 					.attr("height", height)
 					//.append("g")
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-		
+
+	    var tooltip = d3.select('body').append('div')
+   			.attr('class', 'hidden tooltip');
+
+   		var rad = d3.select('body').append("div")
+   			.attr("class","radarChart");
+
 		var data;
+
+		//Temporaire
+		var data2 = [
+          [
+            {axis:"Coding D3",value:0.12},
+            {axis:"Coding Python",value:0.18},
+            {axis:"Philosophy Report",value:0.19},
+            {axis:"Scientific Report",value:0.07},
+            {axis:"Mail",value:0.12},
+            {axis:"Les Miserables",value:0.02}
+          ]
+        ];
+
+        var color_tt = d3.scaleOrdinal()
+    		.range(["salmon"])
+
+	    var radarChartOptions = {
+		  w: width_tt,
+		  h: height_tt,
+		  margin: margin_tt,
+		  maxValue: 0.2,
+		  levels: 5,
+		  roundStrokes: true,
+		  color: color_tt
+		};
+
 		var freq;
 		var height2 = width / 3;
 
@@ -49,7 +114,6 @@
 					}
 				}
 				color.domain([0, dmax]);
-				console.log(freq)
 				
 				svg.selectAll("rect").data(data).enter()
 					.append("rect")
@@ -69,6 +133,23 @@
 					.attr("rx", 10)
 					.attr("ry", 10)
 					.attr("class", "hour bordered")
+					.on('mousemove', function(d) {
+					        var mouse = d3.mouse(svg.node()).map(function(d) {
+					          return parseInt(d);
+					        });
+					        tooltip.classed('hidden', false)
+					          .attr('style', 'left:' + (mouse[0] + 15) +
+					                'px; top:' + (mouse[1] - 0) + 'px')
+					          .html(function(o){
+								RadarChart(".radarChart", data2, radarChartOptions);})
+					        rad.attr('transform', 'translate(' + (mouse[0] + 30) +
+					                ',' + (mouse[1] - 0) + ')')
+					        .attr('style', 'left:' + (mouse[0] + 30) +
+					                'px; top:' + (mouse[1] + 100) + 'px')
+					      })
+			        .on('mouseout', function() {
+			        tooltip.classed('hidden', true);
+			                });
 				
 				svg.selectAll("text").data(data).enter()
 					.append("text")
