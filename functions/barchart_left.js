@@ -1,7 +1,7 @@
-function barchart_left(elt, data, main_key, filter_count, w, h, var_color, alphabetical = false) {
+function barchart_left(elt, data, main_key, filter_count, w, h, color, alphabetical = false) {
 
     //var keys = stroke2freq(data, filter_count, alphabetical = false)
-    var keys = filter_data(data, main_key, filter_count, alphabetical = false)
+    var keys = data_filter(data, main_key, filter_count, alphabetical = false);
 
     var val = []
     keys.forEach( function(d){
@@ -52,7 +52,7 @@ function barchart_left(elt, data, main_key, filter_count, w, h, var_color, alpha
         .attr("x", function(d) { return xScale(d.value); })
         .attr("y", function(d) { return yScale(d.key); })
         .attr("height", yScale.bandwidth())
-        .style("fill", var_color)
+        .style("fill", color)
         .on("mouseenter", function(d) {
             d3.select("svg").selectAll(".bar")
                 .attr("opacity", function(e) {
@@ -78,6 +78,22 @@ function barchart_left(elt, data, main_key, filter_count, w, h, var_color, alpha
         .style("font-size", 14)
         .style("font-family", "monospace")
         .text("Percentage of total key strokes (%)");
+
+    var legend_dict = {"d3":"Key strokes while coding in D3.js",
+        "matlab":"Key strokes while coding in Matlab",
+        "philosophy":"Key strokes while writing a philosophy paper",
+        "scientific":"Key strokes while writing a scientific paper",
+        "miserables":"Letters in the book Les Miserables",
+        "mail":"Key strokes while writing e-mails"
+    };
+
+    elt.append("text")
+        .attr("transform",
+            "translate(" + w/2 + " ," + (-h*0.02) + ")")
+        .style("text-anchor", "middle")
+        .style("font-size", 16)
+        .style("font-family", "monospace")
+        .text(legend_dict[main_key]);
 
 
     // text label for the y axis

@@ -5,6 +5,7 @@
 	<script src="functions/radar_chart.js"></script>
     <script src="functions/stroke2freq.js"></script>
     <script src="functions/stroke2dict.js"></script>
+    <script src="functions/data_filter.js"></script>
 	<style>
 		body {
 		font-family: 'Open Sans', sans-serif;
@@ -36,60 +37,50 @@ var margin = {top: 100, right: 100, bottom: 100, left: 100},
             width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
             height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
 
-        //////////////////////////////////////////////////////////////
-        ////////////////////////// Data //////////////////////////////
-        //////////////////////////////////////////////////////////////
 
-var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
+var tooltip = "e";
 
-d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/tolstoi/logs_rapport_philo.txt', function(error, raw){
-    var dsv = d3.dsvFormat(';')
-    var data = dsv.parse(raw)
+data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
+d3.json(data_path, function(json){
+    var init_data = json;
+    var data = transform_data(init_data);
+    var radar_data = [];
 
-    var dict_keys = stroke2dict(data, 30, alphabetical = false)
+    var legend_dict = {"d3":"Coding D3",
+        "matlab":"Coding Matlab",
+        "philosophy":"Philosophy Paper",
+        "scientific":"Scientific Paper",
+        "miserables":"Les Miserables",
+        "mail":"Mail"
+    };
 
-    var tooltip = dict_keys["c"]
+    for (var key in data){
+        for (var letter in data[key]) {
+            if (letter === tooltip) {
+                radar_data.push({axis: legend_dict[key], value: data[key][letter]});
+            }
+        }
+    }
 
-    var data = [
-        [
-            {axis:"Coding D3",value:0.12},
-            {axis:"Coding Python",value:0.18},
-            {axis:"Philosophy Report",value:tooltip},
-            {axis:"Scientific Report",value:0.07},
-            {axis:"Mail",value:0.12},
-            {axis:"Les Miserables",value:0.19}
-        ]
-    ];
+    var final_data = [radar_data];
 
     var color = d3.scaleOrdinal()
-        .range(["salmon"])
+        .range(["salmon"]);
     //.range(["#EDC951","#CC333F","#00A0B0"]);
 
     var radarChartOptions = {
         w: width,
         h: height,
         margin: margin,
-        maxValue: 0.2,
+        maxValue: 0.20,
         levels: 5,
         roundStrokes: true,
         color: color
     };
-//Call function to draw the Radar chart
-    RadarChart(".radarChart", data, radarChartOptions);
 
+    //Call function to draw the Radar chart
+    RadarChart(".radarChart", final_data, radarChartOptions);
 });
-
-var data2 = [
-          [
-            {axis:"Coding D3",value:0.12},
-            {axis:"Coding Python",value:0.18},
-            {axis:"Philosophy Report",value:tooltip},
-            {axis:"Scientific Report",value:0.07},
-            {axis:"Mail",value:0.12},
-            {axis:"Les Miserables",value:0.19}
-          ]
-        ];
-// Draw the Chart
 
 
 	</script>

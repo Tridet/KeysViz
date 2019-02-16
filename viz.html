@@ -12,7 +12,7 @@
   <script src="functions/barchart_right.js"></script>
   <script src="functions/barchart_left.js"></script>
   <script src="functions/stroke2freq.js"></script>
-  <script src="functions/filter_data.js"></script>
+  <script src="functions/data_filter.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
     body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0;}
@@ -86,50 +86,28 @@
 
   data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
   d3.json(data_path, function(json){
-      var elt = g
       var data = json;
-      var main_key = 'd3'
-      var filter_count = 30
-      var w = innerWidth
-      var h = innerHeight
-      var var_color = 'salmon'
+      var filter_count = 30;
+      var w = innerWidth;
+      var h = innerHeight;
+      var color = 'salmon';
+      var alphabetical = false;
 
-      barchart_left(elt, data, main_key, filter_count, w, h, var_color, false);
+      var elt_left = g;
+      var main_key_left = 'd3';
+      barchart_left(elt_left, data, main_key_left, filter_count, w, h, color, alphabetical);
       //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
       //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
 
-      // title of the ligne chart
-      elt.append("text")
-          .attr("transform",
-              "translate(" + w/2 + " ," + (-h*0.02) + ")")
-          .style("text-anchor", "middle")
-          .style("font-size", 16)
-          .style("font-family", "monospace")
-          .text("Key strokes while coding in D3.js");
-
-      var elt_bis = g1
-      var main_key_bis = 'philosophy'
-
-      barchart_right(elt_bis, data, main_key_bis, filter_count, w, h, var_color, false);
+      var elt_right = g1;
+      var main_key_right = 'philosophy';
+      barchart_right(elt_right, data, main_key_right, filter_count, w, h, color, alphabetical);
       //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
       //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
-
-      // title of the ligne chart
-      elt_bis.append("text")
-          .attr("transform",
-              "translate(" + w/2 + " ," + (-h*0.02) + ")")
-          .style("text-anchor", "middle")
-          .style("font-size", 16)
-          .style("font-family", "monospace")
-          .text("Key strokes while writing a philosophy paper");
-
   });
 
   </script>
 </div>
-
-
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
