@@ -64,7 +64,12 @@
 
   var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
   var outerWidth = $(window).width();//window.innerWidth
-  var outerHeight = $(window).height()-topHeight;//window.innerHeight-topbarHeight;
+  var screen_w = screen.width;
+  var ratio_w = outerWidth/screen_w;
+  var outerHeight = $(window).height()-topHeight;
+  var screen_h = screen.height;
+  var ratio_h = outerHeight/screen_h;
+  var ratio = Math.min(ratio_h, ratio_w);
   var margin = {top: 0.04*outerWidth, right: 0.06*outerWidth, bottom:0.04*outerWidth, left: 0.06*outerWidth};
 
   var innerWidth = outerWidth/2 - margin.left - margin.right;
@@ -95,13 +100,13 @@
 
       var elt_left = g;
       var main_key_left = 'd3';
-      barchart_left(elt_left, data, main_key_left, filter_count, w, h, color, alphabetical);
+      barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
       //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
       //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
 
       var elt_right = g1;
       var main_key_right = 'philosophy';
-      barchart_right(elt_right, data, main_key_right, filter_count, w, h, color, alphabetical);
+      barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
       //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
       //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
   });

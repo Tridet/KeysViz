@@ -1,4 +1,4 @@
-function barchart_left(elt, data, main_key, filter_count, w, h, color, alphabetical = false) {
+function barchart_left(elt, data, main_key, filter_count, w, h, ratio, color, alphabetical = false) {
 
     //var keys = stroke2freq(data, filter_count, alphabetical = false)
     var keys = data_filter(data, main_key, filter_count, alphabetical = false);
@@ -19,12 +19,12 @@ function barchart_left(elt, data, main_key, filter_count, w, h, color, alphabeti
         .attr("class", "x_axis")
         .attr("transform", "translate(0,"+ h +")")
         .style("font-family", "monospace")
-        .style("font-size", 12)
+        .style("font-size", Math.round(12*ratio));
 
     var yAxisG = elt.append("g")
         .attr("class", "y_axis")
         .style("font-family", "monospace")
-        .style("font-size", 12);
+        .style("font-size", Math.round(12*ratio));
 
     var yScale = d3.scaleBand()
         .paddingInner(0.07)
@@ -75,7 +75,7 @@ function barchart_left(elt, data, main_key, filter_count, w, h, color, alphabeti
         .attr("transform",
             "translate(" + (w/2) + " ," + (h*1.05) + ")")
         .style("text-anchor", "middle")
-        .style("font-size", 14)
+        .style("font-size", Math.round(14*ratio))
         .style("font-family", "monospace")
         .text("Percentage of total key strokes (%)");
 
@@ -91,7 +91,7 @@ function barchart_left(elt, data, main_key, filter_count, w, h, color, alphabeti
         .attr("transform",
             "translate(" + w/2 + " ," + (-h*0.02) + ")")
         .style("text-anchor", "middle")
-        .style("font-size", 16)
+        .style("font-size", Math.round(16*ratio))
         .style("font-family", "monospace")
         .text(legend_dict[main_key]);
 

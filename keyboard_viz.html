@@ -6,6 +6,7 @@
 	<script src="./functions/stroke2freq.js"></script>
 	<script src="./functions/radar_chart.js"></script>
 	<script src="./functions/bind_key_freq.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
 	rect.bordered {
 			stroke: #E6E6E6;
@@ -45,6 +46,16 @@
 <body>
 
 	<script>
+
+        //var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
+        var outerWidth = $(window).width();//window.innerWidth
+        var screen_w = screen.width;
+        var ratio_w = outerWidth/screen_w;
+        var outerHeight = $(window).height()//-topHeight;
+        var screen_h = screen.height;
+        var ratio_h = outerHeight/screen_h;
+        var ratio = Math.min(ratio_h, ratio_w);
+
 		var margin = { top: 50, right: 30, bottom: 50, left: 30 },
 					width = window.innerWidth - margin.left - margin.right,
 					height = window.innerHeight - margin.top - margin.bottom;
@@ -139,8 +150,8 @@
 								RadarChart(".radarChart", data2, radarChartOptions);})
 						rad.classed("hidden", false)
 							 .attr('style', function(o){
-							 	var left = (mouse[0] + 45)
-							 	var top = (mouse[1] + 90)
+							 	var left = (mouse[0] + 45);
+							 	var top = (mouse[1] + 90);
 							 	if (mouse[1]+height_tt+100>height){
 							 		top = (mouse[1] - 290);
 							 	}
@@ -159,7 +170,7 @@
 					.append("text")
 					.attr("y", function(d) {return height2*d.nb/5 + height2/9;})
 					.attr("x", function(d) {return width*(d.start + d.rat/2);})
-					.attr("font-size", 17)
+					.attr("font-size", Math.round(17*ratio))
 					.attr("font-family", "monospace")
 					.text(function(d) {return d.v})
 					.attr("fill", "black")
