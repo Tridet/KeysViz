@@ -36,6 +36,7 @@
 			border-radius: 2px;
 			opacity: 0.9;
 			position: absolute;
+			border-radius: 25px;
 			}
 	body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
 	</style>
@@ -137,8 +138,19 @@
 							.html(function(o){
 								RadarChart(".radarChart", data2, radarChartOptions);})
 						rad.classed("hidden", false)
-							 .attr('style', 'left:' + (mouse[0] + 30) + 'px; top:' + (mouse[1] + 100) + 'px')
-					})
+							 .attr('style', function(o){
+							 	var left = (mouse[0] + 45)
+							 	var top = (mouse[1] + 90)
+							 	if (mouse[1]+height_tt+100>height){
+							 		top = (mouse[1] - 290);
+							 	}
+							 	if (mouse[0]+width_tt+100>width){
+							 		left = (mouse[0] - 290);
+							 	}
+							 	
+							 	return 'left:' + left + 'px; top:' + top + 'px';
+								
+						})})
 					.on('mouseout', function() {
 							rad.classed('hidden', true);
 					});
@@ -151,7 +163,30 @@
 					.attr("font-family", "monospace")
 					.text(function(d) {return d.v})
 					.attr("fill", "black")
-					.attr("text-anchor", "middle")
+					.attr("text-anchor", "middle").on('mousemove', function(d) {
+						var mouse = d3.mouse(svg.node()).map(function(d) {
+							return parseInt(d);
+						});
+						tooltip
+							.html(function(o){
+								RadarChart(".radarChart", data2, radarChartOptions);})
+						rad.classed("hidden", false)
+							 .attr('style', function(o){
+							 	var left = (mouse[0] + 45)
+							 	var top = (mouse[1] + 90)
+							 	if (mouse[1]+height_tt+100>height){
+							 		top = (mouse[1] - 290);
+							 	}
+							 	if (mouse[0]+width_tt+100>width){
+							 		left = (mouse[0] - 290);
+							 	}
+							 	
+							 	return 'left:' + left + 'px; top:' + top + 'px';
+								
+						})})
+					.on('mouseout', function() {
+							rad.classed('hidden', true);
+					});
 			})
 		})
 		
