@@ -6,6 +6,7 @@
 	<script src="./functions/stroke2freq.js"></script>
 	<script src="./functions/radar_chart.js"></script>
 	<script src="./functions/bind_key_freq.js"></script>
+	<script src="functions/data_filter.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
 	rect.bordered {
@@ -76,20 +77,8 @@
 			var rad = d3.select('body').append("div")
 				.attr("class","hidden radarChart");
 
-		var data;
 
-		//Temporaire
-		var data2 = [
-			[
-				{axis:"Coding D3",value:0.12},
-				{axis:"Coding Python",value:0.18},
-				{axis:"Philosophy Report",value:0.19},
-				{axis:"Scientific Report",value:0.07},
-				{axis:"Mail",value:0.12},
-				{axis:"Les Miserables",value:0.02}
-			]
-		];
-
+		
 		var color_tt = d3.scaleOrdinal()
 			.range(["salmon"])
 
@@ -97,7 +86,7 @@
 			w: width_tt,
 			h: height_tt,
 			margin: margin_tt,
-			maxValue: 0.2,
+			maxValue: 0.15,
 			levels: 5,
 			roundStrokes: true,
 			color: color_tt
@@ -111,6 +100,23 @@
 		d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/keyboard_display.json', function(json) {
 			data = json;
 			//console.log(data);
+		data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
+
+		d3.json(data_path, function(json2){
+		    var init_data = json2;
+		    var data2 = transform_data(init_data);
+		    var radar_data = [];
+
+		    var legend_dict = {"d3":"Coding D3",
+		        "matlab":"Coding Matlab",
+		        "philosophy":"Philosophy Paper",
+		        "scientific":"Scientific Paper",
+		        "miserables":"Les Miserables",
+		        "mail":"Mail"
+		    };
+
+
+			console.log(data2);
 			d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/pascal/logs_js.txt', function(raw){
 
 				var dsv = d3.dsvFormat(';');
@@ -129,6 +135,38 @@
 				binding(data, freq);
 				console.log(data)
 				
+				function mouse_move(d){
+						var mouse = d3.mouse(svg.node()).map(function(d) {
+							return parseInt(d);
+						});
+						tooltip
+							.html(function(o){
+								var radar_data = [];
+								for (var key in data2){
+								    for (var letter in data2[key]) {
+								        if (letter === d.v.toLowerCase()) {
+								            radar_data.push({axis: legend_dict[key], value: data2[key][letter]});
+								        }
+								    }
+								}
+
+								var final_data = [radar_data];
+								RadarChart(".radarChart", final_data, radarChartOptions);})
+						rad.classed("hidden", false)
+							 .attr('style', function(o){
+							 	var left = (mouse[0] + 45);
+							 	var top = (mouse[1] + 90);
+							 	if (mouse[1]+height_tt+50>height){
+							 		top = (mouse[1] - 290);
+							 	}
+							 	if (mouse[0]+width_tt+100>width){
+							 		left = (mouse[0] - 290);
+							 	}
+							 	
+							 	return 'left:' + left + 'px; top:' + top + 'px';
+								
+						})}
+
 				svg.selectAll("rect").data(data).enter()
 					.append("rect")
 					.attr("x", function(d,i) {return width*d.start;})
@@ -141,27 +179,7 @@
 					.attr("rx", 10)
 					.attr("ry", 10)
 					.attr("class", "hour bordered")
-					.on('mousemove', function(d) {
-						var mouse = d3.mouse(svg.node()).map(function(d) {
-							return parseInt(d);
-						});
-						tooltip
-							.html(function(o){
-								RadarChart(".radarChart", data2, radarChartOptions);})
-						rad.classed("hidden", false)
-							 .attr('style', function(o){
-							 	var left = (mouse[0] + 45);
-							 	var top = (mouse[1] + 90);
-							 	if (mouse[1]+height_tt+100>height){
-							 		top = (mouse[1] - 290);
-							 	}
-							 	if (mouse[0]+width_tt+100>width){
-							 		left = (mouse[0] - 290);
-							 	}
-							 	
-							 	return 'left:' + left + 'px; top:' + top + 'px';
-								
-						})})
+					.on('mousemove', function(d){mouse_move(d)} )
 					.on('mouseout', function() {
 							rad.classed('hidden', true);
 					});
@@ -174,32 +192,14 @@
 					.attr("font-family", "monospace")
 					.text(function(d) {return d.v})
 					.attr("fill", "black")
-					.attr("text-anchor", "middle").on('mousemove', function(d) {
-						var mouse = d3.mouse(svg.node()).map(function(d) {
-							return parseInt(d);
-						});
-						tooltip
-							.html(function(o){
-								RadarChart(".radarChart", data2, radarChartOptions);})
-						rad.classed("hidden", false)
-							 .attr('style', function(o){
-							 	var left = (mouse[0] + 45)
-							 	var top = (mouse[1] + 90)
-							 	if (mouse[1]+height_tt+100>height){
-							 		top = (mouse[1] - 290);
-							 	}
-							 	if (mouse[0]+width_tt+100>width){
-							 		left = (mouse[0] - 290);
-							 	}
-							 	
-							 	return 'left:' + left + 'px; top:' + top + 'px';
-								
-						})})
+					.attr("text-anchor", "middle")
+					.on('mousemove', function(d){mouse_move(d)})
 					.on('mouseout', function() {
 							rad.classed('hidden', true);
 					});
 			})
 		})
-		
+	})
+
 	</script>
 </body>
