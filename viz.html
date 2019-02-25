@@ -73,6 +73,7 @@
   //var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
 
   function plot(alph){
+    
   var svg = d3.select("body").append("svg")
   .attr("id","svg_id")
   .attr("width", outerWidth)
@@ -105,19 +106,14 @@
       //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
   });
 }
-  function alphabet(){
-    plot(true);
-  }
-  function descending(){
-    plot(false)
-  }
+
 
 plot(false);
 
 d3.select("input[value=\"descending\"]").on("click", function(){d3.select("#svg_id").remove();
-  descending();});
+  plot(false);});
 d3.select("input[value=\"alphabetical\"]").on("click",  function(){d3.select("#svg_id").remove();
-  alphabet();});
+  plot(true);});
 
   </script>
 </div>
