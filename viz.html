@@ -18,7 +18,6 @@
     body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0;}
   </style>
 
-  <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
   
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
@@ -29,7 +28,6 @@
 <link href="./main.3f6952e4.css" rel="stylesheet"></head>
 
 <body>
- <!-- Add your content of header -->
 <header>
   <nav class="navbar  navbar-fixed-top navbar-default">
     <div class="container">
@@ -53,13 +51,6 @@
       <label><input type="radio" name="layout" value="alphabetical"> Alphabetical &nbsp;</label>
   </form>
 
-    <!--
-  <select class="sort" text-align="right" position="relative">
-      <option selected="" value="value-descending">Frequency</option>
-      <option value="name-ascending">Alphabetical</option>
-  </select>
-  -->
-
   <script>
 
   var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
@@ -76,7 +67,14 @@
   var innerHeight = outerHeight - margin.top - margin.bottom;
 
   //Create the SVG
+
+
+  //var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
+  //var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
+
+  function plot(alph){
   var svg = d3.select("body").append("svg")
+  .attr("id","svg_id")
   .attr("width", outerWidth)
   .attr("height", outerHeight);
 
@@ -85,10 +83,6 @@
 
   var g1 = svg.append("g")
   .attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top) + ")");
-
-  //var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
-  //var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
-
   data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
   d3.json(data_path, function(json){
       var data = json;
@@ -96,7 +90,7 @@
       var w = innerWidth;
       var h = innerHeight;
       var color = 'salmon';
-      var alphabetical = false;
+      var alphabetical = alph;
 
       var elt_left = g;
       var main_key_left = 'd3';
@@ -110,6 +104,20 @@
       //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
       //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
   });
+}
+  function alphabet(){
+    plot(true);
+  }
+  function descending(){
+    plot(false)
+  }
+
+plot(false);
+
+d3.select("input[value=\"descending\"]").on("click", function(){d3.select("#svg_id").remove();
+  descending();});
+d3.select("input[value=\"alphabetical\"]").on("click",  function(){d3.select("#svg_id").remove();
+  alphabet();});
 
   </script>
 </div>
@@ -119,7 +127,6 @@
      navActivePage();
   });
 </script>
-
---> <script type="text/javascript" src="./main.70a66962.js"></script></body>
+<script type="text/javascript" src="./main.70a66962.js"></script></body>
 
 </html>
