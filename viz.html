@@ -49,8 +49,8 @@
   <form id="form" align="right" position="relative">
       </br>
       &nbsp;Sorting layout:
-      <label><input type="radio" name="layout" value="descending" checked> Frequency&nbsp;</label>
-      <label><input type="radio" name="layout" value="alphabetical"> Alphabetical &nbsp;</label>
+      <label><input type="radio" name="layout" id="descending" checked> Frequency&nbsp;</label>
+      <label><input type="radio" name="layout" id="alphabetical"> Alphabetical &nbsp;</label>
   </form>
 
     <!--
@@ -101,16 +101,50 @@
       var elt_left = g;
       var main_key_left = 'd3';
       barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
-      //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
-      //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
 
       var elt_right = g1;
       var main_key_right = 'philosophy';
       barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
-      //d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
-      //d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
   });
+/*
+  d3.select("#descending").on("click",
+      d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json', function(json){
+          var data = json;
+          var filter_count = 30;
+          var w = innerWidth;
+          var h = innerHeight;
+          var color = 'salmon';
+          var alphabetical = false;
 
+          var elt_left = g;
+          var main_key_left = 'd3';
+          barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
+
+          var elt_right = g1;
+          var main_key_right = 'philosophy';
+          barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
+      })
+  );
+
+  d3.select("#alphabetical").on("click",
+      d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json', function(json){
+          var data = json;
+          var filter_count = 30;
+          var w = innerWidth;
+          var h = innerHeight;
+          var color = 'salmon';
+          var alphabetical = true;
+
+          var elt_left = g;
+          var main_key_left = 'd3';
+          barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
+
+          var elt_right = g1;
+          var main_key_right = 'philosophy';
+          barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
+      })
+  );
+*/
   </script>
 </div>
 
