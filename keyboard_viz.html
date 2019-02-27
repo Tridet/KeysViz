@@ -7,7 +7,7 @@
 	<script src="./functions/radar_chart.js"></script>
 	<script src="./functions/bind_key_freq.js"></script>
 	<script src="functions/data_filter.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
 	rect.bordered {
 			stroke: #E6E6E6;
@@ -17,10 +17,10 @@
 			fill: #000;
 			stroke: #ffffff;
 			stroke-width: 1px;
-	}
-	.hidden {
+		}
+		.hidden {
 			display: none;
-	}
+		}
 	div.tooltip {
 			color: #222;
 			background-color: #fff;
@@ -29,7 +29,7 @@
 			border-radius: 2px;
 			opacity: 0.9;
 			position: absolute;
-			}
+		}
 	div.radarChart {
 			color: #222;
 			background-color: #fff;
@@ -39,7 +39,7 @@
 			opacity: 0.9;
 			position: absolute;
 			border-radius: 25px;
-			}
+		}
 	body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
 	</style>
 </head>
@@ -48,14 +48,14 @@
 
 	<script>
 
-        //var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
-        var outerWidth = $(window).width();//window.innerWidth
-        var screen_w = screen.width;
-        var ratio_w = outerWidth/screen_w;
-        var outerHeight = $(window).height()//-topHeight;
-        var screen_h = screen.height;
-        var ratio_h = outerHeight/screen_h;
-        var ratio = Math.min(ratio_h, ratio_w);
+		//var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
+		var outerWidth = $(window).width();//window.innerWidth
+		var screen_w = screen.width;
+		var ratio_w = outerWidth/screen_w;
+		var outerHeight = $(window).height()//-topHeight;
+		var screen_h = screen.height;
+		var ratio_h = outerHeight/screen_h;
+		var ratio = Math.min(ratio_h, ratio_w);
 
 		var margin = { top: 50, right: 30, bottom: 50, left: 30 },
 					width = window.innerWidth - margin.left - margin.right,
@@ -71,11 +71,11 @@
 					//.append("g")
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-			var tooltip = d3.select('body').append('div')
-				.attr('class', 'hidden tooltip');
+		var tooltip = d3.select('body').append('div')
+			.attr('class', 'hidden tooltip');
 
-			var rad = d3.select('body').append("div")
-				.attr("class","hidden radarChart");
+		var rad = d3.select('body').append("div")
+			.attr("class","hidden radarChart");
 
 
 		
@@ -100,78 +100,78 @@
 		d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/keyboard_display.json', function(json) {
 			data = json;
 			//console.log(data);
-		data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
+			data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
 
-		d3.json(data_path, function(json2){
-		    var init_data = json2;
-		    var data2 = transform_data(init_data);
-		    var radar_data = [];
+			d3.json(data_path, function(json2){
+				var init_data = json2;
+				var data2 = transform_data(init_data);
+				var radar_data = [];
 
-		    var legend_dict = {"d3":"Coding D3",
-		        "matlab":"Coding Matlab",
-		        "philosophy":"Philosophy Paper",
-		        "scientific":"Scientific Paper",
-		        "miserables":"Les Miserables",
-		        "mail":"Mail"
-		    };
+				console.log(init_data);
 
+				var legend_dict = {"d3":"Coding D3",
+					"matlab":"Coding Matlab",
+					"philosophy":"Philosophy Paper",
+					"scientific":"Scientific Paper",
+					"miserables":"Les Miserables",
+					"mail":"Mail"
+				};
 
-			//console.log(data2);
-			d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/pascal/logs_js.txt', function(raw){
+				freq = init_data["d3"];
 
-				var dsv = d3.dsvFormat(';');
-				freq = dsv.parse(raw);
-				freq.forEach(function(d) {
-					d["stroke"] = d["stroke"].toString();
-				});
-				freq = stroke2dict(freq, 50);
+				//console.log(data2)
 				var dmax = 0;
+				var sum = 0;
 				for (var k in freq) {
+					sum = sum + freq[k]
 					if (dmax < freq[k]) {
 						dmax = freq[k];
 					}
 				}
+
+				dmax = dmax / sum;
+				for (var k in freq) {
+					freq[k] = freq[k] / sum;
+				}
+				
 				color.domain([0, dmax]);
+				console.log(freq)
 				binding(data, freq);
 				//console.log(data)
 				
 				function mouse_move(d){
-						var mouse = d3.mouse(svg.node()).map(function(d) {
-							return parseInt(d);
-						});
-						tooltip
-							.html(function(o){
-								var radar_data = [];
-								for (var key in data2){
-								    for (var letter in data2[key]) {
-								        if (letter === d.v.toLowerCase()) {
-								            radar_data.push({axis: legend_dict[key], value: data2[key][letter]});
-								        } 
-								        else if (d.v.toLowerCase().slice(0,3) === "cmd" && letter === "cmd")
-								        {radar_data.push({axis:legend_dict[key], value: data2[key]["cmd"]});}
-								    	else if (d.v.toLowerCase() === "alt_l" && letter === "alt")
-								        {radar_data.push({axis:legend_dict[key], value: data2[key]["alt"]});}
-								    	else if (d.v.toLowerCase() === "shift_l" && letter === "shift")
-								        {radar_data.push({axis:legend_dict[key], value: data2[key]["shift"]});}
-								    }
+					var mouse = d3.mouse(svg.node()).map(function(d) {
+						return parseInt(d);
+					});
+					tooltip
+						.html(function(o) {
+							var radar_data = [];
+							for (var key in data2) {
+								for (var letter in data2[key]) {
+									if (letter === d.v.toLowerCase()) {
+										radar_data.push({axis: legend_dict[key], value: data2[key][letter]});
+									}
 								}
+							}
 
-								var final_data = [radar_data];
-								RadarChart(".radarChart", final_data, radarChartOptions);})
-						rad.classed("hidden", false)
-							 .attr('style', function(o){
-							 	var left = (mouse[0] + 45);
-							 	var top = (mouse[1] + 90);
-							 	if (mouse[1]+height_tt+50>height){
-							 		top = (mouse[1] - 290);
-							 	}
-							 	if (mouse[0]+width_tt+100>width){
-							 		left = (mouse[0] - 290);
-							 	}
-							 	
-							 	return 'left:' + left + 'px; top:' + top + 'px';
-								
-						})}
+							var final_data = [radar_data];
+							RadarChart(".radarChart", final_data, radarChartOptions);
+						})
+
+					rad.classed("hidden", false)
+						 .attr('style', function(o) {
+							var left = (mouse[0] + 45);
+							var top = (mouse[1] + 90);
+							if (mouse[1]+height_tt+50>height) {
+								top = (mouse[1] - 290);
+							}
+							if (mouse[0]+width_tt+100>width) {
+								left = (mouse[0] - 290);
+							}
+							
+							return 'left:' + left + 'px; top:' + top + 'px';
+						})
+				}
 
 				svg.selectAll("rect").data(data).enter()
 					.append("rect")
@@ -187,7 +187,7 @@
 					.attr("class", "hour bordered")
 					.on('mousemove', function(d){mouse_move(d)} )
 					.on('mouseout', function() {
-							rad.classed('hidden', true);
+						rad.classed('hidden', true);
 					});
 				
 				svg.selectAll("text").data(data).enter()
@@ -201,11 +201,10 @@
 					.attr("text-anchor", "middle")
 					.on('mousemove', function(d){mouse_move(d)})
 					.on('mouseout', function() {
-							rad.classed('hidden', true);
+						rad.classed('hidden', true);
 					});
 			})
 		})
-	})
 
 	</script>
 </body>
