@@ -91,67 +91,69 @@
 
 	<script>
 
-	var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
-	var outerWidth = $(window).width();//window.innerWidth
-	var screen_w = screen.width;
-	var ratio_w = outerWidth/screen_w;
-	var outerHeight = $(window).height()-topHeight;
-	var screen_h = screen.height;
-	var ratio_h = outerHeight/screen_h;
-	var ratio = Math.min(ratio_h, ratio_w);
-	var margin = {top: 0.04*outerWidth, right: 0.06*outerWidth, bottom:0.04*outerWidth, left: 0.06*outerWidth};
+		var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
+		var outerWidth = $(window).width();//window.innerWidth
+		var screen_w = screen.width;
+		var ratio_w = outerWidth/screen_w;
+		var outerHeight = $(window).height()-topHeight;
+		var screen_h = screen.height;
+		var ratio_h = outerHeight/screen_h;
+		var ratio = Math.min(ratio_h, ratio_w);
+		var margin = {top: 0.04*outerWidth, right: 0.06*outerWidth, bottom:0.04*outerWidth, left: 0.06*outerWidth};
 
-	var innerWidth = outerWidth/2 - margin.left - margin.right;
-	var innerHeight = outerHeight - margin.top - margin.bottom;
+		var innerWidth = outerWidth/2 - margin.left - margin.right;
+		var innerHeight = outerHeight - margin.top - margin.bottom;
 
-	//Create the SVG
-
-
-	//var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
-	//var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
-
-	function plot(alph){
-		
-		var svg = d3.select("body").append("svg")
-			.attr("id","svg_id")
-			.attr("width", outerWidth)
-			.attr("height", outerHeight);
-
-		var g = svg.append("g")
-			.attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
-
-		var g1 = svg.append("g")
-			.attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
-		data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
-		d3.json(data_path, function(json){
-				var data = json;
-				var filter_count = 30;
-				var w = innerWidth;
-				var h = innerHeight;
-				var color = 'salmon';
-				var alphabetical = alph;
-
-				var elt_left = g;
-				var main_key_left = 'd3';
-				barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
-				//d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
-				//d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
-
-				var elt_right = g1;
-				var main_key_right = 'philosophy';
-				barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
-				//d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
-				//d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
-		});
-	}
+		//Create the SVG
 
 
-	plot(false);
+		//var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
+		//var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
 
-	d3.select("input[value=\"descending\"]").on("click", function(){d3.select("#svg_id").remove();
-		plot(false);});
-	d3.select("input[value=\"alphabetical\"]").on("click",  function(){d3.select("#svg_id").remove();
-		plot(true);});
+		function plot(alph){
+			
+			var svg = d3.select("body").append("svg")
+				.attr("id","svg_id")
+				.attr("width", outerWidth)
+				.attr("height", outerHeight);
+
+			var g = svg.append("g")
+				.attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
+
+			var g1 = svg.append("g")
+				.attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
+			data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
+			d3.json(data_path, function(json){
+					var data = json;
+					var filter_count = 30;
+					var w = innerWidth;
+					var h = innerHeight;
+					var color = 'salmon';
+					var alphabetical = alph;
+
+					var elt_left = g;
+					var main_key_left = 'd3';
+					barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
+					//d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
+					//d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
+
+					var elt_right = g1;
+					var main_key_right = 'philosophy';
+					barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
+					//d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
+					//d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
+			});
+		}
+
+
+		plot(false);
+
+		d3.select("input[value=\"descending\"]").on("click", function(){d3.select("#svg_id").remove();
+			plot(false);});
+		d3.select("input[value=\"D3 coding\"]").on("click",  function(){d3.select("#svg_id").remove();
+			plot(true);});
+
+		d3.select("input[value=\"descending\"]")
 
 	</script>
 </div>
