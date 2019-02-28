@@ -52,7 +52,7 @@
 	<meta name="msapplication-tap-highlight" content="no">
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-	<link href="./assets/favicon.ico" rel="icon">
+	<link href="./assets/apple-icon-180x180.ico" rel="icon">
 
 	<title>KeysViz Project</title> 
 	<link href="./main.3f6952e4.css" rel="stylesheet"> 
@@ -126,10 +126,10 @@
 						//.append("g")
 						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				var tooltip = d3.select('body').append('div')
+			var tooltip = d3.select('body').append('div')
 					.attr('class', 'hidden tooltip');
 
-				var rad = d3.select('body').append("div")
+			var rad = d3.select('body').append("div")
 					.attr("class","hidden radarChart");
 
 
@@ -149,6 +149,7 @@
 
 			var freq;
 			var height2 = width / 3;
+			var max_dict;
 
 			var color = d3.scaleSqrt().range(['#FFFFFF', '#fa8072']).interpolate(d3.interpolateRgb);
 			
@@ -160,7 +161,6 @@
 				d3.json(data_path, function(json2){
 					var init_data = json2;
 					var data2 = transform_data(init_data);
-					console.log(data2);
 					var radar_data = [];
 
 					var legend_dict = {"d3":"Coding D3",
@@ -171,17 +171,22 @@
 						"mail":"Mail"
 					};
 
-					freq = data2["d3"];
-					var dmax = 0;
-					for (var k in freq) {
-						if (dmax < freq[k]) {
-							dmax = freq[k];
+					max_dict = {};
+
+					for (var cat in data2) {
+						var dmax = 0;
+						for (var k in data2[cat]) {
+							if (dmax < data2[cat][k]) {
+								dmax = data2[cat][k];
+							}
 						}
+						max_dict[cat] = dmax;
 					}
-					console.log(freq)
-					color.domain([0, dmax]);
+
+					color.domain([0, max_dict["d3"]]);
 					binding(data, data2);
-					console.log(data)
+					console.log(data);
+					console.log(max_dict);
 					
 					function mouse_move(d){
 							var mouse = d3.mouse(svg.node()).map(function(d) {
@@ -254,6 +259,16 @@
 						});
 				})
 			})
+			d3.select("#Category")
+				.on("change",  function() {
+					var val = this.value;
+					color.domain([0, max_dict[val]]);
+					svg.selectAll("rect")
+						.transition(50)
+						.attr("fill", function(d,i) {
+							return color(d[val]); 
+						});
+				});
 
 		</script>
 	</div>
