@@ -43,11 +43,10 @@
   </nav>
 </header>
 
-<div>
+<div style="margin-top:10px">
 
   <form id="form" align="right" position="relative">
 
-    </br>
     <div>
       <span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
       <span><a href="./viz.html" class="btn btn-default">Barcharts</a></span>
@@ -55,8 +54,8 @@
       <span>&ensp;</span>
     </div>
 
-    </br>
-    <div>
+
+    <div style="margin-top:15px">
 
       <span>&ensp;</span>
 
@@ -85,9 +84,7 @@
       &nbsp;Sorting by :
       <label><input type="radio" name="layout" value="descending" checked> Frequency&nbsp;</label>
       <label><input type="radio" name="layout" value="alphabetical"> Alphabetical &nbsp;</label>
-
-
-
+    </div>
   </form>
 
   
@@ -121,10 +118,10 @@
   .attr("height", outerHeight);
 
   var g = svg.append("g")
-  .attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top) + ")");
+  .attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
 
   var g1 = svg.append("g")
-  .attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top) + ")");
+  .attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
   data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
   d3.json(data_path, function(json){
       var data = json;
