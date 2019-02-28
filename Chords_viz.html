@@ -1,181 +1,242 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta content="description" name="description">
+	<meta name="google" content="notranslate" />
+	<meta content="Mashup templates have been developped by Orson.io team" name="author">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 	<script src="web_underscore.js"></script>
 	<script src="./functions/chord_mapper.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
 		body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
 		
 	</style>
+	<meta name="msapplication-tap-highlight" content="no">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+	<link href="./assets/favicon.ico" rel="icon">
+
+	<title>KeysViz Project</title> 
+	<link href="./main.3f6952e4.css" rel="stylesheet"> 
 </head>
 
 <body>
-	<script>
-		d3.csv('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/logs_mail.csv', function(error, data) {
-			var mpr = chordMpr(data);
-			mpr
-				.addValuesToMap('son')
-				.setFilter(function(row, a, b) {
-					return (row.father === a.name && row.son === b.name)
-				})
-				.setAccessor(function(recs, a, b) {
-					if (!recs[0]) return 0;
-					return +recs[0].count;
-				});
-			drawChords(mpr.getMatrix(), mpr.getMap());
-		});
+	<header>
+		<nav class="navbar  navbar-fixed-top navbar-default">
+			<div class="container">
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav ">
+						<li><a href="./index.html" title="">01 : Home</a></li>
+						<li><a href="./viz.html" title="">02 : Visualizations</a></li>
+						<li><a href="./about.html" title="">03 : About the project</a></li>
+					</ul>
+				</div> 
+			</div>
+		</nav>
+	</header>
 
-		function filter_matrix(matrix, rate) {
-			//max_mat = d3.max(matrix, function(d) {return d3.max(d);})
-			for (var i=0; i<matrix.length;i++) {
-				for (var j=0; j<i+1; j++) {
-					if (matrix[i][j] <=rate && matrix[j][i] <=rate) {
-						matrix[i][j] = 0;
-						matrix[j][i] = 0;
+	<div style="margin-top:10px">
+
+		<form id="form" align="right" position="relative">
+
+			<div>
+				<span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
+				<span><a href="./viz.html" class="btn btn-default">Barcharts</a></span>
+				<span><a href="./Chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
+				<span>&ensp;</span>
+			</div>
+
+
+			<div style="margin-top:15px">
+				<span>
+					<select id="Category">
+						<option value="hide">-- Category --</option>
+						<option value="d3" rel="icon-temperature">D3 coding</option>
+						<option value="philosophy">Philosophy paper</option>
+						<option value="matlab">Matlab coding</option>
+						<option value="mail">Mail</option>
+						<option value="scientifical">Scientifical paper</option>
+					</select> 
+				</span>
+				<span>&ensp;</span>
+			</div>
+		</form>
+		<script>
+			d3.csv('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/logs_mail.csv', function(error, data) {
+				var mpr = chordMpr(data);
+				mpr
+					.addValuesToMap('son')
+					.setFilter(function(row, a, b) {
+						return (row.father === a.name && row.son === b.name)
+					})
+					.setAccessor(function(recs, a, b) {
+						if (!recs[0]) return 0;
+						return +recs[0].count;
+					});
+				drawChords(mpr.getMatrix(), mpr.getMap());
+			});
+
+			function filter_matrix(matrix, rate) {
+				//max_mat = d3.max(matrix, function(d) {return d3.max(d);})
+				for (var i=0; i<matrix.length;i++) {
+					for (var j=0; j<i+1; j++) {
+						if (matrix[i][j] <=rate && matrix[j][i] <=rate) {
+							matrix[i][j] = 0;
+							matrix[j][i] = 0;
+						}
 					}
 				}
 			}
-		}
 
-		function updateWindow(){
-			x = window.innerWidth;
-			y = window.innerHeight;
+			function updateWindow(){
+				x = window.innerWidth;
+				y = window.innerHeight;
 
-			svg.attr("width", x).attr("height", y);
-		}
-
-		function drawChords(matrix, mmap) {
-			//console.log(matrix)
-			filter_matrix(matrix, 5);
-			var w = window.innerWidth,
-				h = window.innerHeight,
-				r1 = h / 2 ,
-				r0 = r1 - 70;
-
-			var chord = d3.chord()
-				.padAngle(0.05)
-				.sortSubgroups(d3.descending)
-				.sortChords(d3.descending);
-
-			var arc = d3.arc()
-				.innerRadius(r0)
-				.outerRadius(r0 + 20);
-
-			var ribbon = d3.ribbon()
-				.radius(r0);
-
-			var svg = d3.select("body").append("svg:svg")
-				.attr("width", w)
-				.attr("height", h)
-				.append("svg:g")
-				.attr("id", "circle")
-				.attr("transform", "translate(" + w / 2 + "," + h / 2 + ")")
-				.datum(chord(matrix));
-
-			svg.append("circle")
-				.attr("r", r0 + 20)
-				.attr("fill", "none");
-
-			var mapReader = chordRdr(matrix, mmap);
-
-			var colors_1 = d3.scaleOrdinal(d3.schemeCategory20c);
-			for (var i=0;i<20;i++) {
-				colors_1(i)
+				svg.attr("width", x).attr("height", y);
 			}
-			function colors (n) {
-				//var blues = d3.scaleOrdinal(d3.interpolateBlues(1));
-				//var list_colors = ["#FFC30F", "#FF5733", "#C70039"];1B503D
-				var list_colors = ["#C87F5B", "#913034", "#C79657"];
-				//var list_colors = ["#e1e7e8", colors_1(0), colors_1(8)];
-				return list_colors[n];
-			}
-			/*
-			var colors = d3.scaleLinear()
-				.range(['#FFFFFF', '#483D8B	'])
-				.interpolate(d3.interpolateHcl);*/
+
+			function drawChords(matrix, mmap) {
+				//console.log(matrix)
+				filter_matrix(matrix, 5);
+				var w = window.innerWidth,
+					h = window.innerHeight,
+					r1 = h / 2.2 ,
+					r0 = r1 - 70;
+
+				var chord = d3.chord()
+					.padAngle(0.05)
+					.sortSubgroups(d3.descending)
+					.sortChords(d3.descending);
+
+				var arc = d3.arc()
+					.innerRadius(r0)
+					.outerRadius(r0 + 20);
+
+				var ribbon = d3.ribbon()
+					.radius(r0);
+
+				var svg = d3.select("body").append("svg:svg")
+					.attr("width", w)
+					.attr("height", h)
+					.append("svg:g")
+					.attr("id", "circle")
+					.attr("transform", "translate(" + w / 2 + "," + h / 2.2 + ")")
+					.datum(chord(matrix));
+
+				svg.append("circle")
+					.attr("r", r0 + 20)
+					.attr("fill", "none");
+
+				var mapReader = chordRdr(matrix, mmap);
+
+				var colors_1 = d3.scaleOrdinal(d3.schemeCategory20c);
+				for (var i=0;i<20;i++) {
+					colors_1(i)
+				}
+				function colors (n) {
+					//var blues = d3.scaleOrdinal(d3.interpolateBlues(1));
+					//var list_colors = ["#FFC30F", "#FF5733", "#C70039"];1B503D
+					var list_colors = ["#C87F5B", "#913034", "#C79657"];
+					//var list_colors = ["#e1e7e8", colors_1(0), colors_1(8)];
+					return list_colors[n];
+				}
+				/*
+				var colors = d3.scaleLinear()
+					.range(['#FFFFFF', '#483D8B	'])
+					.interpolate(d3.interpolateHcl);*/
 
 
-			var g = svg.selectAll("g.group")
-				.data(function(chords) {
-					return chords.groups;
-				})
-				.enter().append("svg:g")
-				.attr("class", "group")
-
-			g.append("svg:path")
-				.style("stroke", "white")
-				.style("fill", function(d, i) {//console.log(mapReader(d).gname);
-					if(i<6){return colors(1);}
-						else{
-					return colors(2);}
-				})
-				.attr("d", arc)
-				.on("mouseenter",function(d,i){
-					d3.select("svg").selectAll("path.chord")
-					.style("fill",function(f,g){
-					if(f.source.index==i || f.target.index==i){
-						if (i<6) {return colors(1);} else{return colors(2)}
-						}
-					else{return colors(0);}
+				var g = svg.selectAll("g.group")
+					.data(function(chords) {
+						return chords.groups;
 					})
-					.attr("opacity", function(e) {
-							if(e.source.index==i || e.target.index==i){
-								return 1;}
-							else{return 0.1;}
-						})})
-				.on("mouseleave",function(d,i){
-					d3.select("svg").selectAll("path.chord")
-					.style("fill",function(f,g){
-					return colors(0);
+					.enter().append("svg:g")
+					.attr("class", "group")
+
+				g.append("svg:path")
+					.style("stroke", "white")
+					.style("fill", function(d, i) {//console.log(mapReader(d).gname);
+						if(i<6){return colors(1);}
+							else{
+						return colors(2);}
 					})
-					.attr("opacity", 1)});
-				
-
-			g.append("svg:text")
-				.each(function(d) {
-					d.angle = (d.startAngle + d.endAngle) / 2;
-				})
-				.attr("dy", ".35em")
-				.style("font-size", 13)
-				.style("font-family", "monospace")
-				.attr("text-anchor", function(d) {
-					return d.angle > Math.PI ? "end" : null;
-				})
-				.attr("transform", function(d) {
-					return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")" +
-						"translate(" + (r0 + 26) + ")" +
-						(d.angle > Math.PI ? "rotate(180)" : "");
-				})
-				.text(function(d) {
-				return mapReader(d).gname;
-			});
-
-			var chordPaths = svg.selectAll("path.chord")
-				.data(function(chords) {
-					return chords;
-				})
-				.enter().append("svg:path")
-				.attr("class", "chord")
-				.style("stroke", "white")
-				.style("fill", function(d, i) {
-					return colors(0);
-				})
-				.attr("d", ribbon.radius(r0))
-				.on("mouseenter", function(d) {
+					.attr("d", arc)
+					.on("mouseenter",function(d,i){
 						d3.select("svg").selectAll("path.chord")
-							.attr("opacity", function(e) {
-								return e === d ? 1: .1; 
+						.style("fill",function(f,g){
+						if(f.source.index==i || f.target.index==i){
+							if (i<6) {return colors(1);} else{return colors(2)}
+							}
+						else{return colors(0);}
 						})
-				})
-				.on("mouseleave", function(d) {
+						.attr("opacity", function(e) {
+								if(e.source.index==i || e.target.index==i){
+									return 1;}
+								else{return 0.1;}
+							})})
+					.on("mouseleave",function(d,i){
 						d3.select("svg").selectAll("path.chord")
-							.attr("opacity", 1)
+						.style("fill",function(f,g){
+						return colors(0);
+						})
+						.attr("opacity", 1)});
+					
+
+				g.append("svg:text")
+					.each(function(d) {
+						d.angle = (d.startAngle + d.endAngle) / 2;
+					})
+					.attr("dy", ".35em")
+					.style("font-size", 13)
+					.style("font-family", "monospace")
+					.attr("text-anchor", function(d) {
+						return d.angle > Math.PI ? "end" : null;
+					})
+					.attr("transform", function(d) {
+						return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")" +
+							"translate(" + (r0 + 26) + ")" +
+							(d.angle > Math.PI ? "rotate(180)" : "");
+					})
+					.text(function(d) {
+					return mapReader(d).gname;
 				});
 
-			d3.select(window).on('resize.updatesvg', updateWindow);
-			}
+				var chordPaths = svg.selectAll("path.chord")
+					.data(function(chords) {
+						return chords;
+					})
+					.enter().append("svg:path")
+					.attr("class", "chord")
+					.style("stroke", "white")
+					.style("fill", function(d, i) {
+						return colors(0);
+					})
+					.attr("d", ribbon.radius(r0))
+					.on("mouseenter", function(d) {
+							d3.select("svg").selectAll("path.chord")
+								.attr("opacity", function(e) {
+									return e === d ? 1: .1; 
+							})
+					})
+					.on("mouseleave", function(d) {
+							d3.select("svg").selectAll("path.chord")
+								.attr("opacity", 1)
+					});
 
+				d3.select(window).on('resize.updatesvg', updateWindow);
+				}
+
+		</script>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function (event) {
+			 navActivePage();
+		});
 	</script>
+	<script type="text/javascript" src="./main.70a66962.js"></script></body>
 </body>
+</html>
