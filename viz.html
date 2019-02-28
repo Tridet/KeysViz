@@ -26,6 +26,7 @@
   <title>KeysViz Project</title>  
 
 <link href="./main.3f6952e4.css" rel="stylesheet"></head>
+<link href="./menu_deroul.css" rel="stylesheet"></head>
 
 <body>
 <header>
@@ -45,11 +46,51 @@
 <div>
 
   <form id="form" align="right" position="relative">
-      </br>
-      &nbsp;Sorting layout:
+
+    </br>
+    <div>
+      <span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
+      <span><a href="./viz.html" class="btn btn-default">Barcharts</a></span>
+      <span><a href="./Chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
+      <span>&ensp;</span>
+    </div>
+
+    </br>
+    <div>
+
+      <span>&ensp;</span>
+
+      <span>
+        <select id="barchart1">
+          <option value="hide">-- First Barchart --</option>
+          <option value="d3" rel="icon-temperature">D3 coding</option>
+          <option value="philosophy">Philosophy paper</option>
+          <option value="matlab">Matlab coding</option>
+          <option value="mail">Mail</option>
+          <option value="scientifical">Scientifical paper</option>
+        </select> 
+      </span>
+
+      <span>
+        <select id="barchart2">
+          <option value="hide">-- Second Barchart --</option>
+          <option value="d3" rel="icon-temperature">D3 coding</option>
+          <option value="philosophy">Philosophy paper</option>
+          <option value="matlab">Matlab coding</option>
+          <option value="mail">Mail</option>
+          <option value="scientifical">Scientifical paper</option>
+        </select> 
+      </span>
+
+      &nbsp;Sorting by :
       <label><input type="radio" name="layout" value="descending" checked> Frequency&nbsp;</label>
       <label><input type="radio" name="layout" value="alphabetical"> Alphabetical &nbsp;</label>
+
+
+
   </form>
+
+  
 
   <script>
 
