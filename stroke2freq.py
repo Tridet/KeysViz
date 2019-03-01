@@ -6,12 +6,12 @@ import json
 
 cwd = os.getcwd()
 logs_path = cwd+"/data/logs/"
-#log2data(logs_path)
+log2data(logs_path)
 
 def stroke2freq(logs_path):
     freq = {}
     for filename in os.listdir(logs_path):
-        if re.match(r'^(?!\.).*', filename):
+        if (re.match(r'^(?!\.).*', filename) and re.match(r".*\.txt$", filename)):
             data = pd.read_csv(logs_path + filename, sep=' ; ', engine='python')
             counts = data['stroke'].value_counts().to_dict()
             list_key = ['Exiting...', 'None']
@@ -23,4 +23,4 @@ def stroke2freq(logs_path):
                 json.dump(freq, outfile)
 
 
-#stroke2freq(logs_path)
+stroke2freq(logs_path)

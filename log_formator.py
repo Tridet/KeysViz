@@ -9,28 +9,26 @@ def log2data(logs_path):
 
     for filename in os.listdir(logs_path):
         print("reading "+ filename)
-        if re.match(r'^(?!\.).*', filename):
+        if (re.match(r'^(?!\.).*', filename) and re.match(r".*\.txt$", filename)):
             with codecs.open(logs_path + filename, "r+", encoding='utf-8', errors='ignore') as f:
                 data = f.readlines()
+                for k in range(len(data)):
+                    data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù")
                 change1 = False
                 change2 = False
                 if data[0][:13] != "date ; stroke":
                     data.insert(0, "date ; stroke\n")
                     change1 = True
-                last_stroke = data[-1].split(";")[1]
+                last_stroke = data[-1].split(" ; ")[1]
                 if last_stroke == "Exiting...\n" or last_stroke == "Exiting..." :
                     del data[-1]
                     del data[-1]
                     change2 = True
-                if (change1 or change2) :
-                    for k in range(len(data)):
-                        data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù")
-                    with open(logs_path + filename, "w") as f:
-                        print(filename+" overwrite")
-                        f.write(''.join(data))
-                        f.close
-                else:
-                    print(filename + " unchanged")
+
+                with open(logs_path + filename, "w") as f:
+                    f.write(''.join(data))
+                    f.close
+                    print(filename + " overwritten")
 
 
 #log2data(logs_path)
