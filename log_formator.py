@@ -13,7 +13,7 @@ def log2data(logs_path):
             with codecs.open(logs_path + filename, "r+", encoding='utf-8', errors='ignore') as f:
                 data = f.readlines()
                 for k in range(len(data)):
-                    data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù")
+                    data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù").replace("Â","ctrl+z")
                 change1 = False
                 change2 = False
                 if data[0][:13] != "date ; stroke":
