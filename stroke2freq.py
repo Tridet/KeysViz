@@ -19,8 +19,17 @@ def stroke2freq(logs_path):
                 counts.pop(key, None)
             main_key = filename.split('.')[0]
             freq[main_key] = counts
-            with open('data.json', 'w') as outfile:
-                json.dump(freq, outfile)
+
+    dict_all = {}
+    for dicts in freq:
+        for key in freq[dicts]:
+            if key not in dict_all:
+                dict_all[key] = freq[dicts][key]
+            else:
+                dict_all[key] = dict_all[key] + freq[dicts][key]
+    freq["all"] = dict_all
+    with open('data.json', 'w') as outfile:
+        json.dump(freq, outfile)
 
 
 stroke2freq(logs_path)
