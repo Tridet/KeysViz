@@ -89,7 +89,7 @@
 			<div style="margin-top:15px">
 				<span>
 					<select id="Category">
-						<option value="hide">-- Category --</option>
+						<option value="all">-- All categories --</option>
 						<option value="d3" rel="icon-temperature">D3 coding</option>
 						<option value="philosophy">Philosophy paper</option>
 						<option value="matlab">Matlab coding</option>
@@ -160,6 +160,9 @@
 
 				d3.json(data_path, function(json2){
 					var init_data = json2;
+
+					var category = "all";
+
 					var data2 = transform_data(init_data);
 
 					var legend_dict = {"d3":"Coding D3",
@@ -182,7 +185,7 @@
 						max_dict[cat] = dmax;
 					}
 
-					color.domain([0, max_dict["d3"]]);
+					color.domain([0, max_dict[category]]);
 					binding(data, data2);
 					//console.log(data);
 					//console.log(max_dict);
@@ -194,18 +197,29 @@
 							tooltip
 								.html(function(o){
 									var radar_data = [];
-									for (var key in data2){
-										for (var letter in data2[key]) {
-											if (letter === d.v.toLowerCase()) {
-												radar_data.push({axis: legend_dict[key], value: data2[key][letter]});
-											} 
-											else if (d.v.toLowerCase().slice(0,3) === "cmd" && letter === "cmd")
-											{radar_data.push({axis:legend_dict[key], value: data2[key]["cmd"]});}
-											else if (d.v.toLowerCase() === "alt_l" && letter === "alt")
-											{radar_data.push({axis:legend_dict[key], value: data2[key]["alt"]});}
-											else if (d.v.toLowerCase() === "shift_l" && letter === "shift")
-											{radar_data.push({axis:legend_dict[key], value: data2[key]["shift"]});}
-										}
+									for (var key in data2) {
+                                        if (key != 'all'){
+                                            for (var letter in data2[key]) {
+                                                if (letter === d.v.toLowerCase()) {
+                                                    radar_data.push({
+                                                        axis: legend_dict[key],
+                                                        value: data2[key][letter]
+                                                    });
+                                                }
+                                                else if (d.v.toLowerCase().slice(0, 3) === "cmd" && letter === "cmd") {
+                                                    radar_data.push({axis: legend_dict[key], value: data2[key]["cmd"]});
+                                                }
+                                                else if (d.v.toLowerCase() === "alt_l" && letter === "alt") {
+                                                    radar_data.push({axis: legend_dict[key], value: data2[key]["alt"]});
+                                                }
+                                                else if (d.v.toLowerCase() === "shift_l" && letter === "shift") {
+                                                    radar_data.push({
+                                                        axis: legend_dict[key],
+                                                        value: data2[key]["shift"]
+                                                    });
+                                                }
+                                            }
+                                        }
 									}
 
 									var final_data = [radar_data];
@@ -233,7 +247,7 @@
 						.attr("width", function(d,i) {return  width*d.rat;})
 						.attr("height", function(d,i) {return height2/5;})
 						.attr("fill", function(d,i) {
-							return color(d.d3);
+							return color(d[category]);
 						})
 						.attr("rx", 10)
 						.attr("ry", 10)
