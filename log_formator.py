@@ -8,12 +8,13 @@ logs_path = cwd+"/data/logs/"
 def log2data(logs_path):
 
     for filename in os.listdir(logs_path):
+        print("reading "+ filename)
         if re.match(r'^(?!\.).*', filename):
             with codecs.open(logs_path + filename, "r+", encoding='utf-8', errors='ignore') as f:
                 data = f.readlines()
                 change1 = False
                 change2 = False
-                if data[0] != "date ; stroke\n":
+                if data[0][:13] != "date ; stroke":
                     data.insert(0, "date ; stroke\n")
                     change1 = True
                 last_stroke = data[-1].split(";")[1]
@@ -22,6 +23,8 @@ def log2data(logs_path):
                     del data[-1]
                     change2 = True
                 if (change1 or change2) :
+                    for k in range(len(data)):
+                        data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù")
                     with open(logs_path + filename, "w") as f:
                         print(filename+" overwrite")
                         f.write(''.join(data))
@@ -30,3 +33,4 @@ def log2data(logs_path):
                     print(filename + " unchanged")
 
 
+#log2data(logs_path)
