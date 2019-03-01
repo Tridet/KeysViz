@@ -9,8 +9,8 @@
 	<meta name="google" content="notranslate" />
 	<meta content="Mashup templates have been developped by Orson.io team" name="author">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-	<script src="web_underscore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="web_underscore.js"></script>
 	<script src="./functions/chord_mapper.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
@@ -68,8 +68,26 @@
 			</div>
 		</form>
 		<script>
-			d3.csv('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/logs_mail.csv', function(error, data) {
+
+        function plot_chords(val){
+
+            var filename = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data/logs/'+ val + '_bigram.csv';
+
+			d3.csv(filename, function(error, data) {
 				var mpr = chordMpr(data);
+
+				/*
+                var values = _.uniq(_.pluck(data, 'son'));
+                var id_alphabet_init  = {"a":0,"e":1,"i":2,"o":3,"u":4,"y":5,"b":6,"c":7,"d":8,"f":9,"g":10,"h":11,"j":12,"k":13,"l":14,"m":15,"n":16,"p":17,"q":18,"r":19,"s":20,"t":21,"v":22,"x":23,"z":25};
+                var id_alphabet = {};
+                for (key in id_alphabet_init){
+                    if(values.filter(value=> value==key).length > 0){
+                        id_alphabet[key] = id_alphabet_init[key]
+                    };
+                };
+                console.log(id_alphabet)
+                */
+
 				mpr
 					.addValuesToMap('son')
 					.setFilter(function(row, a, b) {
@@ -79,6 +97,8 @@
 						if (!recs[0]) return 0;
 						return +recs[0].count;
 					});
+				console.log(mpr.getMap())
+                console.log(mpr.getMatrix())
 				drawChords(mpr.getMatrix(), mpr.getMap());
 			});
 
@@ -94,7 +114,7 @@
 				}
 			}
 
-			function updateWindow(){
+			function updateWindow(svg){
 				x = window.innerWidth;
 				y = window.innerHeight;
 
@@ -229,8 +249,18 @@
 								.attr("opacity", 1)
 					});
 
-				d3.select(window).on('resize.updatesvg', updateWindow);
+				d3.select(window).on('resize.updatesvg', updateWindow(svg));
 				}
+            }
+
+            plot_chords('mail');
+
+            d3.select("#Category")
+                .on("change",  function() {
+                    var val = this.value;
+                    d3.select("svg").remove();
+                    plot_chords(val);
+                });
 
 		</script>
 	</div>

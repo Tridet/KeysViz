@@ -4,8 +4,8 @@
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/Chords_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chords_data_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/chords_data_parsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/chord_mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/chord_mapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keylogger/README" beforeDir="false" afterPath="$PROJECT_DIR$/keylogger/README" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,9 +35,9 @@
           <entry key="css" value="4" />
           <entry key="gitattributes" value="1" />
           <entry key="html" value="10" />
-          <entry key="js" value="20" />
+          <entry key="js" value="21" />
           <entry key="json" value="1" />
-          <entry key="py" value="7" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -45,8 +45,8 @@
           <entry key="CSS" value="4" />
           <entry key="HTML" value="10" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="20" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="JavaScript" value="21" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="Python" value="2" />
         </counts>
       </usages-collector>
@@ -54,8 +54,8 @@
         <counts>
           <entry key="Python Console" value="81" />
           <entry key="css" value="189" />
-          <entry key="html" value="2798" />
-          <entry key="js" value="1860" />
+          <entry key="html" value="3034" />
+          <entry key="js" value="2052" />
           <entry key="log_formator" value="75" />
           <entry key="py" value="1309" />
           <entry key="stroke2freq" value="67" />
@@ -64,8 +64,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="2798" />
-          <entry key="JavaScript" value="1860" />
+          <entry key="HTML" value="3034" />
+          <entry key="JavaScript" value="2052" />
           <entry key="PLAIN_TEXT" value="146" />
           <entry key="Python" value="1386" />
         </counts>
@@ -77,17 +77,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3726">
-              <caret line="270" column="19" lean-forward="true" selection-start-line="270" selection-start-column="19" selection-end-line="270" selection-end-column="19" />
+            <state relative-caret-position="538">
+              <caret line="124" column="47" lean-forward="true" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Chords_viz.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3192">
+              <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Chords_viz.html">
+        <entry file="file://$PROJECT_DIR$/functions/chord_mapper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="72" column="103" selection-start-line="72" selection-start-column="103" selection-end-line="72" selection-end-column="103" />
+            <state relative-caret-position="545">
+              <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="112" selection-start-line="112" selection-end-line="112" selection-end-column="28" />
+            <state relative-caret-position="294">
+              <caret line="120" column="54" selection-start-line="120" selection-start-column="54" selection-end-line="120" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -131,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>80px</find>
-      <find>{margin:0;padding</find>
       <find>site-border-left</find>
       <find>navbar-collapse</find>
       <find>navbar-collapse.collapse</find>
@@ -160,6 +170,9 @@
       <find>container</find>
       <find>\u</find>
       <find>var_color</find>
+      <find>data</find>
+      <find>24</find>
+      <find>chordMpr</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -190,6 +203,7 @@
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
         <option value="$PROJECT_DIR$/Chords_viz.html" />
+        <option value="$PROJECT_DIR$/functions/chord_mapper.js" />
       </list>
     </option>
   </component>
@@ -366,7 +380,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55394000" />
+    <option name="totallyTimeSpent" value="62632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -505,23 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stroke2freq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log_formator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -529,24 +526,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
+    <entry file="file://$PROJECT_DIR$/stroke2freq.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3726">
-          <caret line="270" column="19" lean-forward="true" selection-start-line="270" selection-start-column="19" selection-end-line="270" selection-end-column="19" />
+        <state relative-caret-position="575">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="112" selection-start-line="112" selection-end-line="112" selection-end-column="28" />
+        <state relative-caret-position="294">
+          <caret line="120" column="54" selection-start-line="120" selection-start-column="54" selection-end-line="120" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="124" column="47" lean-forward="true" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Chords_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="72" column="103" selection-start-line="72" selection-start-column="103" selection-end-line="72" selection-end-column="103" />
+        <state relative-caret-position="-3192">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/chord_mapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
