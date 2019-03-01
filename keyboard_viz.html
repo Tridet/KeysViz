@@ -141,7 +141,7 @@
 				w: width_tt,
 				h: height_tt,
 				margin: margin_tt,
-				maxValue: 0.15,
+				maxValue: 0.005,
 				levels: 5,
 				roundStrokes: true,
 				color: color_tt
@@ -161,7 +161,6 @@
 				d3.json(data_path, function(json2){
 					var init_data = json2;
 					var data2 = transform_data(init_data);
-					var radar_data = [];
 
 					var legend_dict = {"d3":"Coding D3",
 						"matlab":"Coding Matlab",
@@ -185,8 +184,8 @@
 
 					color.domain([0, max_dict["d3"]]);
 					binding(data, data2);
-					console.log(data);
-					console.log(max_dict);
+					//console.log(data);
+					//console.log(max_dict);
 					
 					function mouse_move(d){
 							var mouse = d3.mouse(svg.node()).map(function(d) {
