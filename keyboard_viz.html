@@ -1,211 +1,282 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta content="description" name="description">
+	<meta name="google" content="notranslate" />
+	<meta content="Mashup templates have been developped by Orson.io team" name="author">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="./functions/stroke2dict.js"></script>
 	<script src="./functions/stroke2freq.js"></script>
 	<script src="./functions/radar_chart.js"></script>
 	<script src="./functions/bind_key_freq.js"></script>
 	<script src="functions/data_filter.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
-	rect.bordered {
-			stroke: #E6E6E6;
-			stroke-width:4px;   
+		rect.bordered {
+				stroke: #E6E6E6;
+				stroke-width:4px;   
+			}
+			.reg {
+				fill: #000;
+				stroke: #ffffff;
+				stroke-width: 1px;
 		}
-		.reg {
-			fill: #000;
-			stroke: #ffffff;
-			stroke-width: 1px;
-	}
-	.hidden {
-			display: none;
-	}
-	div.tooltip {
-			color: #222;
-			background-color: #fff;
-			padding: .5em;
-			text-shadow: #f5f5f5 0 1px 0;
-			border-radius: 2px;
-			opacity: 0.9;
-			position: absolute;
-			}
-	div.radarChart {
-			color: #222;
-			background-color: #fff;
-			padding: .5em;
-			text-shadow: #f5f5f5 0 1px 0;
-			border-radius: 2px;
-			opacity: 0.9;
-			position: absolute;
-			border-radius: 25px;
-			}
-	body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+		.hidden {
+				display: none;
+		}
+		div.tooltip {
+				color: #222;
+				background-color: #fff;
+				padding: .5em;
+				text-shadow: #f5f5f5 0 1px 0;
+				border-radius: 2px;
+				opacity: 0.9;
+				position: absolute;
+				}
+		div.radarChart {
+				color: #222;
+				background-color: #fff;
+				padding: .5em;
+				text-shadow: #f5f5f5 0 1px 0;
+				border-radius: 2px;
+				opacity: 0.9;
+				position: absolute;
+				border-radius: 25px;
+				}
+		body {margin:0;position:fixed;top:0;right:0;bottom:0;left:0;}
 	</style>
+	<meta name="msapplication-tap-highlight" content="no">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+	<link href="./assets/apple-icon-180x180.ico" rel="icon">
+
+	<title>KeysViz Project</title> 
+	<link href="./main.3f6952e4.css" rel="stylesheet"> 
 </head>
 
 <body>
 
-	<script>
+	<header>
+		<nav class="navbar  navbar-fixed-top navbar-default">
+			<div class="container">
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav ">
+						<li><a href="./index.html" title="">01 : Home</a></li>
+						<li><a href="./keyboard_viz.html" title="">02 : Visualizations</a></li>
+						<li><a href="./about.html" title="">03 : About the project</a></li>
+					</ul>
+				</div> 
+			</div>
+		</nav>
+	</header>
 
-        //var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
-        var outerWidth = $(window).width();//window.innerWidth
-        var screen_w = screen.width;
-        var ratio_w = outerWidth/screen_w;
-        var outerHeight = $(window).height()//-topHeight;
-        var screen_h = screen.height;
-        var ratio_h = outerHeight/screen_h;
-        var ratio = Math.min(ratio_h, ratio_w);
+	<div style="margin-top:10px">
 
-		var margin = { top: 50, right: 30, bottom: 50, left: 30 },
-					width = window.innerWidth - margin.left - margin.right,
-					height = window.innerHeight - margin.top - margin.bottom;
+		<form id="form" align="right" position="relative">
 
-		var margin_tt = {top: 40, right: 40, bottom: 40, left: 40},
-						width_tt = Math.min(300, window.innerWidth - 10) - margin_tt.left - margin_tt.right,
-						height_tt = Math.min(width_tt, window.innerHeight - margin_tt.top - margin_tt.bottom - 20);
+			<div>
+				<span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
+				<span><a href="./viz.html" class="btn btn-default">Barcharts</a></span>
+				<span><a href="./Chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
+				<span>&ensp;</span>
+			</div>
 
-		var svg = d3.select("body").append("svg")
-					.attr("width", width)
-					.attr("height", height)
-					//.append("g")
-					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			<div style="margin-top:15px">
+				<span>
+					<select id="Category">
+						<option value="hide">-- Category --</option>
+						<option value="d3" rel="icon-temperature">D3 coding</option>
+						<option value="philosophy">Philosophy paper</option>
+						<option value="matlab">Matlab coding</option>
+						<option value="mail">Mail</option>
+						<option value="scientifical">Scientifical paper</option>
+					</select> 
+				</span>
+				<span>&ensp;</span>
+			</div>
+		</form>
+
+		<script>
+
+			//var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
+			var outerWidth = $(window).width();//window.innerWidth
+			var screen_w = screen.width;
+			var ratio_w = outerWidth/screen_w;
+			var outerHeight = $(window).height()//-topHeight;
+			var screen_h = screen.height;
+			var ratio_h = outerHeight/screen_h;
+			var ratio = Math.min(ratio_h, ratio_w);
+
+			var margin = { top: 50, right: 30, bottom: 50, left: 30 },
+						width = window.innerWidth - margin.left - margin.right,
+						height = window.innerHeight - margin.top - margin.bottom;
+
+			var margin_tt = {top: 40, right: 40, bottom: 40, left: 40},
+							width_tt = Math.min(300, window.innerWidth - 10) - margin_tt.left - margin_tt.right,
+							height_tt = Math.min(width_tt, window.innerHeight - margin_tt.top - margin_tt.bottom - 20);
+
+			var svg = d3.select("body").append("svg")
+						.attr("width", width)
+						.attr("height", height)
+						//.append("g")
+						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			var tooltip = d3.select('body').append('div')
-				.attr('class', 'hidden tooltip');
+					.attr('class', 'hidden tooltip');
 
 			var rad = d3.select('body').append("div")
-				.attr("class","hidden radarChart");
+					.attr("class","hidden radarChart");
 
 
-		
-		var color_tt = d3.scaleOrdinal()
-			.range(["salmon"])
+			
+			var color_tt = d3.scaleOrdinal()
+				.range(["salmon"])
 
-		var radarChartOptions = {
-			w: width_tt,
-			h: height_tt,
-			margin: margin_tt,
-			maxValue: 0.15,
-			levels: 5,
-			roundStrokes: true,
-			color: color_tt
-		};
+			var radarChartOptions = {
+				w: width_tt,
+				h: height_tt,
+				margin: margin_tt,
+				maxValue: 0.15,
+				levels: 5,
+				roundStrokes: true,
+				color: color_tt
+			};
 
-		var freq;
-		var height2 = width / 3;
+			var freq;
+			var height2 = width / 3;
+			var max_dict;
 
-		var color = d3.scaleSqrt().range(['#FFFFFF', '#fa8072']).interpolate(d3.interpolateRgb);
-		
-		d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/keyboard_display.json', function(json) {
-			data = json;
-			//console.log(data);
-		data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
+			var color = d3.scaleSqrt().range(['#FFFFFF', '#fa8072']).interpolate(d3.interpolateRgb);
+			
+			d3.json('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/Loic/keyboard_display.json', function(json) {
+				data = json;
+				//console.log(data);
+				data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
 
-		d3.json(data_path, function(json2){
-		    var init_data = json2;
-		    var data2 = transform_data(init_data);
-		    var radar_data = [];
+				d3.json(data_path, function(json2){
+					var init_data = json2;
+					var data2 = transform_data(init_data);
+					var radar_data = [];
 
-		    var legend_dict = {"d3":"Coding D3",
-		        "matlab":"Coding Matlab",
-		        "philosophy":"Philosophy Paper",
-		        "scientific":"Scientific Paper",
-		        "miserables":"Les Miserables",
-		        "mail":"Mail"
-		    };
+					var legend_dict = {"d3":"Coding D3",
+						"matlab":"Coding Matlab",
+						"philosophy":"Philosophy Paper",
+						"scientific":"Scientific Paper",
+						"miserables":"Les Miserables",
+						"mail":"Mail"
+					};
 
+					max_dict = {};
 
-			//console.log(data2);
-			d3.text('https://raw.githubusercontent.com/Tridet/KeysViz/master/data/pascal/logs_js.txt', function(raw){
-
-				var dsv = d3.dsvFormat(';');
-				freq = dsv.parse(raw);
-				freq.forEach(function(d) {
-					d["stroke"] = d["stroke"].toString();
-				});
-				freq = stroke2dict(freq, 50);
-				var dmax = 0;
-				for (var k in freq) {
-					if (dmax < freq[k]) {
-						dmax = freq[k];
+					for (var cat in data2) {
+						var dmax = 0;
+						for (var k in data2[cat]) {
+							if (dmax < data2[cat][k]) {
+								dmax = data2[cat][k];
+							}
+						}
+						max_dict[cat] = dmax;
 					}
-				}
-				color.domain([0, dmax]);
-				binding(data, freq);
-				//console.log(data)
-				
-				function mouse_move(d){
-						var mouse = d3.mouse(svg.node()).map(function(d) {
-							return parseInt(d);
+
+					color.domain([0, max_dict["d3"]]);
+					binding(data, data2);
+					console.log(data);
+					console.log(max_dict);
+					
+					function mouse_move(d){
+							var mouse = d3.mouse(svg.node()).map(function(d) {
+								return parseInt(d);
+							});
+							tooltip
+								.html(function(o){
+									var radar_data = [];
+									for (var key in data2){
+										for (var letter in data2[key]) {
+											if (letter === d.v.toLowerCase()) {
+												radar_data.push({axis: legend_dict[key], value: data2[key][letter]});
+											} 
+											else if (d.v.toLowerCase().slice(0,3) === "cmd" && letter === "cmd")
+											{radar_data.push({axis:legend_dict[key], value: data2[key]["cmd"]});}
+											else if (d.v.toLowerCase() === "alt_l" && letter === "alt")
+											{radar_data.push({axis:legend_dict[key], value: data2[key]["alt"]});}
+											else if (d.v.toLowerCase() === "shift_l" && letter === "shift")
+											{radar_data.push({axis:legend_dict[key], value: data2[key]["shift"]});}
+										}
+									}
+
+									var final_data = [radar_data];
+									RadarChart(".radarChart", final_data, radarChartOptions);})
+							rad.classed("hidden", false)
+								 .attr('style', function(o){
+									var left = (mouse[0] + 45);
+									var top = (mouse[1] + 90);
+									if (mouse[1]+height_tt+50>height){
+										top = (mouse[1] - 290);
+									}
+									if (mouse[0]+width_tt+100>width){
+										left = (mouse[0] - 290);
+									}
+									
+									return 'left:' + left + 'px; top:' + top + 'px';
+									
+							})
+					}
+
+					svg.selectAll("rect").data(data).enter()
+						.append("rect")
+						.attr("x", function(d,i) {return width*d.start;})
+						.attr("y", function(d,i) {return height2*(d.nb-1)/5;})
+						.attr("width", function(d,i) {return  width*d.rat;})
+						.attr("height", function(d,i) {return height2/5;})
+						.attr("fill", function(d,i) {
+							return color(d.d3);
+						})
+						.attr("rx", 10)
+						.attr("ry", 10)
+						.attr("class", "hour bordered")
+						.on('mousemove', function(d){mouse_move(d)})
+						.on('mouseout', function() {
+								rad.classed('hidden', true);
 						});
-						tooltip
-							.html(function(o){
-								var radar_data = [];
-								for (var key in data2){
-								    for (var letter in data2[key]) {
-								        if (letter === d.v.toLowerCase()) {
-								            radar_data.push({axis: legend_dict[key], value: data2[key][letter]});
-								        } 
-								        else if (d.v.toLowerCase().slice(0,3) === "cmd" && letter === "cmd")
-								        {radar_data.push({axis:legend_dict[key], value: data2[key]["cmd"]});}
-								    	else if (d.v.toLowerCase() === "alt_l" && letter === "alt")
-								        {radar_data.push({axis:legend_dict[key], value: data2[key]["alt"]});}
-								    	else if (d.v.toLowerCase() === "shift_l" && letter === "shift")
-								        {radar_data.push({axis:legend_dict[key], value: data2[key]["shift"]});}
-								    }
-								}
-
-								var final_data = [radar_data];
-								RadarChart(".radarChart", final_data, radarChartOptions);})
-						rad.classed("hidden", false)
-							 .attr('style', function(o){
-							 	var left = (mouse[0] + 45);
-							 	var top = (mouse[1] + 90);
-							 	if (mouse[1]+height_tt+50>height){
-							 		top = (mouse[1] - 290);
-							 	}
-							 	if (mouse[0]+width_tt+100>width){
-							 		left = (mouse[0] - 290);
-							 	}
-							 	
-							 	return 'left:' + left + 'px; top:' + top + 'px';
-								
-						})}
-
-				svg.selectAll("rect").data(data).enter()
-					.append("rect")
-					.attr("x", function(d,i) {return width*d.start;})
-					.attr("y", function(d,i) {return height2*d.nb/5;})
-					.attr("width", function(d,i) {return  width*d.rat;})
-					.attr("height", function(d,i) {return height2/5;})
-					.attr("fill", function(d,i) {
-						return color(d.freq);
-					})
-					.attr("rx", 10)
-					.attr("ry", 10)
-					.attr("class", "hour bordered")
-					.on('mousemove', function(d){mouse_move(d)} )
-					.on('mouseout', function() {
-							rad.classed('hidden', true);
-					});
-				
-				svg.selectAll("text").data(data).enter()
-					.append("text")
-					.attr("y", function(d) {return height2*d.nb/5 + height2/9;})
-					.attr("x", function(d) {return width*(d.start + d.rat/2);})
-					.attr("font-size", Math.round(17*ratio))
-					.attr("font-family", "monospace")
-					.text(function(d) {return d.v})
-					.attr("fill", "black")
-					.attr("text-anchor", "middle")
-					.on('mousemove', function(d){mouse_move(d)})
-					.on('mouseout', function() {
-							rad.classed('hidden', true);
-					});
+					
+					svg.selectAll("text").data(data).enter()
+						.append("text")
+						.attr("y", function(d) {return height2*(d.nb-1)/5 + height2/9;})
+						.attr("x", function(d) {return width*(d.start + d.rat/2);})
+						.attr("font-size", Math.round(17*ratio))
+						.attr("font-family", "monospace")
+						.text(function(d) {return d.v})
+						.attr("fill", "black")
+						.attr("text-anchor", "middle")
+						.on('mousemove', function(d){mouse_move(d)})
+						.on('mouseout', function() {
+								rad.classed('hidden', true);
+						});
+				})
 			})
-		})
-	})
+			d3.select("#Category")
+				.on("change",  function() {
+					var val = this.value;
+					color.domain([0, max_dict[val]]);
+					svg.selectAll("rect")
+						.transition(50)
+						.attr("fill", function(d,i) {
+							return color(d[val]);
+						});
+				});
 
+		</script>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function (event) {
+			 navActivePage();
+		});
 	</script>
+	<script type="text/javascript" src="./main.70a66962.js"></script></body>
 </body>
+</html>
