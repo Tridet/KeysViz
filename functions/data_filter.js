@@ -22,9 +22,26 @@ function data_filter(data, main_key, filter_count, alphabetical = false) {
     var keys = keys.slice(keys.length - filter_count);
 
     if (alphabetical === true) {
+        alph = "abcdefghijklmnopqrstuvwxyz" //je connais mon alphabet
         keys.sort(function (x, y) {
             return d3.descending(x.key, y.key)
         });
+        
+        // on filtre pour ne garder que les lettres
+        keys = keys.filter(function(x){
+            if (/[a-z]{1}/.test(x.key) && x.key.length==1){
+                return x;
+            }
+        })
+
+        //on ajoute les lettres manquantes
+        for (var k=0; k<26; k++){
+            if (!(alph[25-k] == keys[k].key)){
+                keys.splice(k, 0, {value : 0, key : alph[25-k]})
+            }
+        }
+        console.log(keys)
+
     };
 
     return keys;
