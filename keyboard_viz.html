@@ -253,9 +253,11 @@
 						.attr("ry", 10)
 						.attr("class", "hour bordered")
 						.on('mousemove', function(d){mouse_move(d)})
+                        .on("mouseover", function(){d3.select(this).style('stroke-width', 5).style("stroke", "black")})
 						.on('mouseout', function() {
 								rad.classed('hidden', true);
-						});
+						})
+                        .on("mouseleave", function(){d3.select(this).style('stroke-width', 0).style("stroke", "black")});
 					
 					svg.selectAll("text").data(data).enter()
 						.append("text")
