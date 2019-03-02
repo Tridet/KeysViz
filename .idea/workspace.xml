@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/Chords_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/radar_chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/radar_chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/viz.html" afterDir="false" />
-    </list>
+    <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -54,7 +49,7 @@
         <counts>
           <entry key="Python Console" value="81" />
           <entry key="css" value="189" />
-          <entry key="html" value="3595" />
+          <entry key="html" value="3620" />
           <entry key="js" value="2207" />
           <entry key="log_formator" value="75" />
           <entry key="py" value="1514" />
@@ -64,7 +59,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="3595" />
+          <entry key="HTML" value="3620" />
           <entry key="JavaScript" value="2207" />
           <entry key="PLAIN_TEXT" value="351" />
           <entry key="Python" value="1386" />
@@ -77,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-567">
-              <caret line="169" column="56" selection-start-line="169" selection-start-column="56" selection-end-line="169" selection-end-column="56" />
+            <state relative-caret-position="675">
+              <caret line="224" column="59" selection-start-line="224" selection-start-column="49" selection-end-line="224" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -107,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chords_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+            <state relative-caret-position="286">
+              <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -116,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="67" column="61" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
+            <state relative-caret-position="497">
+              <caret line="78" column="72" selection-start-line="78" selection-start-column="72" selection-end-line="78" selection-end-column="72" />
               <folding>
                 <element signature="e#2681#2687#0" expanded="true" />
                 <element signature="e#2781#2787#0" expanded="true" />
@@ -139,7 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>10px</find>
       <find>margin:10px</find>
       <find>margin:0</find>
       <find>565</find>
@@ -168,6 +162,7 @@
       <find>hierarchical_list</find>
       <find>rad</find>
       <find>scien</find>
+      <find>scienti</find>
       <find>scie</find>
     </findStrings>
     <replaceStrings>
@@ -197,8 +192,8 @@
         <option value="$PROJECT_DIR$/functions/chord_mapper.js" />
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
         <option value="$PROJECT_DIR$/functions/radar_chart.js" />
-        <option value="$PROJECT_DIR$/keyboard_viz.html" />
         <option value="$PROJECT_DIR$/Chords_viz.html" />
+        <option value="$PROJECT_DIR$/keyboard_viz.html" />
         <option value="$PROJECT_DIR$/viz.html" />
       </list>
     </option>
@@ -376,7 +371,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75235000" />
+    <option name="totallyTimeSpent" value="75523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -546,24 +541,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
+    <entry file="file://$PROJECT_DIR$/Chords_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="169" column="56" selection-start-line="169" selection-start-column="56" selection-end-line="169" selection-end-column="56" />
+        <state relative-caret-position="286">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chords_viz.html">
+    <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+        <state relative-caret-position="675">
+          <caret line="224" column="59" selection-start-line="224" selection-start-column="49" selection-end-line="224" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="67" column="61" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
+        <state relative-caret-position="497">
+          <caret line="78" column="72" selection-start-line="78" selection-start-column="72" selection-end-line="78" selection-end-column="72" />
           <folding>
             <element signature="e#2681#2687#0" expanded="true" />
             <element signature="e#2781#2787#0" expanded="true" />
