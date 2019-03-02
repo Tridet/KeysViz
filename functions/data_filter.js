@@ -19,8 +19,10 @@ function data_filter(data, main_key, filter_count, alphabetical = false) {
         return d3.ascending(x.value, y.value);
     });
 
-    var keys = keys.slice(keys.length - filter_count);
-
+    if (alphabetical===false){
+        var keys = keys.slice(keys.length - filter_count);
+    }
+    
     if (alphabetical === true) {
         alph = "abcdefghijklmnopqrstuvwxyz" //je connais mon alphabet
         keys.sort(function (x, y) {
