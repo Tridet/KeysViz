@@ -61,7 +61,6 @@
 
 			<span>
 				<select id="barchart1">
-					<option value="hide">-- First Barchart --</option>
 					<option value="d3" rel="icon-temperature">D3 coding</option>
 					<option value="philosophy">Philosophy paper</option>
 					<option value="matlab">Matlab coding</option>
@@ -72,9 +71,8 @@
 
 			<span>
 				<select id="barchart2">
-					<option value="hide">-- Second Barchart --</option>
 					<option value="d3" rel="icon-temperature">D3 coding</option>
-					<option value="philosophy">Philosophy paper</option>
+					<option value="philosophy" selected>Philosophy paper</option>
 					<option value="matlab">Matlab coding</option>
 					<option value="mail">Mail</option>
 					<option value="scientifical">Scientifical paper</option>
@@ -103,26 +101,27 @@
 
 		var innerWidth = outerWidth/2 - margin.left - margin.right;
 		var innerHeight = outerHeight - margin.top - margin.bottom;
-
+		var alpha = false;
 		//Create the SVG
 
 
 		//var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
 		//var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
 
-		function plot(alph){
+		function plot(alph, main_key_left="d3", main_key_right="philosophy"){
 			
+			if (d3.select("svg").empty()){
 			var svg = d3.select("body").append("svg")
 				.attr("id","svg_id")
 				.attr("width", outerWidth)
 				.attr("height", outerHeight);
 
-			var g = svg.append("g")
-				.attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
+			}else{
+				var svg = d3.select("#svg_id")
+			}
 
-			var g1 = svg.append("g")
-				.attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
-           data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
+
+            data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json'
 			d3.json(data_path, function(json){
 					var data = json;
 					var filter_count = 30;
@@ -130,30 +129,55 @@
 					var h = innerHeight;
 					var color = 'salmon';
 					var alphabetical = alph;
-
-					var elt_left = g;
-					var main_key_left = 'd3';
-					barchart_left(elt_left, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
+					
+					if (d3.select("#"+main_key_left).empty()){
+						var g = svg.append("g")
+							.attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
+						barchart_left(g, data, main_key_left, filter_count, w, h, ratio, color, alphabetical);
+						g.attr("id","#" + main_key_left)
+				}
 					//d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
 					//d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
 
-					var elt_right = g1;
-					var main_key_right = 'philosophy';
-					barchart_right(elt_right, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
+					if (d3.select("#"+main_key_right).empty()){
+						var g1 = svg.append("g")
+							.attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
+						barchart_right(g1, data, main_key_right, filter_count, w, h, ratio, color, alphabetical);
+						g1.attr("id","#" + main_key_right)
+				}
 					//d3.select("input[value=\"descending\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",false));
 					//d3.select("input[value=\"alphabetical\"]").on("click", barchart_left(g, data, 30, innerWidth, innerHeight, "salmon",true));
 			});
 		}
 
+		d3.select("#barchart1")
+			.on("change",function(){
+				var val = this.value;
+				var old_val = d3.select("#barchart2").property("value");
+				d3.select("#svg_id").remove();
+				console.log(alpha)
+				plot(alpha, val, old_val)
+			})
 
-		plot(false);
+		d3.select("#barchart2")
+			.on("change",function(){
+				var val = this.value;
+				var old_val = d3.select("#barchart1").property("value");
+				d3.select("#svg_id").remove();
+				plot(alpha, old_val, val)
+			})
 
-		d3.select("input[value=\"descending\"]").on("click", function(){d3.select("#svg_id").remove();
-			plot(false);});
-		d3.select("input[value=\"alphabetical\"]").on("click",  function(){d3.select("#svg_id").remove();
-			plot(true);});
+		d3.select("input[value=\"descending\"]").on("click", function(){
+			d3.select("#svg_id").remove();
+			alpha = false;
+			plot(alpha, d3.select("#barchart1").value, d3.select("#barchart2").value );});
 
-		//d3.select("input[value=\"D3 coding\"]")
+		d3.select("input[value=\"alphabetical\"]").on("click",  function(){
+			d3.select("#svg_id").remove();
+			alpha = true;
+			plot(alpha, d3.select("#barchart1").value, d3.select("#barchart2").value );});
+
+		plot(false, "d3", "philosophy");
 
 	</script>
 </div>

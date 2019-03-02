@@ -26,7 +26,7 @@ function data_filter(data, main_key, filter_count, alphabetical = false) {
         keys.sort(function (x, y) {
             return d3.descending(x.key, y.key)
         });
-        
+
         // on filtre pour ne garder que les lettres
         keys = keys.filter(function(x){
             if (/[a-z]{1}/.test(x.key) && x.key.length==1){
@@ -40,8 +40,6 @@ function data_filter(data, main_key, filter_count, alphabetical = false) {
                 keys.splice(k, 0, {value : 0, key : alph[25-k]})
             }
         }
-        console.log(keys)
-
     };
 
     return keys;
