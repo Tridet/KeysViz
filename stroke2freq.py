@@ -6,7 +6,7 @@ import json
 
 cwd = os.getcwd()
 logs_path = cwd+"/data/logs/"
-log2data(logs_path)
+#log2data(logs_path)
 
 def stroke2freq(logs_path):
     freq = {}
@@ -32,4 +32,4 @@ def stroke2freq(logs_path):
         json.dump(freq, outfile)
 
 
-stroke2freq(logs_path)
+#stroke2freq(logs_path)

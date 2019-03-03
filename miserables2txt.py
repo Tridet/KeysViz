@@ -17,6 +17,7 @@ def miserables2txt(miserables_path, logs_path):
             with codecs.open(miserables_path + filename, "r+", encoding='utf-8', errors='ignore') as f:
                 lines = [line.strip() for line in f if line.strip()]
                 for line in lines:
+                    line = line.lower()
                     for char in line:
                         if char == ' ':
                             char = 'space'

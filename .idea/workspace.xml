@@ -39,9 +39,9 @@
           <entry key="css" value="4" />
           <entry key="gitattributes" value="1" />
           <entry key="html" value="9" />
-          <entry key="js" value="20" />
+          <entry key="js" value="21" />
           <entry key="json" value="1" />
-          <entry key="py" value="7" />
+          <entry key="py" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -49,19 +49,20 @@
           <entry key="CSS" value="4" />
           <entry key="HTML" value="9" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="20" />
+          <entry key="JavaScript" value="21" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="81" />
+          <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
           <entry key="html" value="2684" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
-          <entry key="py" value="1733" />
+          <entry key="py" value="1756" />
           <entry key="stroke2freq" value="67" />
         </counts>
       </usages-collector>
@@ -71,61 +72,21 @@
           <entry key="HTML" value="2684" />
           <entry key="JavaScript" value="1860" />
           <entry key="PLAIN_TEXT" value="146" />
-          <entry key="Python" value="1836" />
+          <entry key="Python" value="1902" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3735">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viz.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miserables2txt.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="431">
-              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1551575353218" expanded="true" signature="253:254" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log_formator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -188,7 +149,6 @@
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/functions/radar_chart.js" />
         <option value="$PROJECT_DIR$/functions/stroke2dict.js" />
-        <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/functions/stroke2freq.js" />
         <option value="$PROJECT_DIR$/functions/filter_data.js" />
         <option value="$PROJECT_DIR$/functions/data_operation.js" />
@@ -198,8 +158,9 @@
         <option value="$PROJECT_DIR$/functions/barchart_right.js" />
         <option value="$PROJECT_DIR$/viz.html" />
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
-        <option value="$PROJECT_DIR$/miserables2txt.py" />
         <option value="$PROJECT_DIR$/log_formator.py" />
+        <option value="$PROJECT_DIR$/miserables2txt.py" />
+        <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
       </list>
     </option>
@@ -266,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.chords_data_parsing">
+  <component name="RunManager" selected="Python.stroke2freq">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -293,9 +254,6 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -337,9 +295,6 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -359,9 +314,6 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -383,6 +335,13 @@
       <item itemvalue="Python.miserables2txt" />
       <item itemvalue="Python.stroke2freq" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.stroke2freq" />
+        <item itemvalue="Python.chords_data_parsing" />
+        <item itemvalue="Python.miserables2txt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -498,13 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/stroke2freq.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/data_filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
@@ -561,38 +513,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
+    <entry file="file://$PROJECT_DIR$/log_formator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stroke2freq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="475">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miserables2txt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="446">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1551575353218" expanded="true" signature="253:254" ph="..." />
+            <marker date="1551576291790" expanded="true" signature="253:254" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log_formator.py">
+    <entry file="file://$PROJECT_DIR$/functions/stroke2freq.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="465">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stroke2freq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
           <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

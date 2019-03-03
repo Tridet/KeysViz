@@ -102,4 +102,4 @@ def chords_data_parsing(logs_path):
             writer.writerow(x)
 
 
-chords_data_parsing(logs_path)
+#chords_data_parsing(logs_path)
