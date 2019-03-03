@@ -8,10 +8,11 @@ logs_path = cwd+"/data/logs/"
 def log2data(logs_path):
 
     for filename in os.listdir(logs_path):
-        if (re.match(r'^(?!\.).*', filename) and re.match(r".*\.txt$", filename)):
+        if (re.match(r'^(?!\.).*', filename) and re.match(r'.*\.txt$', filename) and re.match(r'^(?!miserables.txt$)', filename)):
             print("reading "+ filename)
             with codecs.open(logs_path + filename, "r+", encoding='utf-8', errors='ignore') as f:
-                data = f.readlines()
+                #data = f.readlines()
+                data = [line.strip() for line in f if line.strip()]
                 for k in range(len(data)):
                     data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù").replace("Â","ctrl+z")
                 change1 = False
@@ -26,7 +27,7 @@ def log2data(logs_path):
                     change2 = True
 
                 with open(logs_path + filename, "w") as f:
-                    f.write(''.join(data))
+                    f.write('\n'.join(data))
                     f.close()
                     print(filename + " overwritten")
 

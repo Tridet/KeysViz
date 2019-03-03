@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="" />
+    <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chords_data_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/chords_data_parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/d3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/d3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/mail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/mail.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/matlab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/matlab.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/philosophy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/philosophy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_formator.py" beforeDir="false" afterPath="$PROJECT_DIR$/log_formator.py" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,40 +38,40 @@
         <counts>
           <entry key="css" value="4" />
           <entry key="gitattributes" value="1" />
-          <entry key="html" value="12" />
-          <entry key="js" value="26" />
+          <entry key="html" value="9" />
+          <entry key="js" value="20" />
           <entry key="json" value="1" />
-          <entry key="py" value="11" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="12" />
+          <entry key="HTML" value="9" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="26" />
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="2" />
+          <entry key="JavaScript" value="20" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="81" />
           <entry key="css" value="189" />
-          <entry key="html" value="3620" />
-          <entry key="js" value="2207" />
-          <entry key="log_formator" value="75" />
-          <entry key="py" value="1514" />
+          <entry key="html" value="2684" />
+          <entry key="js" value="1860" />
+          <entry key="log_formator" value="101" />
+          <entry key="py" value="1733" />
           <entry key="stroke2freq" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="3620" />
-          <entry key="JavaScript" value="2207" />
-          <entry key="PLAIN_TEXT" value="351" />
-          <entry key="Python" value="1386" />
+          <entry key="HTML" value="2684" />
+          <entry key="JavaScript" value="1860" />
+          <entry key="PLAIN_TEXT" value="146" />
+          <entry key="Python" value="1836" />
         </counts>
       </usages-collector>
     </session>
@@ -72,52 +81,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="224" column="59" selection-start-line="224" selection-start-column="49" selection-end-line="224" selection-end-column="59" />
+            <state relative-caret-position="3735">
+              <caret line="249" selection-start-line="249" selection-end-line="249" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/radar_chart.js">
+        <entry file="file://$PROJECT_DIR$/viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="25" column="125" selection-start-line="25" selection-start-column="125" selection-end-line="25" selection-end-column="125" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/chord_mapper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Chords_viz.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/viz.html">
+        <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="78" column="72" selection-start-line="78" selection-start-column="72" selection-end-line="78" selection-end-column="72" />
+            <state relative-caret-position="401">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
-                <element signature="e#2681#2687#0" expanded="true" />
-                <element signature="e#2781#2787#0" expanded="true" />
-                <element signature="e#2875#2881#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miserables2txt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1551575353218" expanded="true" signature="253:254" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log_formator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -127,13 +135,33 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>80px</find>
+      <find>{margin:0;padding</find>
+      <find>site-border-left</find>
+      <find>navbar-collapse</find>
+      <find>navbar-collapse.collapse</find>
+      <find>navbar-fixed-top</find>
+      <find>auto</find>
+      <find>display</find>
+      <find>.navbar</find>
+      <find>nav</find>
+      <find>navbar-def</find>
+      <find>box-sizing</find>
+      <find>max</find>
+      <find>555</find>
+      <find>width:5</find>
+      <find>navbar</find>
+      <find>line-he</find>
+      <find>line-height:25</find>
+      <find>.container</find>
+      <find>10px</find>
       <find>margin:10px</find>
       <find>margin:0</find>
       <find>565</find>
@@ -143,27 +171,6 @@
       <find>container</find>
       <find>\u</find>
       <find>var_color</find>
-      <find>data</find>
-      <find>24</find>
-      <find>chordMpr</find>
-      <find>%</find>
-      <find>.radar</find>
-      <find>radar_data</find>
-      <find>radarchart</find>
-      <find>LEVELS</find>
-      <find>format</find>
-      <find>conso</find>
-      <find>radarcha</find>
-      <find>d3</find>
-      <find>data/</find>
-      <find>mousem</find>
-      <find>mouse</find>
-      <find>stroke</find>
-      <find>hierarchical_list</find>
-      <find>rad</find>
-      <find>scien</find>
-      <find>scienti</find>
-      <find>scie</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -179,22 +186,21 @@
         <option value="$PROJECT_DIR$/main.3f6952e4.css" />
         <option value="$PROJECT_DIR$/stroke2freq.js" />
         <option value="$PROJECT_DIR$/about.html" />
+        <option value="$PROJECT_DIR$/functions/radar_chart.js" />
         <option value="$PROJECT_DIR$/functions/stroke2dict.js" />
-        <option value="$PROJECT_DIR$/log_formator.py" />
         <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/functions/stroke2freq.js" />
         <option value="$PROJECT_DIR$/functions/filter_data.js" />
         <option value="$PROJECT_DIR$/functions/data_operation.js" />
+        <option value="$PROJECT_DIR$/radar_viz.html" />
         <option value="$PROJECT_DIR$/functions/data_filter.js" />
         <option value="$PROJECT_DIR$/functions/barchart_left.js" />
         <option value="$PROJECT_DIR$/functions/barchart_right.js" />
-        <option value="$PROJECT_DIR$/radar_viz.html" />
-        <option value="$PROJECT_DIR$/functions/chord_mapper.js" />
-        <option value="$PROJECT_DIR$/chords_data_parsing.py" />
-        <option value="$PROJECT_DIR$/functions/radar_chart.js" />
-        <option value="$PROJECT_DIR$/Chords_viz.html" />
-        <option value="$PROJECT_DIR$/keyboard_viz.html" />
         <option value="$PROJECT_DIR$/viz.html" />
+        <option value="$PROJECT_DIR$/keyboard_viz.html" />
+        <option value="$PROJECT_DIR$/miserables2txt.py" />
+        <option value="$PROJECT_DIR$/log_formator.py" />
+        <option value="$PROJECT_DIR$/chords_data_parsing.py" />
       </list>
     </option>
   </component>
@@ -204,7 +210,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -214,6 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,7 +237,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Unknown.chords_data_parsing547658232">
+  <component name="RunManager" selected="Python.chords_data_parsing">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -287,6 +293,9 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -324,6 +333,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="miserables2txt" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="KeysViz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/miserables2txt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="stroke2freq" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -346,6 +377,12 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.chords_data_parsing" />
+      <item itemvalue="Python.log_formator" />
+      <item itemvalue="Python.miserables2txt" />
+      <item itemvalue="Python.stroke2freq" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -371,13 +408,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75523000" />
+    <option name="totallyTimeSpent" value="54012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26215646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26251787" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -475,62 +512,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.3f6952e4.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="7161" selection-start-line="7" selection-start-column="7161" selection-end-line="7" selection-end-column="7161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/barchart_right.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stroke2freq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/barchart_left.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2392">
-          <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log_formator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/chord_mapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/radar_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+        <state relative-caret-position="897">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -541,29 +526,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chords_viz.html">
+    <entry file="file://$PROJECT_DIR$/main.3f6952e4.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        <state relative-caret-position="161">
+          <caret line="7" column="7161" selection-start-line="7" selection-start-column="7161" selection-end-line="7" selection-end-column="7161" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="224" column="59" selection-start-line="224" selection-start-column="49" selection-end-line="224" selection-end-column="59" />
+        <state relative-caret-position="3735">
+          <caret line="249" selection-start-line="249" selection-end-line="249" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="78" column="72" selection-start-line="78" selection-start-column="72" selection-end-line="78" selection-end-column="72" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/barchart_left.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/barchart_right.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
           <folding>
-            <element signature="e#2681#2687#0" expanded="true" />
-            <element signature="e#2781#2787#0" expanded="true" />
-            <element signature="e#2875#2881#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stroke2freq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miserables2txt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1551575353218" expanded="true" signature="253:254" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log_formator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
         </state>
       </provider>
     </entry>
