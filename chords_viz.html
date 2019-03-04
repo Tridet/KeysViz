@@ -97,8 +97,6 @@
 						if (!recs[0]) return 0;
 						return +recs[0].count;
 					});
-				console.log(mpr.getMap())
-                console.log(mpr.getMatrix())
 				drawChords(mpr.getMatrix(), mpr.getMap());
 			});
 
@@ -122,7 +120,6 @@
 			}
 
 			function drawChords(matrix, mmap) {
-				console.log(matrix)
                 var maxRow = matrix.map(function(row){ return Math.max.apply(Math, row); });
                 var rate = Math.round(Math.max.apply(null, maxRow)/5);
 				filter_matrix(matrix, rate);
@@ -181,12 +178,13 @@
 					.enter().append("svg:g")
 					.attr("class", "group")
 
+                //var count_vowels;
+
 				g.append("svg:path")
 					.style("stroke", "white")
 					.style("fill", function(d, i) {//console.log(mapReader(d).gname);
-					    console.log(mmap)
-                        var vowels = ["a", "e", "i", "o", "u", "y"]
-                        var count_vowels= 0
+                        var vowels = ["a", "e", "i", "o", "u", "y"];
+                        var count_vowels= 0;
                         for (key in mmap){
                             if (vowels.includes(key)){
                                 count_vowels = count_vowels + 1;
@@ -201,6 +199,13 @@
 						d3.select("svg").selectAll("path.chord")
 						.style("fill",function(f,g){
 						if(f.source.index==i || f.target.index==i){
+                            var vowels = ["a", "e", "i", "o", "u", "y"];
+                            var count_vowels= 0;
+                            for (key in mmap){
+                                if (vowels.includes(key)){
+                                    count_vowels = count_vowels + 1;
+                                }
+                            }
 							if (i<count_vowels) {return colors(1);} else{return colors(2)}
 							}
 						else{return colors(0);}

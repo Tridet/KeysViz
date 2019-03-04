@@ -52,7 +52,7 @@
           <entry key="Python Console" value="81" />
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
-          <entry key="html" value="3286" />
+          <entry key="html" value="3347" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
           <entry key="py" value="1756" />
@@ -62,7 +62,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="3286" />
+          <entry key="HTML" value="3347" />
           <entry key="JavaScript" value="1860" />
           <entry key="PLAIN_TEXT" value="146" />
           <entry key="Python" value="1902" />
@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chords_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="193" column="25" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+            <state relative-caret-position="502">
+              <caret line="121" column="47" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -374,12 +374,12 @@
       <workItem from="1550305519929" duration="5215000" />
       <workItem from="1550311016358" duration="2208000" />
       <workItem from="1551434722610" duration="1359000" />
-      <workItem from="1551705468831" duration="4485000" />
+      <workItem from="1551705468831" duration="4811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59045000" />
+    <option name="totallyTimeSpent" value="59371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -584,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chords_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="193" column="25" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+        <state relative-caret-position="502">
+          <caret line="121" column="47" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
         </state>
       </provider>
     </entry>
