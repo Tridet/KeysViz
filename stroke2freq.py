@@ -32,4 +32,4 @@ def stroke2freq(logs_path):
         json.dump(freq, outfile)
 
 
-#stroke2freq(logs_path)
+stroke2freq(logs_path)

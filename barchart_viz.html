@@ -61,6 +61,7 @@
 
 			<span>
 				<select id="barchart1">
+                    <option value="christie" rel="icon-temperature">Agatha Christie</option>
 					<option value="d3" rel="icon-temperature">D3 coding</option>
 					<option value="miserables">Les Miserables</option>
 					<option value="mail">Mail</option>
@@ -72,6 +73,7 @@
 
 			<span>
 				<select id="barchart2">
+                    <option value="christie" rel="icon-temperature">Agatha Christie</option>
 					<option value="d3" rel="icon-temperature">D3 coding</option>
 					<option value="miserables">Les Miserables</option>
 					<option value="mail" selected>Mail</option>
@@ -165,7 +167,8 @@
             "philosophy":"Key strokes while writing a philosophy paper",
             "scientific":"Key strokes while writing a scientific paper",
             "miserables":"Letters in the book Les Miserables",
-            "mail":"Key strokes while writing e-mails"
+            "mail":"Key strokes while writing e-mails",
+            "christie":"Letters in the book Orient Express by Agatha Christie"
         };
 
 		var config1 = {
@@ -279,7 +282,7 @@
 			bars
 				.exit()
 				.transition()
-				.duration(1000)
+				.duration(0)
 				.attr('widht', 0)
 				.attr('x', height)
 				.remove();
@@ -315,7 +318,6 @@
                 .text("Percentage of total key strokes (%)");
 
             yTitles
-                .exit()
                 .remove();
 
             legends
@@ -331,7 +333,6 @@
                 .text(legend_dict[key])
 
             legends
-                .exit()
                 .remove();
 
 		}
