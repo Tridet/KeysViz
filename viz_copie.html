@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta content="description" name="description">
+	<meta name="google" content="notranslate" />
+	<meta content="Mashup templates have been developped by Orson.io team" name="author">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="functions/barchart_right.js"></script>
+	<script src="functions/barchart_left.js"></script>
+	<script src="functions/stroke2freq.js"></script>
+	<script src="functions/data_filter.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0;}
+	</style>
+
+	<meta name="msapplication-tap-highlight" content="no">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+	<link href="./assets/apple-icon-180x180.ico" rel="icon">
+
+	<title>KeysViz Project</title>  
+
+	<link href="./main.3f6952e4.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+	<nav class="navbar  navbar-fixed-top navbar-default">
+		<div class="container">
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav ">
+					<li><a href="./index.html" title="">01 : Home</a></li>
+					<li><a href="./keyboard_viz.html" title="">02 : Visualizations</a></li>
+					<li><a href="./about.html" title="">03 : About the project</a></li>
+				</ul>
+			</div> 
+		</div>
+	</nav>
+</header>
+
+<div style="margin-top:10px">
+
+	<form id="form" align="right" position="relative">
+
+		<div>
+			<span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
+			<span><a href="./viz.html" class="btn btn-default">Barcharts</a></span>
+			<span><a href="./Chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
+			<span>&ensp;</span>
+		</div>
+
+
+		<div style="margin-top:15px">
+
+			<span>&ensp;</span>
+
+			<span>
+				<select id="barchart1">
+					<option value="d3" rel="icon-temperature">D3 coding</option>
+					<option value="miserables">Les Miserables</option>
+					<option value="mail">Mail</option>
+					<option value="matlab">Matlab coding</option>
+					<option value="philosophy">Philosophy paper</option>
+
+				</select> 
+			</span>
+
+			<span>
+				<select id="barchart2">
+					<option value="d3" rel="icon-temperature">D3 coding</option>
+					<option value="miserables">Les Miserables</option>
+					<option value="mail" selected>Mail</option>
+					<option value="matlab">Matlab coding</option>
+					<option value="philosophy">Philosophy paper</option>
+				</select> 
+			</span>
+
+			&nbsp;Sorting by :
+			<label><input type="radio" name="layout" value="descending" checked> Frequency&nbsp;</label>
+			<label><input type="radio" name="layout" value="alphabetical"> Alphabetical &nbsp;</label>
+		</div>
+	</form>
+
+	
+
+	<script>
+
+		var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
+		var outerWidth = $(window).width();//window.innerWidth
+		var screen_w = screen.width;
+		var ratio_w = outerWidth/screen_w;
+		var outerHeight = $(window).height()-topHeight;
+		var screen_h = screen.height;
+		var ratio_h = outerHeight/screen_h;
+		var ratio = Math.min(ratio_h, ratio_w);
+		var margin = {top: 0.04*outerWidth, right: 0.06*outerWidth, bottom:0.04*outerWidth, left: 0.06*outerWidth};
+
+		var innerWidth = outerWidth/2 - margin.left - margin.right;
+		var innerHeight = outerHeight - margin.top - margin.bottom;
+		var alpha = false;
+		//Create the SVG
+		var svg = d3.select("body").append("svg")
+				.attr("width", outerWidth)
+				.attr("height", outerHeight);
+
+		// Dividing the svg into 2 groups
+		var g1 = svg.append("g")
+					.attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
+
+		var g2 = svg.append("g")
+					.attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
+
+		var data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
+		var data;
+
+		// General settings for barcharts
+		var settings = {
+			"filter_count" : 30,
+			"width" : innerWidth,
+			"height" : innerHeight,
+			"ratio" : ratio,
+			"color" : "salmon"
+		};
+
+		// Declaring Axis and scaling
+		var xScale1 = d3.scaleLinear().range([0,innerWidth]);
+		var xScale2 = d3.scaleLinear().range([0,innerWidth]);
+		var yScale1 = d3.scaleBand().paddingInner(0.07).range([innerHeight,0]);
+		var yScale2 = d3.scaleBand().paddingInner(0.07).range([innerHeight,0]);
+
+		var xAxis1 = d3.axisBottom(xScale1);
+		var xAxis2 = d3.axisBottom(xScale2);
+		var yAxis1 = d3.axisRight(yScale1);
+		var yAxis2 = d3.axisLeft(yScale2);
+
+		var xAxisG1 = g1.append("g")
+			.attr("class", "x_axis")
+			.attr("transform", "translate(0,"+ innerHeight +")")
+			.style("font-family", "monospace")
+			.style("font-size", Math.round(12*ratio));
+
+		var xAxisG2 = g2.append("g")
+			.attr("class", "x_axis")
+			.attr("transform", "translate(0,"+ innerHeight +")")
+			.style("font-family", "monospace")
+			.style("font-size", Math.round(12*ratio));
+
+		var yAxisG1 = g1.append("g")
+			.attr("class", "y_axis")
+			.style("font-family", "monospace")
+			.style("font-size", Math.round(12*ratio));
+
+		var yAxisG2 = g2.append("g")
+			.attr("class", "y_axis")
+			.style("font-family", "monospace")
+			.style("font-size", Math.round(12*ratio));
+
+		var config1 = {
+			"xscale" : xScale1,
+			"yscale" : yScale1,
+			"xaxis": xAxis1,
+			"yaxis": yAxis1,
+			"xaxisG" : xAxisG1,
+			"yaxisG" : yAxisG1
+		};
+
+		var config2 = {
+			"xscale" : xScale2,
+			"yscale" : yScale2,
+			"xaxis": xAxis2,
+			"yaxis": yAxis2,
+			"xaxisG" : xAxisG2,
+			"yaxisG" : yAxisG2
+		};
+
+		var update = function(data, key, loc, alpha, settings, config, left) {
+			var filter_count = settings["filter_count"];
+			var width = settings["width"];
+			var height = settings["height"];
+			var ratio = settings["ratio"];
+			var color = settings["color"];
+
+			var xscale = config["xscale"];
+			var yscale = config["yscale"];
+			var xaxis = config["xaxis"];
+			var yaxis = config["yaxis"];
+			var xaxisG = config["xaxisG"];
+			var yaxisG = config["yaxisG"];
+
+			var keys = data_filter(data, key, filter_count, alpha);
+			var val = [];
+
+			keys.forEach( function(d){
+				val.push(d.value)
+			});
+
+			var max_percentage = d3.max(val);
+
+			var strokeAccessor = function(d) {
+				return d.key
+			};
+
+			var strokeNames = d3.set(keys.map(strokeAccessor)).values();
+
+			yscale.domain(strokeNames);
+
+			if (left) {
+				xscale.domain([max_percentage,0]);
+				var set_width = function(val) {
+					return width - xscale(val);
+				}
+				var set_x = function(val) {
+					return xscale(val);
+				}
+			}
+			else {
+				xscale.domain([0,max_percentage]);
+				var set_width = function(val) {
+					return xscale(val);
+				}
+				var set_x = function(val) {
+					return 0;
+				}
+			}
+
+			var bars = loc.selectAll(".bar")
+				.data(keys);
+
+			bars
+				.enter()
+				.append('rect')
+				.attr('class', 'bar')
+				.attr("fill", color)
+				.attr('width', 0)
+				.attr('height', yscale.bandwidth())
+				.attr('x', function() {if (left) {return width;} else {return 0;}})
+				.on("mouseenter", function(d) {
+					d3.select("svg").selectAll(".bar")
+						.attr("opacity", function(e) {
+							return e.key===d.key ? 1: .1;
+						})
+					loc.append("text")
+						.attr("id","label")
+						.attr("x", function(){if(left) {return xscale(d.value)-40;} else {return xscale(d.value)+10;}})
+						.attr("y", yscale(d.key)+13)
+						.text(d.value.toFixed(2))
+				})
+				.on("mouseleave", function(d) {
+					d3.select("svg").selectAll(".bar")
+						.attr("opacity", 1)
+					d3.selectAll("#label").remove()
+				})
+				.merge(bars)
+				.transition()
+				.duration(1000)
+				.attr("width", function(d) {return set_width(d.value);} )
+				.attr("x", function(d) {return set_x(d.value);})
+				.attr("y", function(d) {return yscale(d.key);})
+				.attr("height", yscale.bandwidth())
+				
+
+			bars
+				.exit()
+				.transition()
+				.duration(1000)
+				.attr('widht', 0)
+				.attr('x', height)
+				.remove();
+
+			xaxisG.transition()
+				.duration(1000)
+				.call(xaxis);
+			if (left) {
+				yaxisG.attr("transform", "translate(" + width + " ,0)")
+					.transition()
+					.duration(1000)
+					.call(yaxis);
+			}
+			else {
+				yaxisG.transition()
+					.duration(1000)
+					.call(yaxis);
+			}
+		}
+
+		d3.json(data_path, function(json) {
+			data = json;
+			update(data, 'd3', g1, alpha, settings, config1, 1);
+			update(data, 'mail', g2, alpha, settings, config2, 0);
+		})
+
+		d3.select("#barchart1")
+			.on("change",function(){
+				var val = this.value;
+				update(data, val, g1, alpha, settings, config1, 1); 
+			})
+
+		d3.select("#barchart2")
+			.on("change",function(){
+				var val = this.value;
+				update(data, val, g2, alpha, settings, config2, 0);
+			})
+
+		d3.select("input[value=\"descending\"]").on("click", function(){
+			alpha = false;
+			update(data, d3.select("#barchart1").node().value, g1, alpha, settings, config1, 1);
+			update(data, d3.select("#barchart2").node().value, g2, alpha, settings, config2, 0);
+		});
+
+		d3.select("input[value=\"alphabetical\"]").on("click",  function(){
+			alpha = true;
+			update(data, d3.select("#barchart1").node().value, g1, alpha, settings, config1, 1);
+			update(data, d3.select("#barchart2").node().value, g2, alpha, settings, config2, 0);
+		});
+
+	</script>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function (event) {
+		 navActivePage();
+	});
+</script>
+<script type="text/javascript" src="./main.70a66962.js"></script></body>
+</body>
+</html>

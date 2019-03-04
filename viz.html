@@ -109,6 +109,7 @@
 		//var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S,%L");
 		//var displayDate = d3.timeFormat("%Y-%m-%d %H:%M:%S,%L");
 
+
 		function plot(alph, main_key_left="d3", main_key_right="philosophy"){
 			
 			if (d3.select("svg").empty()){
@@ -171,12 +172,12 @@
 		d3.select("input[value=\"descending\"]").on("click", function(){
 			d3.select("#svg_id").remove();
 			alpha = false;
-			plot(alpha, d3.select("#barchart1").value, d3.select("#barchart2").value );});
+			plot(alpha, d3.select("#barchart1").node().value, d3.select("#barchart2").node().value );});
 
 		d3.select("input[value=\"alphabetical\"]").on("click",  function(){
 			d3.select("#svg_id").remove();
 			alpha = true;
-			plot(alpha, d3.select("#barchart1").value, d3.select("#barchart2").value );});
+			plot(alpha, d3.select("#barchart1").node().value, d3.select("#barchart2").node().value );});
 
 		plot(false, "d3", "mail");
 
