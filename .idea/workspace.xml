@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/barchart_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chords_data_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/chords_data_parsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miserables2txt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stroke2freq.py" beforeDir="false" afterPath="$PROJECT_DIR$/stroke2freq.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +17,7 @@
     <session id="1469307077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
@@ -60,7 +54,7 @@
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
           <entry key="dummy" value="4" />
-          <entry key="html" value="3410" />
+          <entry key="html" value="3447" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
           <entry key="py" value="1869" />
@@ -70,7 +64,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="3410" />
+          <entry key="HTML" value="3447" />
           <entry key="JavaScript" value="1860" />
           <entry key="PLAIN_TEXT" value="150" />
           <entry key="Python" value="2015" />
@@ -119,7 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.navbar</find>
       <find>nav</find>
       <find>navbar-def</find>
       <find>box-sizing</find>
@@ -141,14 +134,15 @@
       <find>\u</find>
       <find>var_color</find>
       <find>misera</find>
-      <find>legend</find>
       <find>bar</find>
       <find>filter</find>
       <find>5</find>
       <find>6</find>
       <find>rate</find>
-      <find>vowel</find>
       <find>yTitle</find>
+      <find>vowel</find>
+      <find>legne</find>
+      <find>legend</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -176,12 +170,12 @@
         <option value="$PROJECT_DIR$/log_formator.py" />
         <option value="$PROJECT_DIR$/viz_copie.html" />
         <option value="$PROJECT_DIR$/viz.html" />
-        <option value="$PROJECT_DIR$/chords_viz.html" />
-        <option value="$PROJECT_DIR$/barchart_viz.html" />
         <option value="$PROJECT_DIR$/miserables2txt.py" />
         <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
+        <option value="$PROJECT_DIR$/chords_viz.html" />
+        <option value="$PROJECT_DIR$/barchart_viz.html" />
       </list>
     </option>
   </component>
@@ -386,12 +380,12 @@
       <workItem from="1550311016358" duration="2208000" />
       <workItem from="1551434722610" duration="1359000" />
       <workItem from="1551705468831" duration="4984000" />
-      <workItem from="1551738595453" duration="1228000" />
+      <workItem from="1551738595453" duration="1660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60772000" />
+    <option name="totallyTimeSpent" value="61204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -542,13 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chords_viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="193" column="33" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book2txt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -587,17 +574,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/barchart_viz.html">
+    <entry file="file://$PROJECT_DIR$/chords_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="295" column="18" selection-start-line="295" selection-start-column="18" selection-end-line="295" selection-end-column="18" />
+        <state relative-caret-position="252">
+          <caret line="59" column="96" selection-start-line="59" selection-start-column="96" selection-end-line="59" selection-end-column="96" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2866">
-          <caret line="173" column="33" selection-start-line="173" selection-start-column="33" selection-end-line="173" selection-end-column="33" />
+        <state relative-caret-position="622">
+          <caret line="159" column="94" lean-forward="true" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/barchart_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="64" column="70" selection-start-line="64" selection-start-column="70" selection-end-line="64" selection-end-column="70" />
         </state>
       </provider>
     </entry>
