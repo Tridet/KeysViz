@@ -49,8 +49,8 @@
 
 		<div>
 			<span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
-			<span><a href="./viz.html" class="btn btn-default">Barcharts</a></span>
-			<span><a href="./Chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
+			<span><a href="./barchart_viz.html" class="btn btn-default">Barcharts</a></span>
+			<span><a href="chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
 			<span>&ensp;</span>
 		</div>
 
@@ -160,13 +160,22 @@
 			.style("font-family", "monospace")
 			.style("font-size", Math.round(12*ratio));
 
+        var legend_dict = {"d3":"Key strokes while coding in D3.js",
+            "matlab":"Key strokes while coding in Matlab",
+            "philosophy":"Key strokes while writing a philosophy paper",
+            "scientific":"Key strokes while writing a scientific paper",
+            "miserables":"Letters in the book Les Miserables",
+            "mail":"Key strokes while writing e-mails"
+        };
+
 		var config1 = {
 			"xscale" : xScale1,
 			"yscale" : yScale1,
 			"xaxis": xAxis1,
 			"yaxis": yAxis1,
 			"xaxisG" : xAxisG1,
-			"yaxisG" : yAxisG1
+			"yaxisG" : yAxisG1,
+			"legend" : legend_dict
 		};
 
 		var config2 = {
@@ -175,7 +184,8 @@
 			"xaxis": xAxis2,
 			"yaxis": yAxis2,
 			"xaxisG" : xAxisG2,
-			"yaxisG" : yAxisG2
+			"yaxisG" : yAxisG2,
+            "legend" : legend_dict
 		};
 
 		var update = function(data, key, loc, alpha, settings, config, left) {
@@ -191,6 +201,8 @@
 			var yaxis = config["yaxis"];
 			var xaxisG = config["xaxisG"];
 			var yaxisG = config["yaxisG"];
+
+            var legend = config["legend"];
 
 			var keys = data_filter(data, key, filter_count, alpha);
 			var val = [];
@@ -286,6 +298,42 @@
 					.duration(1000)
 					.call(yaxis);
 			}
+
+			var legends =  loc.selectAll(".legend");
+			var yTitles = loc.selectAll(".yTitle");
+
+            yTitles
+                .remove();
+
+            loc.append("text")
+                .attr("class","yTitle")
+                .attr("transform",
+                    "translate(" + (width/2) + " ," + (height*1.05) + ")")
+                .style("text-anchor", "middle")
+                .style("font-size", Math.round(14*ratio))
+                .style("font-family", "monospace")
+                .text("Percentage of total key strokes (%)");
+
+            yTitles
+                .exit()
+                .remove();
+
+            legends
+				.remove();
+
+            loc.append("text")
+				.attr("class","legend")
+                .attr("transform",
+                    "translate(" + width/2 + " ," + (-height*0.02) + ")")
+                .style("text-anchor", "middle")
+                .style("font-size", Math.round(16*ratio))
+                .style("font-family", "monospace")
+                .text(legend_dict[key])
+
+            legends
+                .exit()
+                .remove();
+
 		}
 
 		d3.json(data_path, function(json) {

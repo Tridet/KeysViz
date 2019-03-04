@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chords_data_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/chords_data_parsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/d3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/d3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/mail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/mail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/matlab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/matlab.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logs/philosophy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logs/philosophy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log_formator.py" beforeDir="false" afterPath="$PROJECT_DIR$/log_formator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viz_copie.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,22 +21,22 @@
     <session id="1469307077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
           <entry key="gitattributes" value="1" />
-          <entry key="html" value="9" />
-          <entry key="js" value="21" />
+          <entry key="html" value="16" />
+          <entry key="js" value="22" />
           <entry key="json" value="1" />
           <entry key="py" value="8" />
         </counts>
@@ -47,9 +44,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="16" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="21" />
+          <entry key="JavaScript" value="22" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Python" value="4" />
         </counts>
@@ -59,7 +56,7 @@
           <entry key="Python Console" value="81" />
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
-          <entry key="html" value="2684" />
+          <entry key="html" value="3036" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
           <entry key="py" value="1756" />
@@ -69,7 +66,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="2684" />
+          <entry key="HTML" value="3036" />
           <entry key="JavaScript" value="1860" />
           <entry key="PLAIN_TEXT" value="146" />
           <entry key="Python" value="1902" />
@@ -80,13 +77,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
+        <entry file="file://$PROJECT_DIR$/barchart_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="590">
+              <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/barchart_left.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="73" selection-start-line="73" selection-end-line="79" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -103,8 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>80px</find>
-      <find>{margin:0;padding</find>
       <find>site-border-left</find>
       <find>navbar-collapse</find>
       <find>navbar-collapse.collapse</find>
@@ -132,6 +133,9 @@
       <find>container</find>
       <find>\u</find>
       <find>var_color</find>
+      <find>misera</find>
+      <find>legend</find>
+      <find>bar</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -156,12 +160,15 @@
         <option value="$PROJECT_DIR$/functions/data_filter.js" />
         <option value="$PROJECT_DIR$/functions/barchart_left.js" />
         <option value="$PROJECT_DIR$/functions/barchart_right.js" />
-        <option value="$PROJECT_DIR$/viz.html" />
-        <option value="$PROJECT_DIR$/keyboard_viz.html" />
         <option value="$PROJECT_DIR$/log_formator.py" />
         <option value="$PROJECT_DIR$/miserables2txt.py" />
         <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
+        <option value="$PROJECT_DIR$/viz_copie.html" />
+        <option value="$PROJECT_DIR$/barchart_viz.html" />
+        <option value="$PROJECT_DIR$/viz.html" />
+        <option value="$PROJECT_DIR$/keyboard_viz.html" />
+        <option value="$PROJECT_DIR$/chords_viz.html" />
       </list>
     </option>
   </component>
@@ -171,7 +178,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -181,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,6 +204,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.stroke2freq">
+  <component name="RunManager" selected="Unknown.chords_data_parsing1392267769">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,6 +261,9 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -295,6 +305,9 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -314,6 +327,9 @@
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -329,19 +345,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.chords_data_parsing" />
-      <item itemvalue="Python.log_formator" />
-      <item itemvalue="Python.miserables2txt" />
-      <item itemvalue="Python.stroke2freq" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.stroke2freq" />
-        <item itemvalue="Python.chords_data_parsing" />
-        <item itemvalue="Python.miserables2txt" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -363,17 +366,18 @@
       <workItem from="1550305519929" duration="5215000" />
       <workItem from="1550311016358" duration="2208000" />
       <workItem from="1551434722610" duration="1359000" />
+      <workItem from="1551705468831" duration="2960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54012000" />
+    <option name="totallyTimeSpent" value="57520000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26251787" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26215646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -436,13 +440,6 @@
     <entry file="file://$PROJECT_DIR$/main.70a66962.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -464,13 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/radar_viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/radar_chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -482,27 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="7161" selection-start-line="7" selection-start-column="7161" selection-end-line="7" selection-end-column="7161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3735">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/barchart_left.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -524,10 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1551576291790" expanded="true" signature="253:254" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -547,11 +512,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
+        <state relative-caret-position="633">
           <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/barchart_left.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="73" selection-start-line="73" selection-end-line="79" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radar_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="897">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-534" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="82" column="50" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chords_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/barchart_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
         </state>
       </provider>
     </entry>
