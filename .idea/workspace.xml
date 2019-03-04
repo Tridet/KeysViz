@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viz_copie.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +31,8 @@
         <counts>
           <entry key="css" value="4" />
           <entry key="gitattributes" value="1" />
-          <entry key="html" value="16" />
-          <entry key="js" value="22" />
+          <entry key="html" value="17" />
+          <entry key="js" value="23" />
           <entry key="json" value="1" />
           <entry key="py" value="8" />
         </counts>
@@ -44,9 +40,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="16" />
+          <entry key="HTML" value="17" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="22" />
+          <entry key="JavaScript" value="23" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Python" value="4" />
         </counts>
@@ -56,7 +52,7 @@
           <entry key="Python Console" value="81" />
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
-          <entry key="html" value="3036" />
+          <entry key="html" value="3286" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
           <entry key="py" value="1756" />
@@ -66,7 +62,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="3036" />
+          <entry key="HTML" value="3286" />
           <entry key="JavaScript" value="1860" />
           <entry key="PLAIN_TEXT" value="146" />
           <entry key="Python" value="1902" />
@@ -76,7 +72,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/barchart_viz.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="590">
@@ -85,11 +81,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/barchart_left.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chords_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="73" selection-start-line="73" selection-end-line="79" selection-end-column="53" />
+            <state relative-caret-position="294">
+              <caret line="193" column="25" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/chord_mapper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1012">
+              <caret line="44" column="127" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="127" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,9 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>site-border-left</find>
-      <find>navbar-collapse</find>
-      <find>navbar-collapse.collapse</find>
       <find>navbar-fixed-top</find>
       <find>auto</find>
       <find>display</find>
@@ -136,6 +141,9 @@
       <find>misera</find>
       <find>legend</find>
       <find>bar</find>
+      <find>filter</find>
+      <find>5</find>
+      <find>6</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -366,12 +374,12 @@
       <workItem from="1550305519929" duration="5215000" />
       <workItem from="1550311016358" duration="2208000" />
       <workItem from="1551434722610" duration="1359000" />
-      <workItem from="1551705468831" duration="2960000" />
+      <workItem from="1551705468831" duration="4485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57520000" />
+    <option name="totallyTimeSpent" value="59045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -550,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chords_viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="712">
@@ -568,6 +569,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="590">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/chord_mapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="44" column="127" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="127" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chords_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="193" column="25" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
         </state>
       </provider>
     </entry>

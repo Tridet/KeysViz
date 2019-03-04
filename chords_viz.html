@@ -122,8 +122,10 @@
 			}
 
 			function drawChords(matrix, mmap) {
-				//console.log(matrix)
-				filter_matrix(matrix, 5);
+				console.log(matrix)
+                var maxRow = matrix.map(function(row){ return Math.max.apply(Math, row); });
+                var rate = Math.round(Math.max.apply(null, maxRow)/5);
+				filter_matrix(matrix, rate);
 				var w = window.innerWidth,
 					h = window.innerHeight,
 					r1 = h / 2.2 ,
@@ -182,7 +184,15 @@
 				g.append("svg:path")
 					.style("stroke", "white")
 					.style("fill", function(d, i) {//console.log(mapReader(d).gname);
-						if(i<6){return colors(1);}
+					    console.log(mmap)
+                        var vowels = ["a", "e", "i", "o", "u", "y"]
+                        var count_vowels= 0
+                        for (key in mmap){
+                            if (vowels.includes(key)){
+                                count_vowels = count_vowels + 1;
+                            }
+                        }
+						if(i<count_vowels){return colors(1);}
 							else{
 						return colors(2);}
 					})
@@ -191,7 +201,7 @@
 						d3.select("svg").selectAll("path.chord")
 						.style("fill",function(f,g){
 						if(f.source.index==i || f.target.index==i){
-							if (i<6) {return colors(1);} else{return colors(2)}
+							if (i<count_vowels) {return colors(1);} else{return colors(2)}
 							}
 						else{return colors(0);}
 						})
