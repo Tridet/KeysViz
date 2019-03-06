@@ -77,18 +77,6 @@
 			d3.csv(filename, function(error, data) {
 				var mpr = chordMpr(data);
 
-				/*
-                var values = _.uniq(_.pluck(data, 'son'));
-                var id_alphabet_init  = {"a":0,"e":1,"i":2,"o":3,"u":4,"y":5,"b":6,"c":7,"d":8,"f":9,"g":10,"h":11,"j":12,"k":13,"l":14,"m":15,"n":16,"p":17,"q":18,"r":19,"s":20,"t":21,"v":22,"x":23,"z":25};
-                var id_alphabet = {};
-                for (key in id_alphabet_init){
-                    if(values.filter(value=> value==key).length > 0){
-                        id_alphabet[key] = id_alphabet_init[key]
-                    };
-                };
-                console.log(id_alphabet)
-                */
-
 				mpr
 					.addValuesToMap('son')
 					.setFilter(function(row, a, b) {

@@ -18,13 +18,21 @@ You can choose to launch and stop the keylogger at anytime hence avoiding to rec
 
 ### 2. Load your personal logs
 
-Once you've recorder your personal keystrokes you can put your logs inside the data/logs folder and remove all the files (.txt or .csv) not dealing with 'miserables' or 'christie' (unless you do not want to use it). The logs must be named according to their categories and must be unique, for example 'mail.txt' for logs about e-mails.
+Once you've recorded your personal keystrokes you can put your logs inside the data/logs folder and remove all the files (.txt or .csv) not dealing with 'miserables' or 'christie' (unless you do not want to use it). The logs must be named according to their categories and must be unique, for example 'mail.txt' for logs about e-mails.
 
 ### 3. Parse the data
 
 Run python function 'run.py' to parse your data
 
-### 4. Visualize the insights
+
+### 4. Change the path name to use within the HTML pages
+
+Within the pages keyboard_viz and barchart_viz you will have to change the variable **data_path**
+Within the page chords_viz you will have to change the variable **filename**
+
+You will also have to change the value inside the dropdown menus and the legend dictionary inside these three pages.
+
+### 5. Visualize the insights
 
 
 <div>
