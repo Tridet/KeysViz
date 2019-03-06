@@ -27,5 +27,3 @@ The project is available [here](https://tridet.github.io/KeysViz/index.html).
 #Authors
 
 Loïc BETHENCOURT - Pascal GODBILLOT - Théo LACOUR
-
-#Credits
