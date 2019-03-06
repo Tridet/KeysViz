@@ -22,13 +22,14 @@ Once you've recorded your personal keystrokes you can put your logs inside the d
 
 ### 3. Parse the data
 
-Run python function 'run.py' to parse your data
+Run python function 'run.py' to parse your data.
 
 
 ### 4. Change the path name to use within the HTML pages
 
-Within the pages keyboard_viz and barchart_viz you will have to change the variable **data_path**
-Within the page chords_viz you will have to change the variable **filename**
+Within the pages keyboard_viz and barchart_viz you will have to change the variable **data_path**.
+
+Within the page chords_viz you will have to change the variable **filename**.
 
 You will also have to change the value inside the dropdown menus and the legend dictionary inside these three pages.
 
