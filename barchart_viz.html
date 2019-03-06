@@ -112,9 +112,11 @@
 
 		// Dividing the svg into 2 groups
 		var g1 = svg.append("g")
+                    .attr("id","g1")
 					.attr("transform", "translate(" + margin.right*0.6 + "," + (margin.top*0.8) + ")");
 
 		var g2 = svg.append("g")
+                    .attr("id","g2")
 					.attr("transform", "translate(" + (outerWidth/2 + margin.left) + "," +  (margin.top*0.8) + ")");
 
 		var data_path = 'https://raw.githubusercontent.com/Tridet/KeysViz/master/data.json';
@@ -191,7 +193,7 @@
             "legend" : legend_dict
 		};
 
-		var update = function(data, key, loc, alpha, settings, config, left) {
+		var update = function(data, key, loc, alpha, settings, config, left, updated = false) {
 			var filter_count = settings["filter_count"];
 			var width = settings["width"];
 			var height = settings["height"];
@@ -207,14 +209,53 @@
 
             var legend = config["legend"];
 
-			var keys = data_filter(data, key, filter_count, alpha);
 			var val = [];
+            var keys = data_filter(data, key, filter_count, alpha);
 
 			keys.forEach( function(d){
 				val.push(d.value)
 			});
 
-			var max_percentage = d3.max(val);
+			var max_percentage_init = d3.max(val);
+
+            if (left) {
+                var val_right = [];
+                var key_right = d3.select("#barchart2").node().value;
+                var keys_right = data_filter(data, key_right, filter_count, alpha);
+
+                keys_right.forEach( function(d){
+                    val_right.push(d.value)
+                });
+                var max_percentage_right = d3.max(val_right);
+                var max_percentage = Math.max(max_percentage_init, max_percentage_right);
+                if (updated === false){
+                    update(data, d3.select("#barchart2").node().value, g2, alpha, settings, config2, 0,true)
+                }
+                var cat_left = d3.select("#barchart1").node().value;
+                var cat_right = d3.select("#barchart2").node().value;
+                if (cat_left === cat_right){
+                }
+            }
+            else {
+                var val_left = [];
+                var key_left = d3.select("#barchart1").node().value;
+                var keys_left = data_filter(data, key_left, filter_count, alpha);
+
+                keys_left.forEach( function(d){
+                    val_left.push(d.value)
+                });
+                var max_percentage_left = d3.max(val_left);
+                var max_percentage = Math.max(max_percentage_init, max_percentage_left);
+                if (updated === false){
+                    update(data, d3.select("#barchart1").node().value, g1, alpha, settings, config1, 1, true)
+                }
+                var cat_left = d3.select("#barchart1").node().value;
+                var cat_right = d3.select("#barchart2").node().value;
+                if (cat_left === cat_right){
+                }
+            }
+            console.log(max_percentage)
+			// var max_percentage = 16.5;
 
 			var strokeAccessor = function(d) {
 				return d.key

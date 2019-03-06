@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/barchart_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,22 +19,22 @@
     <session id="1469307077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
           <entry key="gitattributes" value="1" />
-          <entry key="html" value="19" />
+          <entry key="html" value="20" />
           <entry key="js" value="24" />
           <entry key="json" value="1" />
           <entry key="py" value="12" />
@@ -41,7 +43,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="19" />
+          <entry key="HTML" value="20" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="24" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -54,7 +56,7 @@
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
           <entry key="dummy" value="4" />
-          <entry key="html" value="3447" />
+          <entry key="html" value="4225" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
           <entry key="py" value="1869" />
@@ -64,7 +66,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="3447" />
+          <entry key="HTML" value="4225" />
           <entry key="JavaScript" value="1860" />
           <entry key="PLAIN_TEXT" value="150" />
           <entry key="Python" value="2015" />
@@ -75,28 +77,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stroke2freq.py">
+        <entry file="file://$PROJECT_DIR$/barchart_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chords_data_parsing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
+            <state relative-caret-position="477">
+              <caret line="250" column="17" selection-start-line="250" selection-start-column="17" selection-end-line="250" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log_formator.py">
+        <entry file="file://$PROJECT_DIR$/viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+            <state relative-caret-position="283">
+              <caret line="116" column="36" lean-forward="true" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3657">
+              <caret line="159" column="94" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chords_viz.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="166" column="78" lean-forward="true" selection-start-line="166" selection-start-column="78" selection-end-line="166" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -174,8 +185,8 @@
         <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
-        <option value="$PROJECT_DIR$/chords_viz.html" />
         <option value="$PROJECT_DIR$/barchart_viz.html" />
+        <option value="$PROJECT_DIR$/chords_viz.html" />
       </list>
     </option>
   </component>
@@ -195,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,6 +222,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.chords_data_parsing">
+  <component name="RunManager" selected="Unknown.chords_data_parsing1167404299">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="KeysViz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -352,12 +363,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.chords_data_parsing" />
-      <item itemvalue="Python.log_formator" />
-      <item itemvalue="Python.miserables2txt" />
-      <item itemvalue="Python.stroke2freq" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -380,18 +385,19 @@
       <workItem from="1550311016358" duration="2208000" />
       <workItem from="1551434722610" duration="1359000" />
       <workItem from="1551705468831" duration="4984000" />
-      <workItem from="1551738595453" duration="1660000" />
+      <workItem from="1551738595453" duration="2042000" />
+      <workItem from="1551803702127" duration="8004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61204000" />
+    <option name="totallyTimeSpent" value="69590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26609442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26215646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -517,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-534" />
@@ -568,30 +567,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="44" column="127" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="127" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chords_viz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="59" column="96" selection-start-line="59" selection-start-column="96" selection-end-line="59" selection-end-column="96" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="159" column="94" lean-forward="true" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="94" />
+        <state relative-caret-position="3657">
+          <caret line="159" column="94" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="116" column="36" lean-forward="true" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/barchart_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="64" column="70" selection-start-line="64" selection-start-column="70" selection-end-line="64" selection-end-column="70" />
+        <state relative-caret-position="477">
+          <caret line="250" column="17" selection-start-line="250" selection-start-column="17" selection-end-line="250" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chords_viz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="166" column="78" lean-forward="true" selection-start-line="166" selection-start-column="78" selection-end-line="166" selection-end-column="78" />
         </state>
       </provider>
     </entry>
