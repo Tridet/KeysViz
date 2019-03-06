@@ -2,13 +2,21 @@ import codecs
 import os
 import re
 
-cwd = os.getcwd()
-logs_path = cwd+"/data/logs/"
-
 def log2data(logs_path):
 
+    """
+    Parse the logs to remove useless lines at the beginning and the end and to add columns name (date, stroke)
+
+    Inputs:
+    - logs_path: path of the logs
+
+    Returns:
+    - parsed text files
+    """
+
     for filename in os.listdir(logs_path):
-        if (re.match(r'^(?!\.).*', filename) and re.match(r'.*\.txt$', filename) and re.match(r'^(?!miserables.txt$)', filename)):
+        if (re.match(r'^(?!\.).*', filename) and re.match(r'.*\.txt$', filename) and re.match(r'^(?!miserables.txt$)', filename)
+                and re.match(r'^(?!christie.txt$)', filename)):
             print("reading "+ filename)
             with codecs.open(logs_path + filename, "r+", encoding='utf-8', errors='ignore') as f:
                 #data = f.readlines()
@@ -30,6 +38,3 @@ def log2data(logs_path):
                     f.write('\n'.join(data))
                     f.close()
                     print(filename + " overwritten")
-
-
-#log2data(logs_path)

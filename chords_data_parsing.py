@@ -5,10 +5,18 @@ import os
 import re
 import pandas as pd
 
-cwd = os.getcwd()
-logs_path = cwd+"/data/logs/"
-
 def chords_data_parsing(logs_path):
+
+    """
+    Parse the logs to create csv files which count the number of co-occurences for two letters
+
+    Inputs:
+    - logs_path: path of the logs
+
+    Returns:
+    - csv files with the number of co-occurences
+    """
+
     hierarchical_list_all = []
     is_in_dic_all = []
     for filename in os.listdir(logs_path):
@@ -100,6 +108,3 @@ def chords_data_parsing(logs_path):
         writer.writeheader()
         for x in new_list:
             writer.writerow(x)
-
-
-chords_data_parsing(logs_path)

@@ -6,9 +6,20 @@ import json
 
 cwd = os.getcwd()
 logs_path = cwd+"/data/logs/"
-#log2data(logs_path)
+
 
 def stroke2freq(logs_path):
+
+    """
+    Create a json file with the number of occurences for each stroke for each category of logs
+
+    Inputs:
+    - logs_path: path of the logs
+
+    Returns:
+    - data.json
+    """
+
     freq = {}
     for filename in os.listdir(logs_path):
         if (re.match(r'^(?!\.).*', filename) and re.match(r".*\.txt$", filename)):
@@ -30,6 +41,3 @@ def stroke2freq(logs_path):
     freq["all"] = dict_all
     with open('data.json', 'w') as outfile:
         json.dump(freq, outfile)
-
-
-stroke2freq(logs_path)

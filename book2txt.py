@@ -12,6 +12,19 @@ book_path = cwd+"/data/AgathaChristie/"
 logs_path = cwd+"/data/logs/"
 
 def book2txt(book_path, logs_path, new_filename):
+
+    """
+    Parse a book under text format and return a file where each line correspond to a letter (or space) of the book
+
+    Inputs:
+    - logs_path: path of the logs
+    - book_path: path of the book
+    - new_filename : name of the file to be written
+
+    Returns:
+    - text file
+    """
+
     characters = []
     for filename in os.listdir(book_path):
         if (re.match(r'^(?!\.).*', filename) and re.match(r".*\.txt$", filename)):
