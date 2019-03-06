@@ -12,7 +12,7 @@ The project is available [here](https://tridet.github.io/KeysViz/index.html).
 
 ## 1. Install the keylogger and record keystrokes
 
-You can choose to launch and stop the keylogger at anytime hence avoiding to record sensitive personal data such as passwords.
+You can choose to launch and stop the keylogger at anytime hence avoiding to record sensitive personal data such as passwords. To install the keylogger use the README.md file inside the keylogger folder.
 
 ## 2. Load your personal logs
 
