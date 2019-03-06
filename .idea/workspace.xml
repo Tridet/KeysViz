@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/apple-icon-180x180.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/apple-icon-180x180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/space.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/barchart_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viz.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,6 +59,7 @@
           <entry key="html" value="4259" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
+          <entry key="md" value="5" />
           <entry key="py" value="1869" />
           <entry key="stroke2freq" value="67" />
         </counts>
@@ -77,6 +69,7 @@
           <entry key="CSS" value="189" />
           <entry key="HTML" value="4259" />
           <entry key="JavaScript" value="1860" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="150" />
           <entry key="Python" value="2015" />
         </counts>
@@ -116,8 +109,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="322">
-                <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+              <first_editor relative-caret-position="270">
+                <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
               </first_editor>
               <second_editor />
             </state>
@@ -218,6 +211,7 @@
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
         <option value="$PROJECT_DIR$/chords_viz.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -417,12 +411,12 @@
       <workItem from="1551434722610" duration="1359000" />
       <workItem from="1551705468831" duration="4984000" />
       <workItem from="1551738595453" duration="2042000" />
-      <workItem from="1551803702127" duration="9911000" />
+      <workItem from="1551803702127" duration="10403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71497000" />
+    <option name="totallyTimeSpent" value="71989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -637,8 +631,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="322">
-            <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <first_editor relative-caret-position="270">
+            <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
           </first_editor>
           <second_editor />
         </state>

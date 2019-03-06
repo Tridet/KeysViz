@@ -1,16 +1,24 @@
-#KeysViz Project
+# KeysViz Project
 
 This repository hosts the KeysViz project motivated by the [interactive data visualization class](https://github.com/LyonDataViz/MOS5.5-Dataviz) given by [Romain Vuillemot](https://github.com/romsson), during my last year at École Centrale de Lyon.
 
-#Record your own keystrokes and analyze it
+# Record your own keystrokes and analyze it
 
 This project aims at creating different D3js visualizations showing insights from personal keyboard strokes data. For this purpose a keylogger has been implemented.
 
 The project is available [here](https://tridet.github.io/KeysViz/index.html).
 
-#Try it
+# Try it
 
-![Alt Text](./assets/images/demo-viz1.gif)
+## 1. Install the keylogger and record keystrokes
+
+You can choose to launch and stop the keylogger at anytime hence avoiding to record sensitive personal data such as passwords.
+
+## 2. Load your personal logs
+
+
+## 3. Visualize the insights
+
 <div>
 <img src="assets/images/demo-viz1.gif">
 </div>
@@ -24,6 +32,8 @@ The project is available [here](https://tridet.github.io/KeysViz/index.html).
 </div>
 
 
-#Authors
+# Authors
 
 Loïc BETHENCOURT - Pascal GODBILLOT - Théo LACOUR
+
+# Credits
