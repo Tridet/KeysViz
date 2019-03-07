@@ -23,18 +23,16 @@ def log2data(logs_path):
                 data = [line.strip() for line in f if line.strip()]
                 for k in range(len(data)):
                     data[k] = data[k].replace("◊","crtl+v").replace("≈","ctrl+a").replace("È","é").replace("©","ctrl+c").replace("æ","ctrl+a").replace("˚","°").replace("Ë","è").replace("˘","ù").replace("Â","ctrl+z")
-                change1 = False
-                change2 = False
                 if data[0][:13] != "date ; stroke":
                     data.insert(0, "date ; stroke\n")
-                    change1 = True
-                last_stroke = data[-1]
-                if "Exiting..." in last_stroke:
-                    del data[-1]
-                    del data[-1]
-                    change2 = True
-
+                final_data = []
+                for line in data :
+                    if (not "Exiting..." in line) and (not "None" in line):
+                        try :
+                            final_data.append(line.split(' ; ')[0] + ' ; ' + line.split(' ; ')[1].lower())
+                        except :
+                            continue
                 with open(logs_path + filename, "w") as f:
-                    f.write('\n'.join(data))
+                    f.write('\n'.join(final_data))
                     f.close()
                     print(filename + " overwritten")
