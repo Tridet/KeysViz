@@ -68,4 +68,3 @@ The [chord diagram visualization](https://tridet.github.io/KeysViz/chords_viz.ht
 * The radar chart visualisation is inspired by the following [block buider](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242).
 * The chords diagram visualisation is inspired by the following [gist](https://gist.github.com/sghall/7859113).
 * The website is inspired by the following [HTML template](http://www.mashup-template.com/preview.html?template=univers).
-* The radar chart visualisation is inspired by the following [block buider](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242).
