@@ -54,6 +54,7 @@
 
 
 			<div style="margin-top:15px">
+                <span>Letters following each other for&ensp;</span>
 				<span>
 					<select id="Category">
 						<option value="all">-- All categories --</option>
@@ -68,6 +69,7 @@
 				<span>&ensp;</span>
 			</div>
 		</form>
+
 		<script>
 
         function plot_chords(val){
@@ -102,6 +104,7 @@
 			}
 
 			function updateWindow(svg){
+                //var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
 				x = window.innerWidth;
 				y = window.innerHeight;
 
@@ -112,6 +115,7 @@
                 var maxRow = matrix.map(function(row){ return Math.max.apply(Math, row); });
                 var rate = Math.round(Math.max.apply(null, maxRow)/5);
 				filter_matrix(matrix, rate);
+                //var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
 				var w = window.innerWidth,
 					h = window.innerHeight,
 					r1 = h / 2.2 ,
