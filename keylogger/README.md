@@ -1,7 +1,6 @@
 # Keylogger
 
-Keylogger in Python. You decide when you run it and when you stop it.
-
+Keylogger in Python. You decide when you run it and when you stop it. The idea is to record the key struck for a certain activity, so you need to run the keylogger during this activity, and you need to specify the name of the file for this activity (the keylogger will concatenate at the end of this text file).
 ## Installing
 
 You need Python 3 and the library pynput :

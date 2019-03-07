@@ -143,23 +143,13 @@
 
 				var mapReader = chordRdr(matrix, mmap);
 
-				var colors_1 = d3.scaleOrdinal(d3.schemeCategory20c);
-				for (var i=0;i<20;i++) {
-					colors_1(i)
-				}
 				function colors (n) {
-					//var blues = d3.scaleOrdinal(d3.interpolateBlues(1));
 					//var list_colors = ["#FFC30F", "#FF5733", "#C70039"];1B503D
 					//var list_colors = ["#C87F5B", "#913034", "#C79657"];
                     var list_colors = ["#d67264", "#913034", "#e1ac85"];
 					//var list_colors = ["#e1e7e8", colors_1(0), colors_1(8)];
 					return list_colors[n];
 				}
-				/*
-				var colors = d3.scaleLinear()
-					.range(['#FFFFFF', '#483D8B	'])
-					.interpolate(d3.interpolateHcl);*/
-
 
 				var g = svg.selectAll("g.group")
 					.data(function(chords) {
@@ -167,8 +157,6 @@
 					})
 					.enter().append("svg:g")
 					.attr("class", "group")
-
-                //var count_vowels;
 
 				g.append("svg:path")
 					.style("stroke", "white")
