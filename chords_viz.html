@@ -118,7 +118,7 @@
                 //var topHeight = Math.max(document.getElementById("navbar-collapse").offsetHeight,document.getElementById("form").offsetHeight);
 				var w = window.innerWidth,
 					h = window.innerHeight,
-					r1 = h / 2.2 ,
+					r1 = h / 2.14 ,
 					r0 = r1 - 70;
 
 				var chord = d3.chord()
@@ -138,7 +138,7 @@
 					.attr("height", h)
 					.append("svg:g")
 					.attr("id", "circle")
-					.attr("transform", "translate(" + w / 2 + "," + h / 2.2 + ")")
+					.attr("transform", "translate(" + w / 2 + "," + h / 2.35 + ")")
 					.datum(chord(matrix));
 
 				svg.append("circle")
