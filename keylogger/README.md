@@ -44,4 +44,8 @@ ps aux | grep Python
 
 AND THEN GET THE ID OF THE PROCESS TO KILL IT : kill ID 
 
-HAVE FUN!!!  
+HAVE FUN!!!
+
+## Credits
+
+The keylogger is a enhanced version of the following [code](https://theembeddedlab.com/tutorials/keylogger-python/) taking advantage of the Python Logger.

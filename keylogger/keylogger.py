@@ -21,7 +21,7 @@ def on_press(key):
 def on_release(key):
 	key_name = get_key_name(key)
 
-	if key_name == "f12":
+	if key_name == None:
 		logger.info('Exiting...')
 		return False
 
