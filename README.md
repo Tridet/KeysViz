@@ -27,11 +27,13 @@ Run python function 'run.py' to parse your data.
 
 ### 4. Change the path name to use within the HTML pages
 
+In order to use your personal data on the website you need to do some modifications :
+
 Within the pages keyboard_viz and barchart_viz you will have to change the variable **data_path**.
 
 Within the page chords_viz you will have to change the variable **filename**.
 
-You will also have to change the value inside the dropdown menus and the legend dictionary inside these three pages.
+You will also have to change the value inside the dropdown menus and the legend dictionaries inside these three pages.
 
 ### 5. Visualize the insights
 
@@ -59,4 +61,6 @@ You will also have to change the value inside the dropdown menus and the legend 
 
 ## Credits
 
-* The radar chart visualisation is inspired by the following [block buider](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242)
+* The radar chart visualisation is inspired by the following [block buider](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242).
+* The chords diagram visualisation is inspired by the following [gist](https://gist.github.com/sghall/7859113).
+* The website is inspired by the following [HTML template](http://www.mashup-template.com/preview.html?template=univers).
