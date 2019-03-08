@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barchart_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -58,7 +60,7 @@
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
           <entry key="dummy" value="4" />
-          <entry key="html" value="4617" />
+          <entry key="html" value="4661" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
           <entry key="md" value="5" />
@@ -69,7 +71,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="4617" />
+          <entry key="HTML" value="4661" />
           <entry key="JavaScript" value="1860" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="342" />
@@ -83,8 +85,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/barchart_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="147" column="24" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="246" column="63" selection-start-line="246" selection-start-column="57" selection-end-line="246" selection-end-column="63" />
+            <state relative-caret-position="552">
+              <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +111,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chords_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="56" column="67" lean-forward="true" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
+            <state relative-caret-position="197">
+              <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,9 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>line-he</find>
-      <find>line-height:25</find>
-      <find>.container</find>
       <find>10px</find>
       <find>margin:10px</find>
       <find>margin:0</find>
@@ -147,8 +157,11 @@
       <find>space</find>
       <find>icon</find>
       <find>window</find>
-      <find>font</find>
       <find>r0</find>
+      <find>font</find>
+      <find>height</find>
+      <find>trans</find>
+      <find>svg</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -175,7 +188,6 @@
         <option value="$PROJECT_DIR$/viz_copie.html" />
         <option value="$PROJECT_DIR$/viz.html" />
         <option value="$PROJECT_DIR$/miserables2txt.py" />
-        <option value="$PROJECT_DIR$/barchart_viz.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/run.py" />
@@ -184,6 +196,7 @@
         <option value="$PROJECT_DIR$/book2txt.py" />
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/log_formator.py" />
+        <option value="$PROJECT_DIR$/barchart_viz.html" />
         <option value="$PROJECT_DIR$/chords_viz.html" />
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
       </list>
@@ -195,7 +208,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -404,15 +417,15 @@
       <workItem from="1551434722610" duration="1359000" />
       <workItem from="1551705468831" duration="4984000" />
       <workItem from="1551738595453" duration="2042000" />
-      <workItem from="1551803702127" duration="17666000" />
+      <workItem from="1551803702127" duration="20421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79252000" />
+    <option name="totallyTimeSpent" value="82007000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26215646" />
@@ -610,22 +623,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/barchart_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="147" column="24" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="24" />
+        <state relative-caret-position="300">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chords_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="56" column="67" lean-forward="true" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
+        <state relative-caret-position="197">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="246" column="63" selection-start-line="246" selection-start-column="57" selection-end-line="246" selection-end-column="63" />
+        <state relative-caret-position="552">
+          <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

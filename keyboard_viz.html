@@ -78,7 +78,7 @@
 
 		<form id="form" align="right" position="relative">
 
-			<div>
+			<div align="right">
 				<span><a href="./keyboard_viz.html" class="btn btn-default">Keyboard</a></span>
 				<span><a href="./barchart_viz.html" class="btn btn-default">Barcharts</a></span>
 				<span><a href="chords_viz.html" class="btn btn-default">Chords Diagram</a></span>
@@ -86,7 +86,7 @@
 			</div>
 
 
-			<div style="margin-top:15px">
+			<div style="margin-top:15px" align="right">
                 <span>Heatmap of the keyboard for&ensp;</span>
 				<span>
 					<select id="Category">
@@ -123,9 +123,9 @@
 							height_tt = Math.min(width_tt, window.innerHeight - margin_tt.top - margin_tt.bottom - 20);
 
 			var svg = d3.select("body").append("svg")
-						.attr("width", width)
+						.attr("width", width + margin.right + margin.left)
 						.attr("height", height)
-						//.append("g")
+						.append("g")
 						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			var tooltip = d3.select('body').append('div')
