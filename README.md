@@ -49,7 +49,8 @@ You will also have to change the value inside the dropdown menus and the legend 
 The data we created with our own keylogger were interesting, but we added texts from famous authors to compare 
 the characters used. Hence, there are some data we can't access (like, how many times "backspace" was used in some texts).
 
-5.1. The [keyboard visualization](https://tridet.github.io/KeysViz/keyboard_viz.html) allows us to see the keys 
+**1. Keyboard**
+* The [keyboard visualization](https://tridet.github.io/KeysViz/keyboard_viz.html) allows us to see the keys 
 most frequently typed by the user in different contexts. The intensity shows what key was striked the most. 
 Obviously, "e" and "space" are typed a lot, but we realized that "backspace" is often the most used key 
 (when we have information about it being typed). When they hover on a key with the mouse, users can see a 
@@ -70,7 +71,9 @@ detailed radar graph that breaks down the use of that particular key in all data
         * Some letters are more used in English than in French and vice versa
     
 
-5.2. The [barcharts visualization](https://tridet.github.io/KeysViz/barchart_viz.html) shows us a ranking of which 
+**2.  Barcharts**
+
+* The [barcharts visualization](https://tridet.github.io/KeysViz/barchart_viz.html) shows us a ranking of which 
 characters were the most used. Hovering on a bar highlights the bar corresponding to the same character on the 
 other chart. Users can change which texts they want to compare, and if they want to see a ranking by frequency 
 or the characters in alphabetical order (in this case, we kept only the letters and discarded special characters).
@@ -100,7 +103,9 @@ or the characters in alphabetical order (in this case, we kept only the letters 
        that there are on average 5 letters by word in both languages and that 
        sentences in English are on average smaller than in French.
 
-5.3. The [chord diagram visualization](https://tridet.github.io/KeysViz/chords_viz.html) is certainly the most complex 
+**3. Chords diagram**
+
+* The [chord diagram visualization](https://tridet.github.io/KeysViz/chords_viz.html) is certainly the most complex 
 graph we made : it shows what characters are most likely to follow each character. We had to filter the data in order 
 to keep the graph readable and to avoid information overload. The insight is not obvious at first sight, but one can 
 guess that the five vowels represents a little less than half of all the letters typed. Also, mouseover a character 

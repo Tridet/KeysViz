@@ -60,7 +60,7 @@
           <entry key="html" value="4663" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
-          <entry key="md" value="1741" />
+          <entry key="md" value="1806" />
           <entry key="py" value="2716" />
           <entry key="stroke2freq" value="67" />
         </counts>
@@ -70,7 +70,7 @@
           <entry key="CSS" value="189" />
           <entry key="HTML" value="4663" />
           <entry key="JavaScript" value="1860" />
-          <entry key="Markdown" value="1741" />
+          <entry key="Markdown" value="1806" />
           <entry key="PLAIN_TEXT" value="342" />
           <entry key="Python" value="2670" />
         </counts>
@@ -109,8 +109,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="557">
-                <caret line="113" column="8" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+              <first_editor relative-caret-position="60">
+                <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               </first_editor>
               <second_editor />
             </state>
@@ -426,12 +426,12 @@
       <workItem from="1551434722610" duration="1359000" />
       <workItem from="1551705468831" duration="4984000" />
       <workItem from="1551738595453" duration="2042000" />
-      <workItem from="1551803702127" duration="24279000" />
+      <workItem from="1551803702127" duration="24570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85865000" />
+    <option name="totallyTimeSpent" value="86156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -655,8 +655,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="557">
-            <caret line="113" column="8" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+          <first_editor relative-caret-position="60">
+            <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           </first_editor>
           <second_editor />
         </state>
