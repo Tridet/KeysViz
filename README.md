@@ -8,6 +8,8 @@ This project aims at creating different D3js visualizations showing insights fro
 
 The project is available [here](https://tridet.github.io/KeysViz/index.html) and use our personal logs while doing different actions such as writing e-mails or coding in D3.js. We also use 'Les Miserables' and 'The Orient Express' books for a basis of comparison.
 
+**For a better user experience use the website with Google Chrome browser!**
+
 ## Try it
 
 You can also use the website with your own personal data.
