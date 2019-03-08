@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a513b8c-83e9-45b3-a63c-659701562921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/barchart_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/barchart_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chords_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/chords_viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard_viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard_viz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,7 +36,7 @@
           <entry key="html" value="26" />
           <entry key="js" value="24" />
           <entry key="json" value="1" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="py" value="22" />
         </counts>
       </usages-collector>
@@ -49,7 +46,7 @@
           <entry key="HTML" value="26" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="24" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="14" />
         </counts>
@@ -60,10 +57,10 @@
           <entry key="chords_data_parsing" value="43" />
           <entry key="css" value="189" />
           <entry key="dummy" value="4" />
-          <entry key="html" value="4661" />
+          <entry key="html" value="4663" />
           <entry key="js" value="1860" />
           <entry key="log_formator" value="101" />
-          <entry key="md" value="5" />
+          <entry key="md" value="1741" />
           <entry key="py" value="2716" />
           <entry key="stroke2freq" value="67" />
         </counts>
@@ -71,9 +68,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="189" />
-          <entry key="HTML" value="4661" />
+          <entry key="HTML" value="4663" />
           <entry key="JavaScript" value="1860" />
-          <entry key="Markdown" value="5" />
+          <entry key="Markdown" value="1741" />
           <entry key="PLAIN_TEXT" value="342" />
           <entry key="Python" value="2670" />
         </counts>
@@ -95,15 +92,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+            <state relative-caret-position="-1559">
+              <caret line="125" column="61" selection-start-line="125" selection-start-column="61" selection-end-line="125" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="557">
+                <caret line="113" column="8" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -189,7 +198,6 @@
         <option value="$PROJECT_DIR$/viz.html" />
         <option value="$PROJECT_DIR$/miserables2txt.py" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/stroke2freq.py" />
         <option value="$PROJECT_DIR$/chords_data_parsing.py" />
@@ -199,6 +207,7 @@
         <option value="$PROJECT_DIR$/barchart_viz.html" />
         <option value="$PROJECT_DIR$/chords_viz.html" />
         <option value="$PROJECT_DIR$/keyboard_viz.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -417,12 +426,12 @@
       <workItem from="1551434722610" duration="1359000" />
       <workItem from="1551705468831" duration="4984000" />
       <workItem from="1551738595453" duration="2042000" />
-      <workItem from="1551803702127" duration="20421000" />
+      <workItem from="1551803702127" duration="24279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82007000" />
+    <option name="totallyTimeSpent" value="85865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -576,16 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="639">
-            <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -644,12 +643,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_viz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+        <state relative-caret-position="-1559">
+          <caret line="125" column="61" selection-start-line="125" selection-start-column="61" selection-end-line="125" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="557">
+            <caret line="113" column="8" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
