@@ -116,10 +116,11 @@ highlights the links between it and the other characters, and mouseover a link h
 </div>
 
    * Some insights :
-       *
-       *
-       *
-       * 
+       * About half of the letters typed are vowels - which is reasonable.
+       * It is quite easy to follow the chords to form words : for instance, if you take a french text, "l" is most often followed by "e" and "a", indicating the words "le" and "la" are very common. In fact, you can spend quite some time trying to find this kind of things, following the chords.
+       * In english texts, you can see "h" follows "t" and then "e" follows "h" most often, which corresponds to "the".
+       * A letter that follows itself shows a chord that collapses onto itself. Representation could indeed be improved in this regard.
+       * For readability purposes, some letters don't have any chord attached, because it would be too thin (it is the case for "k", "x" and "z" for instance).
 
 ## Authors
 
