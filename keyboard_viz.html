@@ -222,7 +222,22 @@
                                             }
                                         }
 									}
-
+									var list_key = [];
+									for (var k in radar_data){
+										list_key.push(radar_data[k]["axis"]);
+									}
+									for (var key in legend_dict){
+										if (!(list_key.includes(legend_dict[key]))){
+											radar_data.push({
+												axis : legend_dict[key],
+												value : 0
+											});
+										}
+									}
+									radar_data.sort(function(a,b){
+										return a["axis"].localeCompare(b["axis"])
+									})
+								
 									var final_data = [radar_data];
 									RadarChart(".radarChart", final_data, radarChartOptions);})
 							rad.classed("hidden", false)
